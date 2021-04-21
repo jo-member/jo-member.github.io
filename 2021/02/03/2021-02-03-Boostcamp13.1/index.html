@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Day13) CNN1 - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="CNN    Convolution 연산 이해하기 지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨   우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용   x라는 입력벡터 상에서 커널사이즈"><meta property="og:type" content="blog"><meta property="og:title" content="Day13) CNN1"><meta property="og:url" content="https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="CNN    Convolution 연산 이해하기 지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨   우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용   x라는 입력벡터 상에서 커널사이즈"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202134359041.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202134617666.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202164217282.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202135650652.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202155309174.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202160533754.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202163834784.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203133123225.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210202163929154.png"><meta property="og:image" content="https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/assets/images/image-20210203133602208.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203155819848.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203160420099.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203162452918.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203180018567.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203180125687.png"><meta property="og:image" content="https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/assets/images/image-20210203180311444.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203182236058.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203182359483.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210203183155786.png"><meta property="article:published_time" content="2021-02-02T15:00:00.000Z"><meta property="article:modified_time" content="2021-04-21T17:34:58.491Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/assets/images/image-20210202134359041.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/"},"headline":"Day13) CNN1","image":["https://jo-member.github.io/assets/images/image-20210202134359041.png","https://jo-member.github.io/assets/images/image-20210202134617666.png","https://jo-member.github.io/assets/images/image-20210202164217282.png","https://jo-member.github.io/assets/images/image-20210202135650652.png","https://jo-member.github.io/assets/images/image-20210202155309174.png","https://jo-member.github.io/assets/images/image-20210202160533754.png","https://jo-member.github.io/assets/images/image-20210202163834784.png","https://jo-member.github.io/assets/images/image-20210203133123225.png","https://jo-member.github.io/assets/images/image-20210202163929154.png","https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/assets/images/image-20210203133602208.png","https://jo-member.github.io/assets/images/image-20210203155819848.png","https://jo-member.github.io/assets/images/image-20210203160420099.png","https://jo-member.github.io/assets/images/image-20210203162452918.png","https://jo-member.github.io/assets/images/image-20210203180018567.png","https://jo-member.github.io/assets/images/image-20210203180125687.png","https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/assets/images/image-20210203180311444.png","https://jo-member.github.io/assets/images/image-20210203182236058.png","https://jo-member.github.io/assets/images/image-20210203182359483.png","https://jo-member.github.io/assets/images/image-20210203183155786.png"],"datePublished":"2021-02-02T15:00:00.000Z","dateModified":"2021-04-21T17:34:58.491Z","author":{"@type":"Person","name":"jo-member"},"description":"CNN    Convolution 연산 이해하기 지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨   우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용   x라는 입력벡터 상에서 커널사이즈"}</script><link rel="canonical" href="https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-02-02T15:00:00.000Z" title="2021. 2. 3. 오전 12:00:00">2021-02-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:34:58.491Z" title="2021. 4. 22. 오전 2:34:58">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Day13) CNN1</h1><div class="content"><p><br/><br/></p>
+<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><br/>
+
+
+
+<h2 id="Convolution-연산-이해하기"><a href="#Convolution-연산-이해하기" class="headerlink" title="Convolution 연산 이해하기"></a>Convolution 연산 이해하기</h2><ul>
+<li><p>지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨</p>
+<p><img src="/assets/images/image-20210202134359041.png" alt="image-20210202134359041"></p>
+</li>
+<li><p>우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용</p>
+<p><img src="/assets/images/image-20210202134617666.png" alt="image-20210202134617666"></p>
+</li>
+<li><p>x라는 입력벡터 상에서 커널사이즈 만큼 움직여 가며 연산</p>
+</li>
+</ul>
+<br/>
+
+<h2 id="다양한-차원에서의-Convolution"><a href="#다양한-차원에서의-Convolution" class="headerlink" title="다양한 차원에서의 Convolution"></a>다양한 차원에서의 Convolution</h2><p><br/>                                              <img src="/assets/images/image-20210202164217282.png" alt="image-20210202164217282"></p>
+<p>​                                                      <img src="/assets/images/image-20210202135650652.png" alt="image-20210202135650652"></p>
+<h2 id="2차원-Convolution-연산"><a href="#2차원-Convolution-연산" class="headerlink" title="2차원 Convolution 연산"></a>2차원 Convolution 연산</h2><p><img src="/assets/images/image-20210202155309174.png" alt="image-20210202155309174"></p>
+<p>입력을 kernal size에 맞춰서 입력위치에 해당하는 index만큼 옮겨다니면서, 성분곱을 연산하는</p>
+<p>2D 이미지 다른 kernel을 적용하여 Convolution filter를 적용하면 kernel에 맞는 특성을 가지는 2D 이미지가 나온다</p>
+<ul>
+<li><p>입력크기를 (H,W), 커널크기를 (K<del>H</del>, K<del>W</del>), 출력크기를 (O<del>H</del>, O<del>W</del>)라 할때</p>
+<p><img src="/assets/images/image-20210202160533754.png" alt="image-20210202160533754"></p>
+</li>
+</ul>
+<p><br/><br/><br/><br/><br/><br/></p>
+<p><img src="/assets/images/image-20210202163834784.png" alt="image-20210202163834784"></p>
+<ul>
+<li>channel이 여러개인 2차원 입력의 경우 2차원 Convolution을 채널 개수만큼 적용한다 (2차원 이미지더라도, RGB가있어서 3 channel)</li>
+<li>채널이 여러개인 입력인 경우 커널도 채널의 개수만큼 있어야 한다</li>
+<li>채널이 여러개일때는 각커널을 적용한 각각의 채널의 결과를 더해준다</li>
+</ul>
+<p><img src="/assets/images/image-20210203133123225.png" alt="image-20210203133123225"></p>
+<br/>
+
+<br/>
+
+<p><strong>만약 출력의 channel을 늘리고 싶다면???</strong></p>
+<p>커널의 개수를 여러개 만들면 된다. </p>
+<p><img src="/assets/images/image-20210202163929154.png" alt="image-20210202163929154"></p>
+<p>feature map의 채널 숫자를 늘리는 보통 이렇게 많이 사용한다</p>
+<p><br/><br/><br/></p>
+<h2 id="Convolution-연산의-Backpropagation"><a href="#Convolution-연산의-Backpropagation" class="headerlink" title="Convolution 연산의 Backpropagation"></a>Convolution 연산의 Backpropagation</h2><br/>
+
+<ul>
+<li>Convolution연산은 모든 입력데이터에 공통으로 커널이 적용되기 때문에 역전파 계산시에도 convolution이 나오게 된다</li>
+</ul>
+<h2 id="Stack-of-Convolution"><a href="#Stack-of-Convolution" class="headerlink" title="Stack of Convolution"></a>Stack of Convolution</h2><p><img src="assets/images/image-20210203133602208.png" alt="image-20210203133602208"></p>
+<p>MLP때와 마찬가지로 non-linear activation을 사이에 적용했다</p>
+<p><strong>연산을 정의하는 Parameter의 숫자</strong>가 중요</p>
+<p>첫번째 Convolutional filter의 parameter수 : 5*5*3*4 = 300 개</p>
+<p>두번째 Convolutional filter의 parameter수 : 5*5*4*10 = 1000개</p>
+<h2 id="Convolution-NN"><a href="#Convolution-NN" class="headerlink" title="Convolution NN"></a>Convolution NN</h2><ul>
+<li>CNN은 Convolution layer + Pooling layer + fully connected layer</li>
+<li>Convolution &amp; pooling layer : feature extraction</li>
+<li>fully connected layer : decision making</li>
+</ul>
+<p>점점 뒤의 fully connected layer를 줄이는 추세 </p>
+<p>reason : parameter의 수</p>
+<p>우리가 일반적으로 우리의 모델의 parameter 숫자가 늘어날수록 학습이 어렵고 generalize performace가 떨어진다</p>
+<p>따라서 CNN은 parameter수를 줄이는데 집중한다</p>
+<p><strong>어떤 뉴럴네트워크에 대해서 parameter숫자를 계산해보자</strong></p>
+<br/>
+
+<h2 id="Stride-amp-Padding"><a href="#Stride-amp-Padding" class="headerlink" title="Stride &amp; Padding"></a>Stride &amp; Padding</h2><p>skip</p>
+<br/>
+
+<br/>
+
+<h2 id="Convolution-Arithmatic"><a href="#Convolution-Arithmatic" class="headerlink" title="Convolution Arithmatic"></a>Convolution Arithmatic</h2><br/>
+
+<p><img src="/assets/images/image-20210203155819848.png" alt="image-20210203155819848"></p>
+<p>우리가 사용하는 kernel을 계산해보면 </p>
+<p>일단 3*3의 width 와 height이며 kernel의 channel은 입력의 channel과 같아야 하므로 128이다</p>
+<p>따라서 하나의 kernel의 size  = 3*3*128이다</p>
+<p>이제 이 kernel의 갯수를 찾으려면 output의 channel인 64이다</p>
+<p>따라서 총 parameter의 개수는 3*3*128*64 = 73728이다</p>
+<p>이제 padding과 stride는 parameter 수와는 연관이 없다</p>
+<p>ex)<img src="/assets/images/image-20210203160420099.png" alt="image-20210203160420099"></p>
+<p>사실 alexnet은 network가 2 path로 나누어짐</p>
+<ol>
+<li><p>일단 첫번째 layer의 kernel = 11x11x3 =  363</p>
+<p>이게 48개 있으므로 parameter개수 = 17424개</p>
+<p>원래는 이제 96짜리 channel을 만들었어야 되는데 2개로 나누어서 48 channel로 만들어줌</p>
+<p>따라서 총 parameter수 = 34848</p>
+</li>
+<li><p>kernel  = 5x5x48 = 1200</p>
+<p>이게 128개 그리고 총 2개 있으니 -&gt; 1200x128x2 = 307k</p>
+</li>
+<li><p>kernel = 3x3x128 = 1152 이게 2개 -&gt; 2304</p>
+<p>이게 192개 그리고 총  -&gt; 2304x192x2 = 884k</p>
+</li>
+<li><p>똑같은 방법 -&gt; 663k</p>
+<p>쭉쭉</p>
+<p>그러다가 Fully connected layer의 parameter 개수</p>
+</li>
+</ol>
+<p>13x13x128x2x2048x2 = 177M</p>
+<p>16M</p>
+<p>4M</p>
+<p>보면 dense layer에서 parameter숫자가 너무 커진다</p>
+<p>결국은 parameter를 줄이기 위해서는 convolution layer를 깊게 쌓고 뒤의 dense layer를 최대한 줄이는 방향으로 발전하고 있다</p>
+<h3 id="1x1-convolution"><a href="#1x1-convolution" class="headerlink" title="1x1 convolution"></a>1x1 convolution</h3><p><img src="/assets/images/image-20210203162452918.png" alt="image-20210203162452918"></p>
+<p>여기서 parameter수를 계산해보면 1x1x128x32 = 4096</p>
+<p>demension을 줄인다!!!</p>
+<p>깊이는 깊어지지만 parameter수를 줄이는 역할을 한다</p>
+<p>e.g) bottle neck architecture</p>
+<br/>
+
+<h1 id="Modern-Convolutional-Neural-Networks"><a href="#Modern-Convolutional-Neural-Networks" class="headerlink" title="Modern Convolutional Neural Networks"></a>Modern Convolutional Neural Networks</h1><br/>
+
+<ul>
+<li><p>ILSVRC에서 우승하거나 좋은 성능을 거둔 model들에 대한 parameter 개수, depth 등등</p>
+<br/></li>
+</ul>
+<h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><br/>
+
+<h3 id="ILSVRC"><a href="#ILSVRC" class="headerlink" title="ILSVRC"></a>ILSVRC</h3><ul>
+<li><p>Imagenet Large-Scale Visual Recognition Challenge</p>
+</li>
+<li><p>1000 different categories</p>
+</li>
+<li><p>over 1 millions images</p>
+</li>
+</ul>
+<h3 id="AlexNet-1"><a href="#AlexNet-1" class="headerlink" title="AlexNet"></a>AlexNet</h3><ul>
+<li>gpu의 성능이 부족해서 한번에 계산이 안되서 2개로 나눠서 따로 training을 시킴</li>
+</ul>
+<p><strong>Receptive field</strong> : 하나의 kernel이 볼수있는 이미지 level에서의 영역은 커짐, 그러나 parameter가 늘어나게 됨</p>
+<ul>
+<li>5 Convolutional layer</li>
+<li>3 Dense layer</li>
+</ul>
+<h3 id="Key-idea"><a href="#Key-idea" class="headerlink" title="Key idea"></a>Key idea</h3><ul>
+<li><p>use ReLU function (non-linear func, 마지막 slope가 1이라 gradient가 사라지거나 네트워크를 망칠 확률이 적음)</p>
+<ul>
+<li><p>preserve properties of linear model</p>
+</li>
+<li><p>overcome the gradient vanishing problem</p>
+</li>
+<li><p>이전에 많이 활용하던 tanh나 sigmoid는 값이 크면 output의 gradient가 0에 가깝게 나온다</p>
+</li>
+</ul>
+</li>
+<li><p>GPI implementation (2 GPU)</p>
+</li>
+<li><p>Overlapping Pooling, Local response normalization</p>
+</li>
+<li><p>Data augmentation</p>
+</li>
+<li><p>Dropout</p>
+</li>
+</ul>
+<p>지금 보면 별로 대단한게 아니지만, 그당시에는 혁신적인 방법</p>
+<p>일반적인 standard 를 잡았다!</p>
+<br/>
+
+<h2 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h2><br/>
+
+<ul>
+<li><p>Increasing depth with 3x3 convolution filter</p>
+</li>
+<li><p>1x1 convolution filter</p>
+</li>
+<li><p>Dropout (p=0.5)</p>
+</li>
+<li><p>VFF16,VGG19</p>
+</li>
+</ul>
+<h3 id="Why-3x3"><a href="#Why-3x3" class="headerlink" title="Why 3x3????"></a>Why 3x3????</h3><p>kernel size가 커지면서 가지는 이점 : Receptive field가 커진다</p>
+<p>ex) </p>
+<p>3x3을 2번 하게 되면 output의 1개의 값은 input의 5x5를 보게된다 -&gt; 이게 바로 Receptive field</p>
+<p>3x3을 3번 하게 되면 output의 1개의 값은 input의 6x6을 보게된다</p>
+<p>따라서 3x3을 2개 사용하는 것과, 5x5를 1개 사용하는 것은 receptive field의 관점에서는 같다</p>
+<p>따라서 이둘의 parameter의 개수를 비교해 보면 (chaneel : 128)</p>
+<p>3x3 2개 : 3x3x128x128x2 = 294k</p>
+<p>5x5 1개 : 5x5x128x128 = 409k</p>
+<p>따라서 3x3 2개를 쓰는게 parameter의 숫자 감소 측면에서 이득이다</p>
+<p>왜이런일이 일어날까?</p>
+<p>사실상 3x3x3 = 27, 6x6 = 36 | 3x3 = 9, 5x5 = 25 이런 맥락이다</p>
+<p>뒤의 대부분을보면 kernel은 7x7을 벗어나지 않는다</p>
+<br/>
+
+<h2 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h2><br/>
+
+<p><img src="/assets/images/image-20210203180018567.png" alt="image-20210203180018567"></p>
+<p>보면 전체 network 안에 작은 network 구조들이 반복되고 있다 (network in network)</p>
+<ul>
+<li>Inception block 활용</li>
+</ul>
+<p><img src="/assets/images/image-20210203180125687.png" alt="image-20210203180125687"></p>
+<p>하나의 입력에 대해서 여러개의 receptive field를 가지는 filter를 거치고 이들을 concatenation</p>
+<p>하지만 그보다 중요한게 중간중간에 추가로 들어간 1x1 Conv</p>
+<p><img src="assets/images/image-20210203180311444.png" alt="/image-20210203180311444"></p>
+<ol>
+<li>3x3x128x128 = 147456</li>
+<li>1x1x128x32 = 4096, 3x3x32x128 = 36864 -&gt;합은 :  40960</li>
+</ol>
+<p>parameter 수가 1/4로 줄었다 —-&gt; 사용하는게 이득이다!!!</p>
+<p><strong>과연 AlexNet,VGGNet, GoogLeNet 중 parameter수가 작은것은?</strong></p>
+<ol>
+<li>AlexNet(8 layer) : 60M</li>
+<li>VGGNet(19-layer) : 110M</li>
+<li>GoogLeNet(22 layer) : 4M</li>
+</ol>
+<br/>
+
+<br/>
+
+<h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
+<li>Deeper neural networks are hard to train</li>
+<li>Overfitting is usually caused by an excessive number of parameters</li>
+</ul>
+<h3 id="Identity-map"><a href="#Identity-map" class="headerlink" title="Identity map"></a>Identity map</h3><p><img src="/assets/images/image-20210203182236058.png" alt="image-20210203182236058"></p>
+<p><img src="/assets/images/image-20210203182359483.png" alt="image-20210203182359483"></p>
+<p>x와 output의 차원을 맞춰주기 위해서 1x1 convolution으로 사용하는것 </p>
+<ul>
+<li>Convolution 연산과 batch norm의 순서??????</li>
+<li>더 자세한 ResNet의 구조????</li>
+</ul>
+<h3 id="Bottleneck-architecture"><a href="#Bottleneck-architecture" class="headerlink" title="Bottleneck  architecture"></a>Bottleneck  architecture</h3><p>3x3의 연산을 하기 전에 channel 수를 줄이게 되면 parameter의 숫자를 줄일수 있지 않을까?</p>
+<p><img src="/assets/images/image-20210203183155786.png" alt="image-20210203183155786"></p>
+<br/>
+
+<h2 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h2><br/>
+
+<ul>
+<li>ResNet을 바라보게 되면 그냥 두개의 값을 더하지 말고 concatnate시키면 되지 않을까?</li>
+<li>계속 concatnate하면 channel이 기하급수적으로 커지기 때문에 이를 해결하기 위해 중간에 1x1 conv를 해줌</li>
+</ul>
+<br/>
+
+
+
+
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>Day13) CNN1</p><p><a href="https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/">https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-02-03</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/02/02/2021-02-02-Boostcamp12.1/"><span class="level-item">Day12) Optimization</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#CNN"><span class="level-left"><span class="level-item">1</span><span class="level-item">CNN</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Convolution-연산-이해하기"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Convolution 연산 이해하기</span></span></a></li><li><a class="level is-mobile" href="#다양한-차원에서의-Convolution"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">다양한 차원에서의 Convolution</span></span></a></li><li><a class="level is-mobile" href="#2차원-Convolution-연산"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">2차원 Convolution 연산</span></span></a></li><li><a class="level is-mobile" href="#Convolution-연산의-Backpropagation"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Convolution 연산의 Backpropagation</span></span></a></li><li><a class="level is-mobile" href="#Stack-of-Convolution"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Stack of Convolution</span></span></a></li><li><a class="level is-mobile" href="#Convolution-NN"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Convolution NN</span></span></a></li><li><a class="level is-mobile" href="#Stride-amp-Padding"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Stride &amp; Padding</span></span></a></li><li><a class="level is-mobile" href="#Convolution-Arithmatic"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">Convolution Arithmatic</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1x1-convolution"><span class="level-left"><span class="level-item">1.8.1</span><span class="level-item">1x1 convolution</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Modern-Convolutional-Neural-Networks"><span class="level-left"><span class="level-item">2</span><span class="level-item">Modern Convolutional Neural Networks</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#AlexNet"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">AlexNet</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#ILSVRC"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">ILSVRC</span></span></a></li><li><a class="level is-mobile" href="#AlexNet-1"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">AlexNet</span></span></a></li><li><a class="level is-mobile" href="#Key-idea"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">Key idea</span></span></a></li></ul></li><li><a class="level is-mobile" href="#VGGNet"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">VGGNet</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Why-3x3"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">Why 3x3????</span></span></a></li></ul></li><li><a class="level is-mobile" href="#GoogLeNet"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">GoogLeNet</span></span></a></li><li><a class="level is-mobile" href="#ResNet"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">ResNet</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Identity-map"><span class="level-left"><span class="level-item">2.4.1</span><span class="level-item">Identity map</span></span></a></li><li><a class="level is-mobile" href="#Bottleneck-architecture"><span class="level-left"><span class="level-item">2.4.2</span><span class="level-item">Bottleneck  architecture</span></span></a></li></ul></li><li><a class="level is-mobile" href="#DenseNet"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">DenseNet</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-02T15:00:00.000Z">2021-02-03</time></p><p class="title"><a href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-01T15:00:00.000Z">2021-02-02</time></p><p class="title"><a href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-28T15:00:00.000Z">2021-01-29</time></p><p class="title"><a href="/2021/01/29/2021-01-29-week2/">Week2</a></p><p class="categories"><a href="/categories/Further-Q/">Further_Q</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

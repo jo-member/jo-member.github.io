@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Day6 - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Start Numpy 큰 matrix를 파이썬으로 표현하기 위해 사용  그리고 memory를 효율적으로 사용하기 위해  반복문 없이 데이터 배열처리를 지원함   ndarrayimport numpy as np test_array &amp;#x3D; np.array([1,2,3,4],float) ndarry 와 list 의 차이점   numpy는 하나의 데이터 type만 배열"><meta property="og:type" content="blog"><meta property="og:title" content="Day6"><meta property="og:url" content="https://jo-member.github.io/2020/01/25/2021-01-25-Boostcamp6/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="Start Numpy 큰 matrix를 파이썬으로 표현하기 위해 사용  그리고 memory를 효율적으로 사용하기 위해  반복문 없이 데이터 배열처리를 지원함   ndarrayimport numpy as np test_array &amp;#x3D; np.array([1,2,3,4],float) ndarry 와 list 의 차이점   numpy는 하나의 데이터 type만 배열"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125115146658.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125123301094.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125123536806.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210127220807298.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125125446603.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125135342040.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125135452387.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/25/assets/images/image-20210125135531702.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/25/assets/images/image-20210125135800188.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125163639790.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/25/assets/images/image-20210125165526235.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/25/assets/images/image-20210125171208255.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125174742158.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125180801162.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125180837456.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125180829401.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125182128448.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/25/assets/images/image-20210125182317163.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125183743570.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210125180837456.png"><meta property="article:published_time" content="2020-01-24T15:00:00.000Z"><meta property="article:modified_time" content="2021-04-21T17:34:03.584Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/assets/images/image-20210125115146658.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2020/01/25/2021-01-25-Boostcamp6/"},"headline":"Day6","image":["https://jo-member.github.io/assets/images/image-20210125115146658.png","https://jo-member.github.io/assets/images/image-20210125123301094.png","https://jo-member.github.io/assets/images/image-20210125123536806.png","https://jo-member.github.io/assets/images/image-20210127220807298.png","https://jo-member.github.io/assets/images/image-20210125125446603.png","https://jo-member.github.io/assets/images/image-20210125135342040.png","https://jo-member.github.io/assets/images/image-20210125135452387.png","https://jo-member.github.io/2020/01/25/assets/images/image-20210125135531702.png","https://jo-member.github.io/2020/01/25/assets/images/image-20210125135800188.png","https://jo-member.github.io/assets/images/image-20210125163639790.png","https://jo-member.github.io/2020/01/25/assets/images/image-20210125165526235.png","https://jo-member.github.io/2020/01/25/assets/images/image-20210125171208255.png","https://jo-member.github.io/assets/images/image-20210125174742158.png","https://jo-member.github.io/assets/images/image-20210125180801162.png","https://jo-member.github.io/assets/images/image-20210125180837456.png","https://jo-member.github.io/assets/images/image-20210125180829401.png","https://jo-member.github.io/assets/images/image-20210125182128448.png","https://jo-member.github.io/2020/01/25/assets/images/image-20210125182317163.png","https://jo-member.github.io/assets/images/image-20210125183743570.png","https://jo-member.github.io/assets/images/image-20210125180837456.png"],"datePublished":"2020-01-24T15:00:00.000Z","dateModified":"2021-04-21T17:34:03.584Z","author":{"@type":"Person","name":"jo-member"},"description":"Start Numpy 큰 matrix를 파이썬으로 표현하기 위해 사용  그리고 memory를 효율적으로 사용하기 위해  반복문 없이 데이터 배열처리를 지원함   ndarrayimport numpy as np test_array &#x3D; np.array([1,2,3,4],float) ndarry 와 list 의 차이점   numpy는 하나의 데이터 type만 배열"}</script><link rel="canonical" href="https://jo-member.github.io/2020/01/25/2021-01-25-Boostcamp6/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-01-24T15:00:00.000Z" title="2020. 1. 25. 오전 12:00:00">2020-01-25</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:34:03.584Z" title="2021. 4. 22. 오전 2:34:03">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Day6</h1><div class="content"><p>Start</p>
+<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><ul>
+<li><p>큰 matrix를 파이썬으로 표현하기 위해 사용</p>
+</li>
+<li><p>그리고 memory를 효율적으로 사용하기 위해</p>
+</li>
+<li><p>반복문 없이 데이터 배열처리를 지원함</p>
+</li>
+</ul>
+<h2 id="ndarray"><a href="#ndarray" class="headerlink" title="ndarray"></a>ndarray</h2><p>import numpy as np</p>
+<p>test_array = np.array([1,2,3,4],float)</p>
+<p>ndarry 와 list 의 차이점 </p>
+<ul>
+<li><strong>numpy는 하나의 데이터 type만 배열에 들어갈수 있다</strong></li>
+<li><strong>dynamic typing이 안됨</strong></li>
+</ul>
+<p>numpy는 차례대로 데이터가 바로 메모리에 할당되지만</p>
+<p>python의 list는 주소값을 메모리에 저장하게 되어 2번을 거쳐서 값을 불러옴</p>
+<img src="/assets/images/image-20210125115146658.png" alt="image-20210125115146658"  />
+
+
+
+<p>따라서 값이 ndarray의 값이 같더라도 is 를 써보면 false가 나온다</p>
+<p>list는 아님</p>
+<h3 id="array의-rank"><a href="#array의-rank" class="headerlink" title="array의 rank"></a><strong>array의 rank</strong></h3><p>rank 0 : scalar</p>
+<p>rank 1 : vector</p>
+<p>rank 2 : matrix</p>
+<p>rank 3 : 3- tensor</p>
+<p>rank 4 : n-tensor</p>
+<p>dtype : numpy는 </p>
+<h3 id="nbytes"><a href="#nbytes" class="headerlink" title="nbytes"></a>nbytes</h3><p>ndarray의 object 메모리 크기를 반환함</p>
+<h2 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h2><h3 id="reshape"><a href="#reshape" class="headerlink" title="reshape"></a>reshape</h3><p>Array의 shape 크기를 변경함, element의 갯수는 동일</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">test_matrix = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">np.array(test_metrix).reshape(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">np.array(test_metrix).reshape(-<span class="number">1</span>,<span class="number">2</span>).shape</span><br><span class="line"><span class="comment"># (4,2)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="flatten"><a href="#flatten" class="headerlink" title="flatten"></a>flatten</h3><p>다차원 array를 1차원 array로 변환</p>
+<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3><p><strong>리스트와 달리 [0,0]과 같은 접근법을 허용한다</strong></p>
+<h3 id="Slicing"><a href="#Slicing" class="headerlink" title="Slicing"></a>Slicing</h3><p>data를 접근 할 때 slicing을 굉장히 많이 쓴다</p>
+<p>이건 많이 써봐서 ㄱㅊ</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#건너 뛰는것도 씀</span></span><br><span class="line">arr[:,::<span class="number">2</span>]</span><br><span class="line"><span class="comment">#2칸씩 건너 뛰는</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Creation-Function"><a href="#Creation-Function" class="headerlink" title="Creation Function"></a>Creation Function</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">np.arange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">0.5</span>)</span><br><span class="line"><span class="comment">#array([0. , 0.5, 1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5, 5. , 5.5, 6. ,6.5, 7. , 7.5, 8. , 8.5, 9. , 9.5])</span></span><br><span class="line"></span><br><span class="line">np.zeros(shape = (<span class="number">10</span>,),dtype =np.int8)</span><br><span class="line">np.empty(shape = (<span class="number">10</span>,),dtype =np.int8)</span><br><span class="line"><span class="comment">#empty함수는 memory에 빈공간이 잡힘 그안에는 쓰레기 값이 있음</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="identity"><a href="#identity" class="headerlink" title="identity"></a>identity</h3><p>단위행렬 (i행렬)을 생성함</p>
+<h3 id="eye"><a href="#eye" class="headerlink" title="eye"></a>eye</h3><p>대각선이 1인행렬, k값의 시작 index 지정가능</p>
+<h3 id="diag"><a href="#diag" class="headerlink" title="diag"></a>diag</h3><p>대각행렬 값을 추출함</p>
+<h3 id="random-sampling"><a href="#random-sampling" class="headerlink" title="random sampling"></a>random sampling</h3><p>데이터 분포에 따른 sampling으로 array를 생성</p>
+<ul>
+<li>np.random</li>
+</ul>
+<h2 id="Operation-function"><a href="#Operation-function" class="headerlink" title="Operation function"></a>Operation function</h2><h3 id="Axis"><a href="#Axis" class="headerlink" title="Axis"></a>Axis</h3><p>기준이되는 dimension 축</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">test_array = np.arrange(<span class="number">1</span>,<span class="number">13</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">array([[ 1,  2,  3,  4],</span></span><br><span class="line"><span class="string">       [ 5,  6,  7,  8],</span></span><br><span class="line"><span class="string">       [ 9, 10, 11, 12]])</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">test_array.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#(array([10,26,42]))</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/images/image-20210125123301094.png" alt="image-20210125123301094"></p>
+<h3 id="Concatenate"><a href="#Concatenate" class="headerlink" title="Concatenate"></a>Concatenate</h3><p><img src="/assets/images/image-20210125123536806.png" alt="image-20210125123536806"></p>
+<ul>
+<li>numpy array를 붙이는 함수</li>
+<li>np.concatenate((a,b),axis = 0)</li>
+<li>값을 붙일때 2개 함수 concatenate,hstack,vstack</li>
+<li>맞춰서 축을 늘리고 싶은때 newaxis 사용</li>
+</ul>
+<p><img src="/assets/images/image-20210127220807298.png" alt="image-20210127220807298"></p>
+<p>  이게 생각보다 익숙하지 않아서 연습이 좀 필요할듯 싶다</p>
+<p>행렬의 dot product</p>
+<ul>
+<li>a.dot(test_b)</li>
+</ul>
+<p>Transpose</p>
+<ul>
+<li>test_a.T</li>
+</ul>
+<h2 id="Broadcasting"><a href="#Broadcasting" class="headerlink" title="Broadcasting"></a><strong>Broadcasting</strong></h2><p>(element wise operation : array의 shape이 같아서 각각 연산)</p>
+<p>Broadcasting은 크기가 shape이 다를때 알아서 퍼져서 연산이 일어남</p>
+<p><img src="/assets/images/image-20210125125446603.png" alt="image-20210125125446603"></p>
+<p>요런느낌</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">test_matrix = np.arange(<span class="number">1</span>, <span class="number">13</span>).reshape(<span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line">test_vector = np.arange(<span class="number">10</span>, <span class="number">40</span>, <span class="number">10</span>)</span><br><span class="line">array([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>])</span><br><span class="line"></span><br><span class="line">test_vector.reshape(-<span class="number">1</span>, <span class="number">3</span>).T + test_vector</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">array([[20, 30, 40],</span></span><br><span class="line"><span class="string">       [30, 40, 50],</span></span><br><span class="line"><span class="string">       [40, 50, 60]])</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 이런 계산도 가능함</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="Numpy-performance"><a href="#Numpy-performance" class="headerlink" title="Numpy performance"></a>Numpy performance</h2><ul>
+<li>연산의 속도는 list보다 훨씬 크다 (dynamic typing을 포기한 결과)</li>
+<li>하지만 할당에서는 연산속도의 이점이 없음</li>
+</ul>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arrange(<span class="number">10</span>)</span><br><span class="line">a&lt;<span class="number">4</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">array([ True,  True,  True,  True, False, False, False, False, False,</span></span><br><span class="line"><span class="string">       False])</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">np.<span class="built_in">any</span>(a&gt;<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 하나라도 true면 전체가 True다</span></span><br><span class="line">np.<span class="built_in">all</span>(a&gt;<span class="number">5</span>)</span><br><span class="line"><span class="comment">#하나라도 false면 전체가 false이다</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#numpy 배열간의 shape이 동일할때는 element간의 크기를 비교</span></span><br><span class="line"></span><br><span class="line">np.logical_and(a&gt;<span class="number">0</span>,a&lt;<span class="number">3</span>)</span><br><span class="line"><span class="comment">#조건의 and</span></span><br><span class="line">np.logical_not(b)</span><br><span class="line">np.logical_or(a&gt;<span class="number">0</span>,a&lt;<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># np.where</span></span><br><span class="line">np.where(a &gt; <span class="number">5</span>)</span><br><span class="line"><span class="comment">#(array([6, 7, 8, 9], dtype=int64),</span></span><br><span class="line">np.where(a&gt;<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment"># array([2, 2, 2, 2, 2, 2, 3, 3, 3, 3])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># argmax : 가장 큰값의 index 반환, argmin : 가장 작은값의 index반환</span></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>])</span><br><span class="line">a.argmax(axis = <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Boolean-Index"><a href="#Boolean-Index" class="headerlink" title="Boolean Index"></a>Boolean Index</h3><p>index에 조건을 넣어주어 조건을 만족하는 해당하는 값만 뽑아옴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">10</span>)</span><br><span class="line">condition = a&gt;<span class="number">5</span></span><br><span class="line">a[condition]</span><br><span class="line"><span class="comment"># array([6, 7, 8, 9])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Fancy-index"><a href="#Fancy-index" class="headerlink" title="Fancy index"></a>Fancy index</h3><p>index값을 넣어줌</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>], <span class="built_in">float</span>)</span><br><span class="line">cond1 = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>])</span><br><span class="line">cond2 = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">a.take(cond1)</span><br><span class="line"><span class="comment">#array([4., 4., 4., 6., 4., 4., 4., 8.])</span></span><br><span class="line">a[cond]</span><br><span class="line"><span class="comment">#array([4., 4., 4., 6., 4., 4., 4., 8.])</span></span><br><span class="line"><span class="comment">#다차원 리스트에 적용</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>]])</span><br><span class="line">a[cond1,cond2]</span><br><span class="line"><span class="comment">#array([4, 4, 4, 0, 4, 4, 4, 2])</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h1><h2 id="What-is-vector"><a href="#What-is-vector" class="headerlink" title="What is vector"></a>What is vector</h2><ul>
+<li>벡터는 숫자를 원소로 가지는 리스트 또는 배열 </li>
+<li>공간에서 한점을 나타낸다 (원점으로 부터 상대적 위치)</li>
+</ul>
+<h3 id="Hadamard-product-element-product"><a href="#Hadamard-product-element-product" class="headerlink" title="Hadamard product (element product)"></a>Hadamard product (element product)</h3><p>성분곱이란 같은 shape에서의 각 element끼리의 곱</p>
+<h2 id="Vector의-덧셈-amp-뺄셈"><a href="#Vector의-덧셈-amp-뺄셈" class="headerlink" title="Vector의 덧셈 &amp; 뺄셈"></a>Vector의 덧셈 &amp; 뺄셈</h2><p>원점으로 부터가 아닌 다른 벡터로 부터 상대적 위치이동</p>
+<p>뺄셈은 방향을 뒤집은 덧셈</p>
+<h2 id="벡터의-norm"><a href="#벡터의-norm" class="headerlink" title="벡터의 norm"></a>벡터의 norm</h2><ul>
+<li>어떠한 벡터의 원점에서부터의 거리</li>
+<li>기호 밑 표현</li>
+</ul>
+<p><img src="/assets/images/image-20210125135342040.png" alt="image-20210125135342040"></p>
+<p>norm은 임의의 차원 d에서 성립</p>
+<h3 id="L1-norm"><a href="#L1-norm" class="headerlink" title="L1 norm"></a>L1 norm</h3><p>각성분의 변화량의 절대값</p>
+<p>좌표명면에서 각좌표축을 따라 이동하는 거리의 합 :<img src="/assets/images/image-20210125135452387.png" alt="image-20210125135452387"></p>
+<h3 id="L2-norm"><a href="#L2-norm" class="headerlink" title="L2 norm"></a>L2 norm</h3><p>**피타고라스 정리를 이용해 유클리드 거리를 계산 ** : <img src="../assets/images/image-20210125135531702.png" alt="image-20210125135531702"></p>
+<h3 id="왜-다른-norm을-사용하나"><a href="#왜-다른-norm을-사용하나" class="headerlink" title="왜 다른 norm을 사용하나?"></a>왜 다른 norm을 사용하나?</h3><ul>
+<li><strong>norm의 종류에 따라 기하학적 성질들이 달라진다</strong></li>
+<li><img src="../assets/images/image-20210125135800188.png" alt="image-20210125135800188"></li>
+</ul>
+<p>원의 정의 : 원점에서 부터 거리가 r 인 점들의 집합</p>
+<p><strong>norm을 사용하여 두벡터 사이의 거리를 구하자</strong></p>
+<p>L1 norm을 사용하여 구한 벡터사이의 거리</p>
+<p>L2 norm을 사용하여 구한 벡터사이의 각도</p>
+<h1 id="행렬"><a href="#행렬" class="headerlink" title="행렬"></a>행렬</h1><p>행렬이란 행벡터를 원소로 가지는 이차원 배열</p>
+<h3 id="전치행렬"><a href="#전치행렬" class="headerlink" title="전치행렬"></a>전치행렬</h3><p><img src="/assets/images/image-20210125163639790.png" alt="image-20210125163639790"></p>
+<h3 id="행렬의-이해"><a href="#행렬의-이해" class="headerlink" title="행렬의 이해"></a>행렬의 이해</h3><p>벡터가 공간에서 한점을 의미한다면 행렬은 여러점들을 나타낸다</p>
+<p>행렬의 행벡터 x<del>i</del> 는 i번째 data를 의미한다</p>
+<p>x<del>ij</del>는 x번째 data의 j 번째 변수를 의미</p>
+<h3 id="행렬의-곱셈"><a href="#행렬의-곱셈" class="headerlink" title="행렬의 곱셈"></a>행렬의 곱셈</h3><p>i번째 행벡터와 j 번째 열벡터의 내적을 성분으로 가지는 행렬을 계산한다</p>
+<p><img src="../assets/images/image-20210125165526235.png" alt="image-20210125165526235"></p>
+<p>numpy에서는 @ 연산을 활용한다</p>
+<h3 id="행렬도-내적이-있을까"><a href="#행렬도-내적이-있을까" class="headerlink" title="행렬도 내적이 있을까"></a>행렬도 내적이 있을까</h3><p>넘파이의 np.inner은 i번째 행벡터와 j째 행벡터 사이의 내적을 성분으로 가지는 행렬을 계산</p>
+<p>수학에서 말하는 내적과 는 다른개념이다</p>
+<p>행렬의 내적은 보통 두 행렬사이의 trace를 계산하게 되는데</p>
+<p>numpy는 다르다</p>
+<p><img src="../assets/images/image-20210125171208255.png" alt="image-20210125171208255"></p>
+<p>이렇게 transpose와의 행렬곱셈이 numpy에서의 innerproduct이다</p>
+<h3 id="행렬의-이해-2"><a href="#행렬의-이해-2" class="headerlink" title="행렬의 이해 2"></a>행렬의 이해 2</h3><p>행렬은 벡터공간에서 사용되는 연산자(operator)로 이해한다</p>
+<p><strong>서로다른 data를 연결시키는 연산자</strong></p>
+<p>m차원 공간의 점인 x와 , n차원 공간의 점인 z를 연결해줄때</p>
+<img src="/assets/images/image-20210125174742158.png" alt="image-20210125174742158" style="zoom:67%;" />
+
+<p>x라는 벡터에 A라는 행렬과 곱해주게 되면 새로운 Z라는 열벡터가 나온다</p>
+<p>mapping하는 연산자!!</p>
+<p><strong>주어진 data에서 pattern을 추출하거나 data압축이 가능하다!!!!!</strong></p>
+<p>행렬을 사용하는 연산자 -&gt; Linear Transform(선형변환)</p>
+<h3 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h3><p>행과 열의 숫자가 같고 det가 0이 아니여야 한다</p>
+<p>np.linalg.inv(x) 를 사용하여 </p>
+<p>주어진 행렬의 행의 갯수가 열의 숫자보다 많다면 -&gt; <img src="/assets/images/image-20210125180801162.png" alt="image-20210125180801162"></p>
+<p><img src="/assets/images/image-20210125180837456.png" alt="image-20210125180837456"></p>
+<p>주어진 행렬의 열의 갯수가 행의 갯수보다 많다면 -&gt;<img src="/assets/images/image-20210125180829401.png" alt="image-20210125180829401"></p>
+<p> 유사역행렬을 사용하여 해중 1개를 계산</p>
+<h3 id="선형회귀-분석-Linear-regression"><a href="#선형회귀-분석-Linear-regression" class="headerlink" title="선형회귀 분석 (Linear regression)"></a>선형회귀 분석 (Linear regression)</h3><p>만약 변수의 갯수보다 식의 갯수가 많은경우 -&gt;  선형회귀로 푼다</p>
+<p>유사역행렬을 구해서 선형회귀 방정식을 구한다</p>
+<p>여러개의 점을 행렬로 표현후 계수벡터인 β를 곱해주게 되면 하나의 선으로 표현된다</p>
+<p>어떠한 β를 쓸까를 구하는 -&gt; 선형회귀 분석</p>
+<p>미지수가 더 많기 때문에 해를 찾는것은 불가능 </p>
+<p>따라서 최대한 가까운 선을 찾는다 -&gt; L2 norm을 사용하여</p>
+<p><img src="/assets/images/image-20210125182128448.png" alt="image-20210125182128448"></p>
+<p>이 계수를 구하기 위해서는</p>
+<p> <img src="../assets/images/image-20210125182317163.png" alt="image-20210125182317163"></p>
+<p>2가지의 방법이 있다. 이때 Moore-Penrose로 구하려면 y절편값을 추가해주어야 한다.</p>
+<p>공부를 마치고 궁금한게 너무 많았다</p>
+<p>특히 선형대수학 파트에서 이다</p>
+<p>무어펜로즈 역행렬을 이용하여 해를 하나  구하는 과정에서</p>
+<p><img src="/assets/images/image-20210125183743570.png" alt="image-20210125183743570"></p>
+<p>이렇게 나와있는데</p>
+<p>A가 R^n*m^ 인 차원에서 n은 식의 갯수 m은 미지수의 갯수</p>
+<p>m이 n보다 크기 때문에 <img src="/assets/images/image-20210125180837456.png" alt="image-20210125180837456"> 이 조건을 보면 왼쪽에 곱해주어야 항등행렬이 된다</p>
+<p>근데 AxA+가 x가 될수있나?</p>
+<p>x가 벡터라 자리를 바꿔 곱해도 되는건가</p>
+<p>무어 펜로즈를 다시한번 자세히 보면 조건이 생성되는 이유는</p>
+<p>n과 m이 다를때  AA^T^ 와 A^T^A 중 하나는 역행렬이 존재하지 않는다</p>
+<p>이 조건이 바로 m&lt;n이면 AA^T^ 의 역행렬이 존재하지 않고, m&gt;n이면 A^T^A의 역행렬이 존재하지 않는다</p>
+<p>따라서 유사역행렬이 조건에 따라 저렇게 표현되는건 알겠는데</p>
+<p>A+A나 AA+ 를 해주었을때 차원이 다르게 나올뿐이지 이게 진짜 I 가 하나는 안나오나? 컴퓨터로 돌려봐야겠다</p>
+<p>그리고 뒤에 linear regression 부분도 너무 간단하게 알려주셔서 중요한 파트인데 더 따로 알아봐야겠다.</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Day6</p><p><a href="https://jo-member.github.io/2020/01/25/2021-01-25-Boostcamp6/">https://jo-member.github.io/2020/01/25/2021-01-25-Boostcamp6/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-01-25</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/01/26/2021-01-26-Boostcamp7/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Day7</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/01/22/2021-01-22-Boostcamp5/"><span class="level-item">Day5</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Numpy"><span class="level-left"><span class="level-item">1</span><span class="level-item">Numpy</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#ndarray"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">ndarray</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#array의-rank"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">array의 rank</span></span></a></li><li><a class="level is-mobile" href="#nbytes"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">nbytes</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Shape"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Shape</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#reshape"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">reshape</span></span></a></li><li><a class="level is-mobile" href="#flatten"><span class="level-left"><span class="level-item">1.2.2</span><span class="level-item">flatten</span></span></a></li><li><a class="level is-mobile" href="#Indexing"><span class="level-left"><span class="level-item">1.2.3</span><span class="level-item">Indexing</span></span></a></li><li><a class="level is-mobile" href="#Slicing"><span class="level-left"><span class="level-item">1.2.4</span><span class="level-item">Slicing</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Creation-Function"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Creation Function</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#identity"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">identity</span></span></a></li><li><a class="level is-mobile" href="#eye"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">eye</span></span></a></li><li><a class="level is-mobile" href="#diag"><span class="level-left"><span class="level-item">1.3.3</span><span class="level-item">diag</span></span></a></li><li><a class="level is-mobile" href="#random-sampling"><span class="level-left"><span class="level-item">1.3.4</span><span class="level-item">random sampling</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Operation-function"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Operation function</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Axis"><span class="level-left"><span class="level-item">1.4.1</span><span class="level-item">Axis</span></span></a></li><li><a class="level is-mobile" href="#Concatenate"><span class="level-left"><span class="level-item">1.4.2</span><span class="level-item">Concatenate</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Broadcasting"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Broadcasting</span></span></a></li><li><a class="level is-mobile" href="#Numpy-performance"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Numpy performance</span></span></a></li><li><a class="level is-mobile" href="#Comparison"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Comparison</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Boolean-Index"><span class="level-left"><span class="level-item">1.7.1</span><span class="level-item">Boolean Index</span></span></a></li><li><a class="level is-mobile" href="#Fancy-index"><span class="level-left"><span class="level-item">1.7.2</span><span class="level-item">Fancy index</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Vector"><span class="level-left"><span class="level-item">2</span><span class="level-item">Vector</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#What-is-vector"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">What is vector</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Hadamard-product-element-product"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">Hadamard product (element product)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Vector의-덧셈-amp-뺄셈"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Vector의 덧셈 &amp; 뺄셈</span></span></a></li><li><a class="level is-mobile" href="#벡터의-norm"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">벡터의 norm</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#L1-norm"><span class="level-left"><span class="level-item">2.3.1</span><span class="level-item">L1 norm</span></span></a></li><li><a class="level is-mobile" href="#L2-norm"><span class="level-left"><span class="level-item">2.3.2</span><span class="level-item">L2 norm</span></span></a></li><li><a class="level is-mobile" href="#왜-다른-norm을-사용하나"><span class="level-left"><span class="level-item">2.3.3</span><span class="level-item">왜 다른 norm을 사용하나?</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#행렬"><span class="level-left"><span class="level-item">3</span><span class="level-item">행렬</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#전치행렬"><span class="level-left"><span class="level-item">3.1.1</span><span class="level-item">전치행렬</span></span></a></li><li><a class="level is-mobile" href="#행렬의-이해"><span class="level-left"><span class="level-item">3.1.2</span><span class="level-item">행렬의 이해</span></span></a></li><li><a class="level is-mobile" href="#행렬의-곱셈"><span class="level-left"><span class="level-item">3.1.3</span><span class="level-item">행렬의 곱셈</span></span></a></li><li><a class="level is-mobile" href="#행렬도-내적이-있을까"><span class="level-left"><span class="level-item">3.1.4</span><span class="level-item">행렬도 내적이 있을까</span></span></a></li><li><a class="level is-mobile" href="#행렬의-이해-2"><span class="level-left"><span class="level-item">3.1.5</span><span class="level-item">행렬의 이해 2</span></span></a></li><li><a class="level is-mobile" href="#역행렬"><span class="level-left"><span class="level-item">3.1.6</span><span class="level-item">역행렬</span></span></a></li><li><a class="level is-mobile" href="#선형회귀-분석-Linear-regression"><span class="level-left"><span class="level-item">3.1.7</span><span class="level-item">선형회귀 분석 (Linear regression)</span></span></a></li></ul></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-02T15:00:00.000Z">2021-02-03</time></p><p class="title"><a href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-01T15:00:00.000Z">2021-02-02</time></p><p class="title"><a href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-28T15:00:00.000Z">2021-01-29</time></p><p class="title"><a href="/2021/01/29/2021-01-29-week2/">Week2</a></p><p class="categories"><a href="/categories/Further-Q/">Further_Q</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

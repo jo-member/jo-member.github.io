@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Day18) Sequence to sequence with Attention - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Sequence to sequence  \ Seq2Seq ModelEx) Are you free tomorrow?  서로 paramter를 share하지 않는 2개의 별개의 RNN model을 (보통 LSTM) 쓴다. 각각의 RNN을 Decoder, Encoder로 사용한다. Encoder의 마지막단의 output을 vertorize 시켜준후 decoder"><meta property="og:type" content="blog"><meta property="og:title" content="Day18) Sequence to sequence with Attention"><meta property="og:url" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="Sequence to sequence  \ Seq2Seq ModelEx) Are you free tomorrow?  서로 paramter를 share하지 않는 2개의 별개의 RNN model을 (보통 LSTM) 쓴다. 각각의 RNN을 Decoder, Encoder로 사용한다. Encoder의 마지막단의 output을 vertorize 시켜준후 decoder"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217110021239.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217111855000.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217120519836.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217120331715.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217120926535.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217121132215.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217125708440.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217130106952.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217130719246.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217130908355.png"><meta property="article:published_time" content="2020-02-16T15:00:00.000Z"><meta property="article:modified_time" content="2021-04-21T17:38:05.169Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="assets/images/image-20210217110021239.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/"},"headline":"Day18) Sequence to sequence with Attention","image":["https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217110021239.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217111855000.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217120519836.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217120331715.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217120926535.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217121132215.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217125708440.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217130106952.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217130719246.png","https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/assets/images/image-20210217130908355.png"],"datePublished":"2020-02-16T15:00:00.000Z","dateModified":"2021-04-21T17:38:05.169Z","author":{"@type":"Person","name":"jo-member"},"description":"Sequence to sequence  \\ Seq2Seq ModelEx) Are you free tomorrow?  서로 paramter를 share하지 않는 2개의 별개의 RNN model을 (보통 LSTM) 쓴다. 각각의 RNN을 Decoder, Encoder로 사용한다. Encoder의 마지막단의 output을 vertorize 시켜준후 decoder"}</script><link rel="canonical" href="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-02-16T15:00:00.000Z" title="2020. 2. 17. 오전 12:00:00">2020-02-17</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:38:05.169Z" title="2021. 4. 22. 오전 2:38:05">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Day18) Sequence to sequence with Attention</h1><div class="content"><h1 id="Sequence-to-sequence"><a href="#Sequence-to-sequence" class="headerlink" title="Sequence to sequence"></a>Sequence to sequence</h1><br/>
+
+<p>\</p>
+<h2 id="Seq2Seq-Model"><a href="#Seq2Seq-Model" class="headerlink" title="Seq2Seq Model"></a>Seq2Seq Model</h2><p>Ex) Are you free tomorrow?</p>
+<p><img src="assets/images/image-20210217110021239.png" alt="image-20210217110021239"></p>
+<p>서로 paramter를 share하지 않는 2개의 별개의 RNN model을 (보통 LSTM) 쓴다. 각각의 RNN을 Decoder, Encoder로 사용한다.</p>
+<p>Encoder의 마지막단의 output을 vertorize 시켜준후 decoder의 input에는 SOS token, hidden state에는 encoder의 output을 넣어준다.</p>
+<h2 id="Seq2Seq-with-Attention"><a href="#Seq2Seq-with-Attention" class="headerlink" title="Seq2Seq with Attention"></a>Seq2Seq with Attention</h2><p>앞에서의 RNN을 사용한 model은 hidden state vector의 dimesion이 정해져 있어서 입력문장의 길이가 길어지면 마지막 time step에 있는 hiddenstate vector에 앞서 나왔던 많은 정보들이 잘 담겨져 있지 않다.</p>
+<p>아무리 이 LSTM에서 longterm dependency를 해결하려 해도구조상의 문제 때문에 해결하기에 매우힘들다</p>
+<p>따라서 이러한 문제를 해결하기 위해서 seq2seq에서 Attention을 활용할 수 있다. Attention은 encoder의 각각의 hidden state vector를 전체적으로 decoder에 제공해주고 decoder에서는 그때그때 필요한 encoder의 hidden state vector를 가져가서 사용한다</p>
+<p>decoder의 hidden state vector가 encoder의 어떤 hidden state vector를 가져올지를 결정하게 된다. 이거는 각각을 내적해보아서, 내적에 기반한 유사도를 판별하게 되고 이결과를 softmax에 통과 시켜서 확률값을 얻어내고 이를 각각의 가중치로 사용하여 이들의 가중평균으로서 나오는 하나의 encoding vector를 얻어낼수 있다!!!!!! 이러한 가중평균으로 나온 하나의 vector를 우리는 context vector라고 부른다.  </p>
+<p><img src="assets/images/image-20210217111855000.png" alt="image-20210217111855000"></p>
+<p>이후에 decoder hidden state vector와 context vector가 concatnate 되어 output layer의 입력으로 들어가게 되고 다음나올 단어를 예측할 수 있게 된다</p>
+<p>이러한 과정들을 EOS가 나올때 까지 반복한다.</p>
+<p>잘못된 단어를 전단계에서 예측을 하더라도 다음단계에는 올바른 ground truth를 넣어주기 떄문에 하나가 틀려도 이후가 망가지지 않는다.  학습이 끝난후 이 잘못된 단어를 다시 넣어준다. 또한 It’s teacher forcing.</p>
+<p>Teacher forcing이 아닌 방식이 학습후에 우리가 실제로 사용할때와 비슷하다.</p>
+<p>Teacher forcing때는 ground truth를 넣어주어야 하기 때문에학습속도가 빠르다</p>
+<p>학습의 전반부에는 teacher forcing을 사용후  어느정도 학습이 되면, 이전의 output을 다시 입력으로 넣어주는 방식으로 진행한다.</p>
+<br/>
+
+<p><img src="assets/images/image-20210217120519836.png" alt="image-20210217120519836"></p>
+<p>이처럼 유사도를 측정하는 과정에서 사용되는 내적은, 3가지의 종류로 계산해 낼 수 있다.</p>
+<p>2번째인 general 방식으로 게산하는 것을 행렬으로 생각해보자.내적을 기반한 계산을 행렬의 곱으로 생각해보면,  </p>
+<p><img src="assets/images/image-20210217120331715.png" alt="image-20210217120331715"></p>
+<p>대각행렬의 성분들은 같은 차원끼리의 가중치를 나타내고, 나머지 값들은 다른 차원끼리의 곱해진 값들의 가중치를 나타낸다</p>
+<p>이처럼 간단한 내적으로 정의된 형태의 유사도를 그가운데 학습가능한 parameter를 추가함으로서 새롭게 score를 계산했다.</p>
+<p>이게 바로 general한 dot product이다.</p>
+<br/>
+
+<p>다음으로 concat을 사용한 score 측정 방식을 보자</p>
+<p><img src="assets/images/image-20210217120926535.png" alt="image-20210217120926535"> </p>
+<p>이처럼 2개의 vector를 concat시켜 MLP의 입력으로 넣어준 후 non linear activation function을 적용하여 값을 구해낸다.</p>
+<p><img src="assets/images/image-20210217121132215.png" alt="image-20210217121132215"></p>
+<p>이수식을 간단하게 보면 Wa는 1번째 layer의 가중치, 그이후에 tanh를 적용한 후 v를 곱해주는데 이는 우리가 최종적으로 얻어야할 output이 scalar값이기 떄문에 v는 row의 형태를 띄어야 한다. 따라서 tranpose를 시켜준것을 확인 할 수 있다.</p>
+<br/>
+
+<p>그렇다면 이들의 paramter은 어떠힌 방식으로 update될까?</p>
+<p>결국은 이러한 유사도를 구하는데 필요한 parameter들또한 backpropagation을 통하여 선형변환 행렬들이 학습되게 된다.</p>
+<br/>
+
+<h2 id="Attention-is-great"><a href="#Attention-is-great" class="headerlink" title="Attention is great"></a>Attention is great</h2><ul>
+<li><p>Attention significantly impoves NMT performace</p>
+<p>어떠한 한 부분에 집중할 수 있게 해주었다</p>
+</li>
+<li><p>It solves bottle neck problem</p>
+<p>encoder의 마지막을 사용했어야 해서 생기는 long term dependency를 해결</p>
+</li>
+<li><p>Gradient vanishing의 문제를 해결하였다.</p>
+</li>
+<li><p>Attention provides some interpretability</p>
+<p>우리가 transform과정에서 모델이 어떠한 부분에 집중 했는지를 확인 할 수 있다. Allignment를 NN이 스스로 배우는 현상을 보여주게 된다.</p>
+</li>
+</ul>
+<h1 id="Beam-search"><a href="#Beam-search" class="headerlink" title="Beam search"></a>Beam search</h1><ul>
+<li>test과정에서 더 좋은 결과를 얻을수 있게 해주는 하나의 방법</li>
+</ul>
+<h2 id="Greedy-decoding"><a href="#Greedy-decoding" class="headerlink" title="Greedy decoding"></a>Greedy decoding</h2><p>가장 높은 확률을 가지는 단어 1개를 선택하는 방법</p>
+<p>이렇게 되면 어떠한 단어를 잘못 생성해내었을때 다시 뒤로 돌아갈수 없어 최적의 예측값을 내지 못하게 된다</p>
+<p>이를 해결하기 위해서 다양한 방법들이 제시된다</p>
+<br/>
+
+<h2 id="Exhaustive-Search"><a href="#Exhaustive-Search" class="headerlink" title="Exhaustive Search"></a>Exhaustive Search</h2><p>첫번째 생성하는 단어가 가장큰 확률이였다고 해도 뒷부분에서 나오는 확률값 가장큰 확률값이 아닌 경우가 발생될수가 있다.</p>
+<p><img src="assets/images/image-20210217125708440.png" alt="image-20210217125708440"></p>
+<p>이는 결국 time step t 까지의 가능한 모든경우를 따져서 이는 곧 vocab가지수가 되고 V^t^가 가능한 모든 경우의 수이다. 이는 너무 큰 숫자이기 때문에 beam search를 쓰게된다</p>
+<br/>
+
+<h2 id="Beam-search-1"><a href="#Beam-search-1" class="headerlink" title="Beam search"></a>Beam search</h2><p>매 time step마다 모든 경우의 수를 고려하는게 아니라, 우리가 정해놓은 k개의 가능하 가짓수를 고려하고 마지막까지 decoding을 진행한후 k개의 candidate중에서 가장확률값이 높은걸 선택하는 방식이다.</p>
+<p>이를 우리는 hypothesis (가설)이라고 부른다</p>
+<p>k는 beam size이 일반적으로 5~10으로 설정하게 된다.</p>
+<p> <img src="assets/images/image-20210217130106952.png" alt="image-20210217130106952"></p>
+<p>확률들의 곱셈 앞에 log를 붙이게 되면 곱들이 모두 덧셈이 된다. 여기서 log함수 단조증가이기 때문에, 큰값이 큰값을 가진다.</p>
+<p>ex) k = 2</p>
+<ol>
+<li> k가 2이기 때문에 가장 확률값이 높은 2개의 단어를 뽑는다</li>
+</ol>
+<p><img src="assets/images/image-20210217130719246.png" alt="image-20210217130719246"></p>
+<ol start="2">
+<li>이중 값이 큰걸 계속해서 선택해 나감</li>
+</ol>
+<p><img src="assets/images/image-20210217130908355.png" alt="image-20210217130908355"></p>
+<ul>
+<li>greedy의 경우 end token이 나왔을때가 종료이지만, beam search에서는 서로다른 시점에서 end token이 생성되기 때문에, 각각이 끝날때마다 한곳에 저장해준다.</li>
+</ul>
+<p>우리가정한 T라는 시간까지 수행하거나, 완료된 hypothesis가 n개가 되었을때 beam search를 중단한다.</p>
+<p>우리가 고려하는 hypotheses의 길이가 다를때는 상대적으로 짧은 길이의 확률이 높은것이고, 길면 낮을것이다. </p>
+<p>이를 고려해 주기 위해서는 각 joint prob을 문장의 길이로 나눔으로서 해결해줄 수 있다.</p>
+<h2 id="BLEU-score"><a href="#BLEU-score" class="headerlink" title="BLEU score"></a>BLEU score</h2><ul>
+<li>생성 model의 점수를 평가하기 위한 척도</li>
+<li>고정된 위치에서 정해진 단어가 나와야 된다는 평가방식은 매우 나쁜 방식이다.</li>
+</ul>
+<p>ex)</p>
+<p>Reference : Half of my heart is in Havana ooh na na</p>
+<p>Predicted :  Half as my heart is in Obama ohh na</p>
+<p>Precision(실제로 위치상관없이 겹치는 단어가 몇개인가) = #(correct words)/length_of_prediction = 7/9</p>
+<p>Recall(재현률)  = #(correct words)/length_of_reference = 7/10</p>
+<p>F-measure = (precision x recall) / 0.5(precision + recall) (두 값들의 조화평균)</p>
+<p>보다 작은 작은 값에 가깝게 구하는 방식 -&gt; 조화평균</p>
+<p>이렇게 구한 값들은 순서를 보장하지 않기 때문에 BLEU가 나왔다.</p>
+<h3 id="BiLingual-Evaluation-Understudy"><a href="#BiLingual-Evaluation-Understudy" class="headerlink" title="BiLingual Evaluation Understudy"></a>BiLingual Evaluation Understudy</h3><p><strong>Ngram</strong>이란걸 사용했다. 연속된 N개의 단어로 이루어진 문구를 matching하여점수로 반영하였다.</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Day18) Sequence to sequence with Attention</p><p><a href="https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/">https://jo-member.github.io/2020/02/17/2021-02-15-Boostcamp18.1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-02-17</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/02/18/2021-02-18-Boostcamp19.1/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Day16) Transformer</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/02/16/2021-02-15-Boostcamp16.1/"><span class="level-item">Day17) RNN</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Sequence-to-sequence"><span class="level-left"><span class="level-item">1</span><span class="level-item">Sequence to sequence</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Seq2Seq-Model"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Seq2Seq Model</span></span></a></li><li><a class="level is-mobile" href="#Seq2Seq-with-Attention"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Seq2Seq with Attention</span></span></a></li><li><a class="level is-mobile" href="#Attention-is-great"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Attention is great</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Beam-search"><span class="level-left"><span class="level-item">2</span><span class="level-item">Beam search</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Greedy-decoding"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Greedy decoding</span></span></a></li><li><a class="level is-mobile" href="#Exhaustive-Search"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Exhaustive Search</span></span></a></li><li><a class="level is-mobile" href="#Beam-search-1"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Beam search</span></span></a></li><li><a class="level is-mobile" href="#BLEU-score"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">BLEU score</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#BiLingual-Evaluation-Understudy"><span class="level-left"><span class="level-item">2.4.1</span><span class="level-item">BiLingual Evaluation Understudy</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-02T15:00:00.000Z">2021-02-03</time></p><p class="title"><a href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-01T15:00:00.000Z">2021-02-02</time></p><p class="title"><a href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-28T15:00:00.000Z">2021-01-29</time></p><p class="title"><a href="/2021/01/29/2021-01-29-week2/">Week2</a></p><p class="categories"><a href="/categories/Further-Q/">Further_Q</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

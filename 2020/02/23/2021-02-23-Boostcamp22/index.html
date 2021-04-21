@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Day22) Graph2 - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="검색엔진에서의 그래프  페이지랭크의 배경1.1 웹과 그래프웹(방향성이 있는 그래프) &amp;#x3D; 웹페이지(node) + 하이퍼링크(edge) 웹페이지는 추가적으로 키워드 정보를 포함하고있다. 2.2 구글이전의 검색엔진 웹을 거대한 디렉토리로 정리 웹페이지의 수가 증가함에 따라 카테고리 수도 무한정 커지는 문제가 있다 카테고리 분류가 모호할수가 있다.  키워드에 의존"><meta property="og:type" content="blog"><meta property="og:title" content="Day22) Graph2"><meta property="og:url" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="검색엔진에서의 그래프  페이지랭크의 배경1.1 웹과 그래프웹(방향성이 있는 그래프) &amp;#x3D; 웹페이지(node) + 하이퍼링크(edge) 웹페이지는 추가적으로 키워드 정보를 포함하고있다. 2.2 구글이전의 검색엔진 웹을 거대한 디렉토리로 정리 웹페이지의 수가 증가함에 따라 카테고리 수도 무한정 커지는 문제가 있다 카테고리 분류가 모호할수가 있다.  키워드에 의존"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/Users/jowon/workspace/jo-member.github.io/_posts/assets/images/image-20210223103102754.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223103757983.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223105936645.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223110133426.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223110453360.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223110837800.png"><meta property="og:image" content="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223120102155.png"><meta property="article:published_time" content="2020-02-22T15:00:00.000Z"><meta property="article:modified_time" content="2021-04-21T17:38:35.922Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/Users/jowon/workspace/jo-member.github.io/_posts/assets/images/image-20210223103102754.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/"},"headline":"Day22) Graph2","image":["https://jo-member.github.io/Users/jowon/workspace/jo-member.github.io/_posts/assets/images/image-20210223103102754.png","https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223103757983.png","https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223105936645.png","https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223110133426.png","https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223110453360.png","https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223110837800.png","https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/assets/images/image-20210223120102155.png"],"datePublished":"2020-02-22T15:00:00.000Z","dateModified":"2021-04-21T17:38:35.922Z","author":{"@type":"Person","name":"jo-member"},"description":"검색엔진에서의 그래프  페이지랭크의 배경1.1 웹과 그래프웹(방향성이 있는 그래프) &#x3D; 웹페이지(node) + 하이퍼링크(edge) 웹페이지는 추가적으로 키워드 정보를 포함하고있다. 2.2 구글이전의 검색엔진 웹을 거대한 디렉토리로 정리 웹페이지의 수가 증가함에 따라 카테고리 수도 무한정 커지는 문제가 있다 카테고리 분류가 모호할수가 있다.  키워드에 의존"}</script><link rel="canonical" href="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-02-22T15:00:00.000Z" title="2020. 2. 23. 오전 12:00:00">2020-02-23</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:38:35.922Z" title="2021. 4. 22. 오전 2:38:35">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Day22) Graph2</h1><div class="content"><h1 id="검색엔진에서의-그래프"><a href="#검색엔진에서의-그래프" class="headerlink" title="검색엔진에서의 그래프"></a>검색엔진에서의 그래프</h1><br/>
+
+<h1 id="페이지랭크의-배경"><a href="#페이지랭크의-배경" class="headerlink" title="페이지랭크의 배경"></a>페이지랭크의 배경</h1><h3 id="1-1-웹과-그래프"><a href="#1-1-웹과-그래프" class="headerlink" title="1.1 웹과 그래프"></a>1.1 웹과 그래프</h3><p>웹(방향성이 있는 그래프) = 웹페이지(node) + 하이퍼링크(edge)</p>
+<p>웹페이지는 추가적으로 키워드 정보를 포함하고있다.</p>
+<h3 id="2-2-구글이전의-검색엔진"><a href="#2-2-구글이전의-검색엔진" class="headerlink" title="2.2 구글이전의 검색엔진"></a>2.2 구글이전의 검색엔진</h3><ol>
+<li><p>웹을 거대한 디렉토리로 정리</p>
+<p>웹페이지의 수가 증가함에 따라 카테고리 수도 무한정 커지는 문제가 있다</p>
+<p>카테고리 분류가 모호할수가 있다.</p>
+</li>
+<li><p>키워드에 의존한 검색엔진</p>
+<p>악의적인 웹피이지에 취약하다</p>
+</li>
+</ol>
+<p>따라서 page rank라는 하나의 알고리즘을 구글이 만들었다</p>
+<p>페이지랭크의 핵심은 투표이다.</p>
+<p>웹페이지는 하이퍼 링크를 통해 투표를하게 된다.</p>
+<p>사용자가 입력한 키워드를 포함한 웹페이지에서 u가 v에 연결되어있다면 v는 신뢰가능</p>
+<p>많이 인용된 논문을 신뢰하는것과 비슷한 알고리즘</p>
+<p>웹페이지를 여러개 만들어서 간서의 수를 부풀릴수 있다.</p>
+<p>이런식의 악용은 온라인 sns에서도 흔히 발견이 된다.</p>
+<p>이러한 악용을 막기위해 가중투표를 사용한다.</p>
+<p>측정하려는 웹페이지의 관련성과 신뢰도 </p>
+<p>자시의 점수 / 나가는 이웃의 수 </p>
+<p><img src="/Users/jowon/workspace/jo-member.github.io/_posts/assets/images/image-20210223103102754.png" alt="image-20210223103102754"></p>
+<p>또한 페이지 랭크는 임의보행의 관점에서도 정의 할 수있다.</p>
+<p>웹서퍼는 현재 하이퍼링크중 하나를 균일한 확률로 클릭하는 방식으로 웹을 서핑한다.</p>
+<p><img src="assets/images/image-20210223103757983.png" alt="image-20210223103757983"></p>
+<p>이 과정을 무한히 수행하면 p(t) = p(t+1)이된다. 수렴한 p는 정상분포라고 부른다. 결국 이를 정리해보면 투표관점에서의 pagerank정의 수식과 비슷함을 확인할 수 있었더.</p>
+<h2 id="페이지랭크의-계산"><a href="#페이지랭크의-계산" class="headerlink" title="페이지랭크의 계산"></a>페이지랭크의 계산</h2><ol>
+<li><p>반복곱</p>
+<p>Power iteration은 각웹페이지에 페이지 랭크를 구할때 사용된다</p>
+<p>각웹페이지 i의 페이지 렝크 점수를 동일하게 (1/웹페이지수) 로 초기화 한다</p>
+<p>아래의 식을 사용하여 웹페이지의 점수를 갱신한다</p>
+<p><img src="assets/images/image-20210223105936645.png" alt="image-20210223105936645"></p>
+<p>페이지 랭크 점수가 수렴할때까지 계산을 반복한다.</p>
+<p><img src="assets/images/image-20210223110133426.png" alt="image-20210223110133426"></p>
+</li>
+<li><p>과연 반복곱이 할상 수렴을 할까요?</p>
+<p>수렴하지 않을수가 있다. -&gt; 들어오는 정점은 있지만 나가는 간선이 없는 spider trap에 의해 일어남</p>
+</li>
+<li><p>과연 수렴을 한다고 해도 이 결과가 합리적인 값일까요?</p>
+<p><img src="assets/images/image-20210223110453360.png" alt="image-20210223110453360"></p>
+</li>
+</ol>
+<p>이 문제점들에 대한 해결책 : 순간이동</p>
+<p>임의 보행관점에서</p>
+<p>(1) 현재 웹페이지에 하이퍼링크가 없다면 임의의 웹페이지로 순간이동을 한다</p>
+<p>(2) 현재 웹페이지에 하이퍼링크가 있다면</p>
+<p>$\alpha$의 확률로 파이퍼 링크중 하나를 균일한 확률로 선택하고 클릭한다</p>
+<p>(1-$\alpha$)의 확률로 임의의 웹페이지로 순간이동 한다</p>
+<p>이로 인해 spider trap이나 dead end에 갇히는 일이 사라졌다. </p>
+<p>순간이동의 도입은 수식이 바뀐다</p>
+<ol>
+<li><p>각 막다른 정점에서 다른모든 정점으로 가는 간선을 추가한 후</p>
+<p><img src="assets/images/image-20210223110837800.png" alt="image-20210223110837800"></p>
+<p>이제는 이 수식을 사용한다.</p>
+</li>
+</ol>
+<h1 id="그래프를-이용한-바이럴-마케팅"><a href="#그래프를-이용한-바이럴-마케팅" class="headerlink" title="그래프를 이용한 바이럴 마케팅"></a>그래프를 이용한 바이럴 마케팅</h1><h2 id="의사결정-기반의-전파"><a href="#의사결정-기반의-전파" class="headerlink" title="의사결정 기반의 전파"></a>의사결정 기반의 전파</h2><p>주변의 의사결정을 고려하여 의사결정을 할때 의사결정 기반의 전파모형을 사용한다</p>
+<p>—&gt; 선형임계치모형 (linear threshold model)</p>
+<p><img src="assets/images/image-20210223120102155.png" alt="image-20210223120102155"></p>
+<h2 id="확률적-전파"><a href="#확률적-전파" class="headerlink" title="확률적 전파"></a>확률적 전파</h2><p>코로나의 전파를 수학적으로 나타낼때는 확률적 모형을 사용해야 한다.</p>
+<p>Independent Cascade model</p>
+<p>바리럴 마케팅이란?</p>
+<p>소비자로 하여금 상품에대한 긍정적인 입소문을 내게 하는 기법</p>
+<p>바이럴 마케팅을 위해서는 소문의 시작점이 중요하다.</p>
+<p>시드 집합이 전파에 많은 영향을 미친다</p>
+<p>그래프. 전파모형, 시드집합의 크기가 주어졋을때 전파의 최대화를 위한 시드집합은 전파최대화 문제이다.</p>
+<p>어려운 문제이다. 그래프에 V개의 정점이 있는경우 시드집합이 k개일때 경우의 수는 vCk 이다</p>
+<p>이론적으로 전파최대화 문제는 풀기가 힘든 문제임이 증명이되어있다.</p>
+<ol>
+<li><p>대표적 휴리스틱으로 정점의 중심성 을 사용합니다.</p>
+<p>즉시드 크기가 k개로 고정이되어있을때 정점의 중심성이 높은수으로 k개 정점을 선택하는 방법이다.</p>
+<p>정점의 중심성으로는 페이지 랭크 점수, 연결 중심성, 근접 중심성, 매개 중심성등이있다. </p>
+</li>
+<li><p>탐욕 알고리즘</p>
+<p>시드 집합의 원소를 한번에 한명씩 선택을 한다.</p>
+<p>정점의 집합 : {1,2,….,V}</p>
+<p>각 집합에 대해 시뮬레이션을 반복하여 평균값을 사용한다. x라는정점이 최초의전파자로 선정이 되어있다. 이런 비교를 통해 뽑힌 집합은 x라고 하자. 이제 x를 포함한 크기가 2이 시드 집합을 찾는다.이를 목표의 크기까지 반복한다.</p>
+<p>최초전파자간의 조합을 고려하지 않는다.   </p>
+<p>탐욕 알고리즘은 항상 최고의 시드 집합을 찾는다는 보장이 없는 근사의 알고리즘이다</p>
+<p>항상 최적의 값이 아니라는 말이다.</p>
+<p>하지만 적어도 어느정도의 시드집합은 찾을 수 있다.</p>
+</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Day22) Graph2</p><p><a href="https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/">https://jo-member.github.io/2020/02/23/2021-02-23-Boostcamp22/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-02-23</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/08/2021-03-08-Boostcamp31.1%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Day31) Image Classification</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/02/22/2021-02-22-Boostcamp21.1/"><span class="level-item">Day21) Graph</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-02T15:00:00.000Z">2021-02-03</time></p><p class="title"><a href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-01T15:00:00.000Z">2021-02-02</time></p><p class="title"><a href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-28T15:00:00.000Z">2021-01-29</time></p><p class="title"><a href="/2021/01/29/2021-01-29-week2/">Week2</a></p><p class="categories"><a href="/categories/Further-Q/">Further_Q</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

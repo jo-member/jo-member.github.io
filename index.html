@@ -1,18 +1,1134 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="끄적끄적"><meta property="og:type" content="blog"><meta property="og:title" content="Jo Member"><meta property="og:url" content="https://jo-member.github.io/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="끄적끄적"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/img/og_image.png"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io"},"headline":"Jo Member","image":["https://jo-member.github.io/img/og_image.png"],"author":{"@type":"Person","name":"jo-member"},"description":"끄적끄적"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-04-21T05:25:56.691Z" title="2021. 4. 21. 오후 2:25:56">2021-04-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T05:25:56.691Z" title="2021. 4. 21. 오후 2:25:56">2021-04-21</time></span><span class="level-item">a minute read (About 123 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/21/hello-world/">Hello World</a></h1><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="끄적끄적"><meta property="og:type" content="blog"><meta property="og:title" content="Jo Member"><meta property="og:url" content="https://jo-member.github.io/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="끄적끄적"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/img/og_image.png"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io"},"headline":"Jo Member","image":["https://jo-member.github.io/img/og_image.png"],"author":{"@type":"Person","name":"jo-member"},"description":"끄적끄적"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-02-02T15:00:00.000Z" title="2021. 2. 3. 오전 12:00:00">2021-02-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:34:58.491Z" title="2021. 4. 22. 오전 2:34:58">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></h1><div class="content"><p><br/><br/></p>
+<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><br/>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="Convolution-연산-이해하기"><a href="#Convolution-연산-이해하기" class="headerlink" title="Convolution 연산 이해하기"></a>Convolution 연산 이해하기</h2><ul>
+<li><p>지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨</p>
+<p><img src="/assets/images/image-20210202134359041.png" alt="image-20210202134359041"></p>
+</li>
+<li><p>우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용</p>
+<p><img src="/assets/images/image-20210202134617666.png" alt="image-20210202134617666"></p>
+</li>
+<li><p>x라는 입력벡터 상에서 커널사이즈 만큼 움직여 가며 연산</p>
+</li>
+</ul>
+<br/>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/profile.png" alt="Won Cho"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Won Cho</p><p class="is-size-6 is-block">결정장애 ESFP의 험난한 일지</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Post</p><a href="/archives"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/jo-member" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Instagram" href="https://www.instagram.com/jo__member/"><i class="fab fa-instagram"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-21T05:25:56.691Z">2021-04-21</time></p><p class="title"><a href="/2021/04/21/hello-world/">Hello World</a></p></div></article></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<h2 id="다양한-차원에서의-Convolution"><a href="#다양한-차원에서의-Convolution" class="headerlink" title="다양한 차원에서의 Convolution"></a>다양한 차원에서의 Convolution</h2><p><br/>                                              <img src="/assets/images/image-20210202164217282.png" alt="image-20210202164217282"></p>
+<p>​                                                      <img src="/assets/images/image-20210202135650652.png" alt="image-20210202135650652"></p>
+<h2 id="2차원-Convolution-연산"><a href="#2차원-Convolution-연산" class="headerlink" title="2차원 Convolution 연산"></a>2차원 Convolution 연산</h2><p><img src="/assets/images/image-20210202155309174.png" alt="image-20210202155309174"></p>
+<p>입력을 kernal size에 맞춰서 입력위치에 해당하는 index만큼 옮겨다니면서, 성분곱을 연산하는</p>
+<p>2D 이미지 다른 kernel을 적용하여 Convolution filter를 적용하면 kernel에 맞는 특성을 가지는 2D 이미지가 나온다</p>
+<ul>
+<li><p>입력크기를 (H,W), 커널크기를 (K<del>H</del>, K<del>W</del>), 출력크기를 (O<del>H</del>, O<del>W</del>)라 할때</p>
+<p><img src="/assets/images/image-20210202160533754.png" alt="image-20210202160533754"></p>
+</li>
+</ul>
+<p><br/><br/><br/><br/><br/><br/></p>
+<p><img src="/assets/images/image-20210202163834784.png" alt="image-20210202163834784"></p>
+<ul>
+<li>channel이 여러개인 2차원 입력의 경우 2차원 Convolution을 채널 개수만큼 적용한다 (2차원 이미지더라도, RGB가있어서 3 channel)</li>
+<li>채널이 여러개인 입력인 경우 커널도 채널의 개수만큼 있어야 한다</li>
+<li>채널이 여러개일때는 각커널을 적용한 각각의 채널의 결과를 더해준다</li>
+</ul>
+<p><img src="/assets/images/image-20210203133123225.png" alt="image-20210203133123225"></p>
+<br/>
+
+<br/>
+
+<p><strong>만약 출력의 channel을 늘리고 싶다면???</strong></p>
+<p>커널의 개수를 여러개 만들면 된다. </p>
+<p><img src="/assets/images/image-20210202163929154.png" alt="image-20210202163929154"></p>
+<p>feature map의 채널 숫자를 늘리는 보통 이렇게 많이 사용한다</p>
+<p><br/><br/><br/></p>
+<h2 id="Convolution-연산의-Backpropagation"><a href="#Convolution-연산의-Backpropagation" class="headerlink" title="Convolution 연산의 Backpropagation"></a>Convolution 연산의 Backpropagation</h2><br/>
+
+<ul>
+<li>Convolution연산은 모든 입력데이터에 공통으로 커널이 적용되기 때문에 역전파 계산시에도 convolution이 나오게 된다</li>
+</ul>
+<h2 id="Stack-of-Convolution"><a href="#Stack-of-Convolution" class="headerlink" title="Stack of Convolution"></a>Stack of Convolution</h2><p><img src="assets/images/image-20210203133602208.png" alt="image-20210203133602208"></p>
+<p>MLP때와 마찬가지로 non-linear activation을 사이에 적용했다</p>
+<p><strong>연산을 정의하는 Parameter의 숫자</strong>가 중요</p>
+<p>첫번째 Convolutional filter의 parameter수 : 5*5*3*4 = 300 개</p>
+<p>두번째 Convolutional filter의 parameter수 : 5*5*4*10 = 1000개</p>
+<h2 id="Convolution-NN"><a href="#Convolution-NN" class="headerlink" title="Convolution NN"></a>Convolution NN</h2><ul>
+<li>CNN은 Convolution layer + Pooling layer + fully connected layer</li>
+<li>Convolution &amp; pooling layer : feature extraction</li>
+<li>fully connected layer : decision making</li>
+</ul>
+<p>점점 뒤의 fully connected layer를 줄이는 추세 </p>
+<p>reason : parameter의 수</p>
+<p>우리가 일반적으로 우리의 모델의 parameter 숫자가 늘어날수록 학습이 어렵고 generalize performace가 떨어진다</p>
+<p>따라서 CNN은 parameter수를 줄이는데 집중한다</p>
+<p><strong>어떤 뉴럴네트워크에 대해서 parameter숫자를 계산해보자</strong></p>
+<br/>
+
+<h2 id="Stride-amp-Padding"><a href="#Stride-amp-Padding" class="headerlink" title="Stride &amp; Padding"></a>Stride &amp; Padding</h2><p>skip</p>
+<br/>
+
+<br/>
+
+<h2 id="Convolution-Arithmatic"><a href="#Convolution-Arithmatic" class="headerlink" title="Convolution Arithmatic"></a>Convolution Arithmatic</h2><br/>
+
+<p><img src="/assets/images/image-20210203155819848.png" alt="image-20210203155819848"></p>
+<p>우리가 사용하는 kernel을 계산해보면 </p>
+<p>일단 3*3의 width 와 height이며 kernel의 channel은 입력의 channel과 같아야 하므로 128이다</p>
+<p>따라서 하나의 kernel의 size  = 3*3*128이다</p>
+<p>이제 이 kernel의 갯수를 찾으려면 output의 channel인 64이다</p>
+<p>따라서 총 parameter의 개수는 3*3*128*64 = 73728이다</p>
+<p>이제 padding과 stride는 parameter 수와는 연관이 없다</p>
+<p>ex)<img src="/assets/images/image-20210203160420099.png" alt="image-20210203160420099"></p>
+<p>사실 alexnet은 network가 2 path로 나누어짐</p>
+<ol>
+<li><p>일단 첫번째 layer의 kernel = 11x11x3 =  363</p>
+<p>이게 48개 있으므로 parameter개수 = 17424개</p>
+<p>원래는 이제 96짜리 channel을 만들었어야 되는데 2개로 나누어서 48 channel로 만들어줌</p>
+<p>따라서 총 parameter수 = 34848</p>
+</li>
+<li><p>kernel  = 5x5x48 = 1200</p>
+<p>이게 128개 그리고 총 2개 있으니 -&gt; 1200x128x2 = 307k</p>
+</li>
+<li><p>kernel = 3x3x128 = 1152 이게 2개 -&gt; 2304</p>
+<p>이게 192개 그리고 총  -&gt; 2304x192x2 = 884k</p>
+</li>
+<li><p>똑같은 방법 -&gt; 663k</p>
+<p>쭉쭉</p>
+<p>그러다가 Fully connected layer의 parameter 개수</p>
+</li>
+</ol>
+<p>13x13x128x2x2048x2 = 177M</p>
+<p>16M</p>
+<p>4M</p>
+<p>보면 dense layer에서 parameter숫자가 너무 커진다</p>
+<p>결국은 parameter를 줄이기 위해서는 convolution layer를 깊게 쌓고 뒤의 dense layer를 최대한 줄이는 방향으로 발전하고 있다</p>
+<h3 id="1x1-convolution"><a href="#1x1-convolution" class="headerlink" title="1x1 convolution"></a>1x1 convolution</h3><p><img src="/assets/images/image-20210203162452918.png" alt="image-20210203162452918"></p>
+<p>여기서 parameter수를 계산해보면 1x1x128x32 = 4096</p>
+<p>demension을 줄인다!!!</p>
+<p>깊이는 깊어지지만 parameter수를 줄이는 역할을 한다</p>
+<p>e.g) bottle neck architecture</p>
+<br/>
+
+<h1 id="Modern-Convolutional-Neural-Networks"><a href="#Modern-Convolutional-Neural-Networks" class="headerlink" title="Modern Convolutional Neural Networks"></a>Modern Convolutional Neural Networks</h1><br/>
+
+<ul>
+<li><p>ILSVRC에서 우승하거나 좋은 성능을 거둔 model들에 대한 parameter 개수, depth 등등</p>
+<br/></li>
+</ul>
+<h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><br/>
+
+<h3 id="ILSVRC"><a href="#ILSVRC" class="headerlink" title="ILSVRC"></a>ILSVRC</h3><ul>
+<li><p>Imagenet Large-Scale Visual Recognition Challenge</p>
+</li>
+<li><p>1000 different categories</p>
+</li>
+<li><p>over 1 millions images</p>
+</li>
+</ul>
+<h3 id="AlexNet-1"><a href="#AlexNet-1" class="headerlink" title="AlexNet"></a>AlexNet</h3><ul>
+<li>gpu의 성능이 부족해서 한번에 계산이 안되서 2개로 나눠서 따로 training을 시킴</li>
+</ul>
+<p><strong>Receptive field</strong> : 하나의 kernel이 볼수있는 이미지 level에서의 영역은 커짐, 그러나 parameter가 늘어나게 됨</p>
+<ul>
+<li>5 Convolutional layer</li>
+<li>3 Dense layer</li>
+</ul>
+<h3 id="Key-idea"><a href="#Key-idea" class="headerlink" title="Key idea"></a>Key idea</h3><ul>
+<li><p>use ReLU function (non-linear func, 마지막 slope가 1이라 gradient가 사라지거나 네트워크를 망칠 확률이 적음)</p>
+<ul>
+<li><p>preserve properties of linear model</p>
+</li>
+<li><p>overcome the gradient vanishing problem</p>
+</li>
+<li><p>이전에 많이 활용하던 tanh나 sigmoid는 값이 크면 output의 gradient가 0에 가깝게 나온다</p>
+</li>
+</ul>
+</li>
+<li><p>GPI implementation (2 GPU)</p>
+</li>
+<li><p>Overlapping Pooling, Local response normalization</p>
+</li>
+<li><p>Data augmentation</p>
+</li>
+<li><p>Dropout</p>
+</li>
+</ul>
+<p>지금 보면 별로 대단한게 아니지만, 그당시에는 혁신적인 방법</p>
+<p>일반적인 standard 를 잡았다!</p>
+<br/>
+
+<h2 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h2><br/>
+
+<ul>
+<li><p>Increasing depth with 3x3 convolution filter</p>
+</li>
+<li><p>1x1 convolution filter</p>
+</li>
+<li><p>Dropout (p=0.5)</p>
+</li>
+<li><p>VFF16,VGG19</p>
+</li>
+</ul>
+<h3 id="Why-3x3"><a href="#Why-3x3" class="headerlink" title="Why 3x3????"></a>Why 3x3????</h3><p>kernel size가 커지면서 가지는 이점 : Receptive field가 커진다</p>
+<p>ex) </p>
+<p>3x3을 2번 하게 되면 output의 1개의 값은 input의 5x5를 보게된다 -&gt; 이게 바로 Receptive field</p>
+<p>3x3을 3번 하게 되면 output의 1개의 값은 input의 6x6을 보게된다</p>
+<p>따라서 3x3을 2개 사용하는 것과, 5x5를 1개 사용하는 것은 receptive field의 관점에서는 같다</p>
+<p>따라서 이둘의 parameter의 개수를 비교해 보면 (chaneel : 128)</p>
+<p>3x3 2개 : 3x3x128x128x2 = 294k</p>
+<p>5x5 1개 : 5x5x128x128 = 409k</p>
+<p>따라서 3x3 2개를 쓰는게 parameter의 숫자 감소 측면에서 이득이다</p>
+<p>왜이런일이 일어날까?</p>
+<p>사실상 3x3x3 = 27, 6x6 = 36 | 3x3 = 9, 5x5 = 25 이런 맥락이다</p>
+<p>뒤의 대부분을보면 kernel은 7x7을 벗어나지 않는다</p>
+<br/>
+
+<h2 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h2><br/>
+
+<p><img src="/assets/images/image-20210203180018567.png" alt="image-20210203180018567"></p>
+<p>보면 전체 network 안에 작은 network 구조들이 반복되고 있다 (network in network)</p>
+<ul>
+<li>Inception block 활용</li>
+</ul>
+<p><img src="/assets/images/image-20210203180125687.png" alt="image-20210203180125687"></p>
+<p>하나의 입력에 대해서 여러개의 receptive field를 가지는 filter를 거치고 이들을 concatenation</p>
+<p>하지만 그보다 중요한게 중간중간에 추가로 들어간 1x1 Conv</p>
+<p><img src="assets/images/image-20210203180311444.png" alt="/image-20210203180311444"></p>
+<ol>
+<li>3x3x128x128 = 147456</li>
+<li>1x1x128x32 = 4096, 3x3x32x128 = 36864 -&gt;합은 :  40960</li>
+</ol>
+<p>parameter 수가 1/4로 줄었다 —-&gt; 사용하는게 이득이다!!!</p>
+<p><strong>과연 AlexNet,VGGNet, GoogLeNet 중 parameter수가 작은것은?</strong></p>
+<ol>
+<li>AlexNet(8 layer) : 60M</li>
+<li>VGGNet(19-layer) : 110M</li>
+<li>GoogLeNet(22 layer) : 4M</li>
+</ol>
+<br/>
+
+<br/>
+
+<h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
+<li>Deeper neural networks are hard to train</li>
+<li>Overfitting is usually caused by an excessive number of parameters</li>
+</ul>
+<h3 id="Identity-map"><a href="#Identity-map" class="headerlink" title="Identity map"></a>Identity map</h3><p><img src="/assets/images/image-20210203182236058.png" alt="image-20210203182236058"></p>
+<p><img src="/assets/images/image-20210203182359483.png" alt="image-20210203182359483"></p>
+<p>x와 output의 차원을 맞춰주기 위해서 1x1 convolution으로 사용하는것 </p>
+<ul>
+<li>Convolution 연산과 batch norm의 순서??????</li>
+<li>더 자세한 ResNet의 구조????</li>
+</ul>
+<h3 id="Bottleneck-architecture"><a href="#Bottleneck-architecture" class="headerlink" title="Bottleneck  architecture"></a>Bottleneck  architecture</h3><p>3x3의 연산을 하기 전에 channel 수를 줄이게 되면 parameter의 숫자를 줄일수 있지 않을까?</p>
+<p><img src="/assets/images/image-20210203183155786.png" alt="image-20210203183155786"></p>
+<br/>
+
+<h2 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h2><br/>
+
+<ul>
+<li>ResNet을 바라보게 되면 그냥 두개의 값을 더하지 말고 concatnate시키면 되지 않을까?</li>
+<li>계속 concatnate하면 channel이 기하급수적으로 커지기 때문에 이를 해결하기 위해 중간에 1x1 conv를 해줌</li>
+</ul>
+<br/>
+
+
+
+
+
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-02-01T15:00:00.000Z" title="2021. 2. 2. 오전 12:00:00">2021-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:34:54.244Z" title="2021. 4. 22. 오전 2:34:54">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></h1><div class="content"><br/>
+
+<h1 id="1-Optimization"><a href="#1-Optimization" class="headerlink" title="1. Optimization"></a>1. Optimization</h1><ul>
+<li>용어들의 명확한 정리가 필요</li>
+</ul>
+<br/>
+
+<h2 id="Concept-of-Optimization"><a href="#Concept-of-Optimization" class="headerlink" title="Concept of Optimization"></a>Concept of Optimization</h2><ul>
+<li>Generalization</li>
+<li>Under fitting vs Over fitting</li>
+<li>Cross Validation</li>
+<li>Bias-varience tradeoff</li>
+<li>Bootstraping</li>
+<li>Bagging and Boosting</li>
+</ul>
+<h3 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h3><br/>
+
+<p>일반화 성능을 높힌다?</p>
+<p>일반화란 :  Training error각 0 이라고 해서 Test error가 0인것은 아니기 때문에 </p>
+<p>좋은 generalization : network의 Test data 성능이 학습데이터와 비슷하게 나온다</p>
+<p><img src="/assets/images/image-20210202104727640.png" alt="image-20210202104727640"></p>
+<h3 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h3><br/>
+
+<p>Training data에서 validation data를 나누어서 training된 모델이 validation data 기준으로 얼마나 잘 동작하는지를 판단</p>
+<p><strong>나누는 기준??????</strong></p>
+<p>학습데이터가 적으면 안된다</p>
+<p>따라서 <strong>Cross validation</strong>을 씀</p>
+<p>학습데이터를 K개씩으로 나누어 하나씩 바꾸어가며 validation data로 설정하고 training과 validation을 반복진행</p>
+<p>Test data는 저얼대 model 학습에 사용되어서는 안된다!!</p>
+<p> <img src="/assets/images/image-20210202105239108.png" alt="image-20210202105239108"></p>
+<br/>
+
+
+
+<h3 id="Bias-varience-tradeoff"><a href="#Bias-varience-tradeoff" class="headerlink" title="Bias-varience tradeoff"></a>Bias-varience tradeoff</h3><img src="/assets/images/image-20210202110006947.png" alt="image-20210202110006947" style="zoom:80%;" />
+
+
+
+<p>학습데이터에 noise가 껴있을때 Cost를 minimizing하는것은 3개로 decomposed 될수있다</p>
+<ul>
+<li>bias</li>
+<li>varience</li>
+<li>noise</li>
+</ul>
+<p>bias와 varience는 trade off관계에 있다</p>
+<p><img src="/assets/images/image-20210203102311593.png" alt="image-20210203102311593"></p>
+<h3 id="Bootstrapping"><a href="#Bootstrapping" class="headerlink" title="Bootstrapping"></a>Bootstrapping</h3><br/>
+
+<ul>
+<li><p>Any test or matric that uses random sampling with replacement</p>
+</li>
+<li><p>학습 data가 100개가 있으면 80개씩 random으로 뽑아서 모델을 여러개를 만들어서 하나의 입력에 대한 consensus를 보고 모델을 수정하는법</p>
+</li>
+</ul>
+<h3 id="Bagging-amp-Boosting"><a href="#Bagging-amp-Boosting" class="headerlink" title="Bagging &amp; Boosting"></a>Bagging &amp; Boosting</h3><br/>
+
+<ul>
+<li><p>Bagging (Bootstrapping aggregating)</p>
+<ul>
+<li>Muitiple models are being trained with bootstrapping</li>
+<li>학습 data가 100개가 있으면 80개씩 random으로 뽑아서(bootstrapping) 모델을 여러개를 만들어서 하나의 입력에 대한 consensus를 보고 모델을 수정하는법</li>
+</ul>
+</li>
+<li><p>Boosting</p>
+<ul>
+<li><p>간단하게 모델을 만들어 testing후 안좋은 부분을 고쳐나가며 여러개의 model을 만든다</p>
+</li>
+<li><p>이들을 독립적인 모델이 아닌 이 모델들을 Sequential하게 합쳐서 하나의 strong learner를 만든다</p>
+<p><img src="/assets/images/image-20210202111433121.png" alt="image-20210202111433121"></p>
+</li>
+</ul>
+</li>
+</ul>
+<br/>
+
+<h2 id="Gradient-Descent-Method"><a href="#Gradient-Descent-Method" class="headerlink" title="Gradient Descent Method"></a>Gradient Descent Method</h2><br/>
+
+
+
+<ul>
+<li>Stocastic (한번에 1개의 sample을 사용하여 gradient update)</li>
+<li>Mini batch (한번에 적당히 작은 batch size개수의 samples를 사용하여 update) S</li>
+<li>Batch (모든 data를 다 써서 gradient를 update) </li>
+</ul>
+<p>Batch gradient descent를 사용할 경우 step 한번에 모든 data에 대한 loss function을 계산해야 하므로 계산량이 터진다</p>
+<p>이를 방지하기 위해 쓰는 것이 SGD (stocastic gradient descent), mini batch</p>
+<p>Batch보다 다소 부정확 할수는 있지만 빠른 계산속도로 인한 빠른 수렴속도</p>
+<p><strong>BATCH SIZE MATTERS!!!</strong></p>
+<p>Large batch size converge to sharp minimizers</p>
+<p>Small batch size converge to flat minimizers    —&gt; High Generalize performance</p>
+<p><img src="/assets/images/image-20210202112531987.png" alt="image-20210202112531987"></p>
+<p>위의 그래프는 model의 training data와 testing data에 대한 loss function이다. </p>
+<p>큰 batch size를 써서 sharp minimum 값을 가지게 된다면, 우리가 원했던 training fuction의 minimum에서의 testing function에서의 testing function의 값을 보면 최소점이 아닌 꽤나 큰값을 가진다. 이는 모델이 Generalize성능이 떨어진다는 이야기로 귀결된다. 하지만 작은 batch size를 써서 function들이 Flat Minumum값을 가지게 된다면, 꽤나 Generalize 성능이 좋다.</p>
+<p>위의 논문 읽어보면 좋다고 추천해 주심</p>
+<p>Automatic Differentiation</p>
+<ul>
+<li>SGD</li>
+<li>Momentum</li>
+<li>Adagrad</li>
+<li>RMSprop</li>
+<li>Adam</li>
+<li>…</li>
+</ul>
+<br/>
+
+
+
+<h3 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h3><p>1번 gradient가 한쪽으로 흐르게 되면 이전의 gradient정보를 사용하여 이어가는 방향 ? 이런느낌</p>
+<p>SGD와 달리 parameter업데이트시 gradient를 바로 사용하여 업데이트 하는게 아니라 a라는 term을 만들어 이전의 gradient 값을 반영해주는 term을 추가해 주었다.</p>
+<ul>
+<li>a<del>t+1</del>  &lt;= Ba<del>t</del> + g<del>t</del></li>
+<li>W<del>t+1</del> &lt;= W<del>t</del> - $\eta$a<del>t+1</del></li>
+<li>B가 momentum, a<del>t+1</del>가 accumulation, a는 momentum을 포함하고 있어서 한번 흘러가기 시작한 gradient를 유지시켜줌</li>
+</ul>
+<p>momentum을 사용하면 SGD에서 local minimum에 빠졌던 문제를 해결할수도 있다. Momentum으로 기존의 local minimum을 빠져나와 더 좋은 minimum으로 갈수도 있다는 것이다.</p>
+<br/>
+
+<h3 id="NAG-Nesterov-Accelerated-Gradient"><a href="#NAG-Nesterov-Accelerated-Gradient" class="headerlink" title="NAG (Nesterov Accelerated Gradient)"></a>NAG (Nesterov Accelerated Gradient)</h3><ul>
+<li>a<del>t+1</del>  &lt;= Ba<del>t</del> + $\nabla$ L(W<del>t</del> - $\eta$Ba<del>t+1</del>)</li>
+<li>W<del>t+1</del> &lt;= W<del>t</del> - $\eta$a<del>t+1</del></li>
+<li> $\nabla$ L(W<del>t</del> - $\eta$Ba<del>t+1</del>)  : a라고 불리우는 현재정보에서 그방향으로 한번가보고 (lookahead) 이를 포함해서 update</li>
+<li>momentum은 관성 : 따라서 값이 local minimum에 수렴하지 못하는 현상이 일어날 수도 있음 (관성을 가져서) </li>
+<li>NAG를 쓰면 convergance ratio가 좋다</li>
+</ul>
+<p><img src="/assets/images/image-20210203103339210.png" alt="image-20210203103339210"></p>
+ <br/>
+
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><ul>
+<li><p>adapts the learning rate </p>
+</li>
+<li><p>parameter가 변해왔는지 안변해왔는지를 보고 parameter를 업데이트 </p>
+</li>
+<li><p>Sum of gradient squares -&gt; G</p>
+<p><img src="/assets/images/image-20210202124747331.png" alt="image-20210202124747331"></p>
+</li>
+</ul>
+<p>G가 결국 계속커지기 때문에 W가 업데이트가 안되고 학습이 멈추는 현상이 발생</p>
+<p>따라서 G의 문제를 해결하는게 뒤의 optimizer인 Adadelta</p>
+ <br/>
+
+<h3 id="Adadelta"><a href="#Adadelta" class="headerlink" title="Adadelta"></a>Adadelta</h3><p><img src="/assets/images/image-20210202124858966.png" alt="image-20210202124858966"></p>
+<p>엄청난 양의 memory가 필요</p>
+<p>이를 해결하기 위해 감마, 1-감마 : exponential moving average(EMA)</p>
+<p>There is no learning rate in Adadelta!!</p>
+<br/>
+
+<h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h3><br/>
+
+<p><img src="/assets/images/image-20210202125049389.png" alt="image-20210202125049389"></p>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><br/>
+
+<ul>
+<li><p>adaptive moment estimation</p>
+<p><img src="/assets/images/image-20210202125200078.png" alt="image-20210202125200078"></p>
+</li>
+</ul>
+<br/>
+
+<h1 id="2-Regulization"><a href="#2-Regulization" class="headerlink" title="2. Regulization"></a>2. Regulization</h1><br/>
+
+<ul>
+<li>For good generalization</li>
+<li>학습을 방해하는게 요점</li>
+<li>Overfitting 방지 이런거</li>
+</ul>
+<br/>
+
+<p>종류</p>
+<ol>
+<li>Early Stopping</li>
+<li>Parameter norm penalty</li>
+<li>Data augmentation</li>
+<li>Noise robustness</li>
+<li>Dropout</li>
+<li>Batch Normalization</li>
+</ol>
+<br/>
+
+<h3 id="Early-stopping"><a href="#Early-stopping" class="headerlink" title="Early stopping"></a>Early stopping</h3><br/>
+
+<ul>
+<li>중간에 학습을 멈추어 validation data를 만드는</li>
+</ul>
+<h3 id="Parameter-norm-penalty"><a href="#Parameter-norm-penalty" class="headerlink" title="Parameter norm penalty"></a>Parameter norm penalty</h3><p><img src="/assets/images/image-20210202125632498.png" alt="image-20210202125632498"></p>
+<p>weight가 작을수록 좋다? -&gt; function space내에서 부드러운 함수일수록 generalization performance가 높을것이다</p>
+<h3 id="Data-augmentation"><a href="#Data-augmentation" class="headerlink" title="Data augmentation"></a>Data augmentation</h3><br/>
+
+
+
+<ul>
+<li>데이터의 개수를 늘리기 위해 label preserving data augmentation같은걸 사용 </li>
+<li>label이 변환되지 않는 선에서 data를 변환</li>
+</ul>
+<h3 id="Label-smoothing"><a href="#Label-smoothing" class="headerlink" title="Label smoothing"></a>Label smoothing</h3><p><img src="/assets/images/image-20210202131206191.png" alt="image-20210202131206191"></p>
+<p>이러한 방법으로 dataset을 확장시켜 model을 training 해보면 성능향상이 뚜렸하다</p>
+<br/>
+
+
+
+<br/>
+
+<h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><br/>
+
+<ul>
+<li><p>내가 적용하고자 하는 statistics를 정규화</p>
+</li>
+<li><p>각각의 layer가 1000개의 parameter라면 각각의 parameter가 정규화되게 하는것</p>
+<p><img src="/assets/images/image-20210202131442725.png" alt="image-20210202131442725"></p>
+</li>
+<li><p>Internal feature shift를 줄인다???? -&gt; 논란이 많다</p>
+</li>
+<li><p>그럼에도 활용하면 일반적으로 성능이 많이 향상된다</p>
+</li>
+</ul>
+<p><img src="/assets/images/image-20210202131704296.png" alt="image-20210202131704296"></p>
+<p>하나하나를 활용하여 Normalize를 하면서 좋은 성능이 나는걸 선택 ㅋㅋ</p>
+<p>Further Question</p>
+<ul>
+<li>Regression Task, Classification Task, Probabilistic Task의 Loss 함수(or 클래스)는 Pytorch에서 어떻게 구현이 되어있을까요?</li>
+<li>올바르게(?) cross-validation을 하기 위해서는 어떻 방법들이 존재할까요? </li>
+<li>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</li>
+<li><a target="_blank" rel="noopener" href="https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9">TimeseriesCV</a></li>
+</ul>
+<br/>
+
+<h1 id="Further-Question-1"><a href="#Further-Question-1" class="headerlink" title="Further Question 1"></a>Further Question 1</h1><br/>
+
+<h2 id="Pytorch-내부에서의-Loss-function-구현"><a href="#Pytorch-내부에서의-Loss-function-구현" class="headerlink" title="Pytorch 내부에서의 Loss function 구현"></a>Pytorch 내부에서의 Loss function 구현</h2><br/>
+
+<ol>
+<li>Regression Task의 Loss function</li>
+</ol>
+<br/>
+
+<ul>
+<li><code>torch.nn.L1Loss</code>(<em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
+</ul>
+<p>Measures the mean absolute error (MAE) between each element in the input <em>x</em> and target <em>y</em> .</p>
+<p><img src="/assets/images/image-20210203115218626.png" alt="image-20210203115218626"></p>
+<p>내부적으로 L1Loss가 어찌 구현되어 있나 확인해 보자</p>
+<p><img src="assets/images/image-20210203114526003.png" alt="image-20210203114526003"></p>
+<p>내부적으로 reduction을 mean으로 설정시 우리가 알고있는 sum을 n으로 나눈 값을 loss로 사용(기본값 : mean)</p>
+<p>reduction을 sum으로 설정시 n으로 나누는게 사라진 그저 차이의 norm의 sum값</p>
+<br/>
+
+<br/>
+
+<ul>
+<li><code>torch.nn.MSELoss</code>(<em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
+</ul>
+<p>Measures the mean squared error (squared L2 norm) between each element in the input x<em>x</em> and target y<em>y</em> .</p>
+<p>위의 L1 loss와 다른점은 차이의 제곱</p>
+<p><img src="/assets/images/image-20210203115235418.png" alt="image-20210203115235418"></p>
+<p><img src="/assets/images/image-20210203113548662.png" alt="image-20210203113548662"></p>
+<br/>
+
+<br/>
+
+<ol start="2">
+<li>Classification Task의 Loss function</li>
+</ol>
+<br/>
+
+<ul>
+<li><code>torch.nn.BCELoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
+</ul>
+<p>내가 이 loss function을 사용했을때는 분류문제중, 2개의 label 사이에서 classification을 할때는 BCELoss를 사용하고 NN의 출력단에 sigmoid함수를 적용해주었다.</p>
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#torch.nn.BCEWithLogitsLoss"><code>nn.BCEWithLogitsLoss</code></a>하지만 이 함수를 사용시 sigmoid가 내부적으로 포함되어있다</p>
+<p><img src="/assets/images/image-20210203115548370.png" alt="image-20210203115548370"></p>
+<p>loss function을 보면 </p>
+<ul>
+<li><code>torch.nn.CrossEntropyLoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>ignore_index: int = -100</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
+</ul>
+<p><img src="/assets/images/image-20210203115810360.png" alt="image-20210203115810360"></p>
+<br/>
+
+<ol start="3">
+<li>Probabilistic Task의 Loss function</li>
+</ol>
+<ul>
+<li><code>torch.nn.NLLLoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>ignore_index: int = -100</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
+</ul>
+<p>The negative log likelihood loss. It is useful to train a classification problem with C classes.</p>
+<br/>
+
+<h1 id="Further-Question-2"><a href="#Further-Question-2" class="headerlink" title="Further Question 2"></a>Further Question 2</h1><br/>
+
+<h2 id="올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요"><a href="#올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요" class="headerlink" title="올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?"></a>올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?</h2><br/>
+
+<p>일정한 k개로 data를 나누어 그중에 하나를 validation data로 사용하는 -&gt; k-fold cv</p>
+<p>validation</p>
+<p>hyper paramter : 우리가 정하는 값 ex) lr, network 깊이, loss function 종류, 등등</p>
+<p>cross validation으로 최적의 hyper parameter를 찾고 이걸 고정한 상태에서 전체 training data를 사용해서 학습을 시킨다</p>
+<p>모형의 파라미터 추정에는 트레이닝셋을 사용하고, 하이퍼파라미터 설정에는 밸리데이션 셋을 사용합니다</p>
+<h1 id="Further-Question-3"><a href="#Further-Question-3" class="headerlink" title="Further Question 3"></a>Further Question 3</h1><br/>
+
+<h2 id="Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요"><a href="#Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요" class="headerlink" title="Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?"></a>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</h2><br/>
+
+<p>시간의 정보를 가진 data를 기존의 k-fold cv를 사용하여 섞어 버린다면 , 과거와 미래가 뒤섞여 안된다</p>
+<p>for time series data we utilize hold-out cross-validation where a subset of the data (<em>split temporally</em>) is reserved for validating the model performance.</p>
+<p>이는 결국 training data set -&gt; validation data set -&gt; test data set 이 시간순으로 배열되야 한다는 뜻이다</p>
+<ol>
+<li><strong>Time dependency</strong></li>
+</ol>
+<p> 현재의 시점에서 미래의 data를 예측하는 모델을 맞추는 데 사용 된 이벤트 이후에 시간순으로 발생하는 이벤트에 대한 모든 데이터를 보류해야합니다. </p>
+<p>따라서 교차적으로 data를 바꾸어주는 K-fold 대신 hold-out cross-validation을 사용해야 한다</p>
+<p>이는 결국 training data set -&gt; validation data set -&gt; test data set 이 시간순으로 배열되야 한다는 뜻이다</p>
+<ol start="2">
+<li><strong>Arbitrary Choice of Test Set</strong></li>
+</ol>
+<p>만약 우리가 임의적으로 정한 test set에서 poor한 결과를 내었다면, 이는 전체적인 data에 대한 poor한결과가 아닌 그 특정한 독립적인 test set에의 poor한 결과이다</p>
+<p>따라서 우리는 Nested Cross-Validation을 사용한다</p>
+<p><img src="/assets/images/image-20210203125504680.png" alt="image-20210203125504680"></p>
+<p>그림을 보면서 Nested cv를 알아보자</p>
+<p>Nested CV에는 오류 추정을 위한 외부 loop와 hyperparameter추정을 위한 Inner loop가 있다</p>
+<p>내부루프는 train data set을 나누는 걸로 앞서 설명한일반적인 CV구조이다</p>
+<p>이제 data set를 여러 train과 test set으로 나누는 외부루프가 추가되었고 각 분할된 오류의 평균을 구한다</p>
+<br/>
+
+<h3 id="Nested-CV-for-Time-series-data"><a href="#Nested-CV-for-Time-series-data" class="headerlink" title="Nested CV for Time series data"></a>Nested CV for Time series data</h3><br/>
+
+<ol>
+<li><strong>Predict second half</strong></li>
+</ol>
+<p>데이터의 전반부 (일시적으로 분할)는 훈련 세트에 할당되고 후반부는 테스트 세트가 된다</p>
+<p>validation data의 크기는 달라질수 있지만, 순서는 data의 시간 순서는 항상 test data set이 train보다 뒤에있어야 한다</p>
+<p>이게 앞선 1의 time dependency를 해소시킨 것이다</p>
+<p><img src="/assets/images/image-20210203130233448.png" alt="image-20210203130233448"></p>
+<ol start="2">
+<li><strong>Day Forward-Chaining</strong></li>
+</ol>
+<p>predict second half의 단점은 hold-out dataset(앞서 말한 연대순)을 임의로 선택하게 되면 time dependency는 해결되었지만 <strong>Arbitrary Choice of Test Set</strong>을 해결하지 못하게 된다</p>
+<p>따라서 앞서 말한 Nested CV와 같이 많은 train과 test data set을 만들어 이들의 오류값을 구해 평균을 내어준다</p>
+<p>예를 들면  1일을 test set으로 간주하고 나머지를 train set으로 해주는 것이다</p>
+<p><img src="/assets/images/image-20210203130519597.png" alt="image-20210203130519597"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-01-28T15:00:00.000Z" title="2021. 1. 29. 오전 12:00:00">2021-01-29</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:34:42.779Z" title="2021. 4. 22. 오전 2:34:42">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Further-Q/">Further_Q</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/29/2021-01-29-week2/">Week2</a></h1><div class="content"><p>week2 간단 정리 가보자 가보자~</p>
+<br/>
+
+<br/>
+
+<h2 id="선형회귀분석"><a href="#선형회귀분석" class="headerlink" title="선형회귀분석"></a>선형회귀분석</h2>  <br/>
+
+<p>여기서 중요한건 데이터들을 하나의 직선으로 근사하는것이다</p>
+<p>정답 직선 -&gt; y</p>
+<p>데이터들의 - &gt; x</p>
+<p><img src="/assets/images/image-20210129161242260.png" alt="image-20210129161242260"></p>
+<p>결국 이거거등 x를 y에 근사시키는거</p>
+<p>베타를 구하는게 선형회귀분석이지</p>
+<p>만약 n&gt;=m 이건 결국 행이더 크다 -&gt; 식의 갯수가 변수의 갯수보다 많다</p>
+<p>이럼 연방 푸는게 불가능 하지 따라서 y에 근접하는 y’을 찾는거다</p>
+<p><br/><br/></p>
+<p><strong>따라서 !!!!!</strong></p>
+<p>정답 y와 y’의 차이가최소화 되게 -&gt; L2 norm을 이용해서 L2 norm을 최소화하는 B를 찾는것</p>
+<p>이때 무어 펜로즈 역행렬 사용 해서 B를 구한다</p>
+<p>하하하</p>
+<p>이선형 회귀분석이랑 경사하강법이랑 무슨상관???????</p>
+<p>무어펜로즈 사용하기 시러서 경사하강법 쓰는거지요</p>
+<p><br/><br/></p>
+<p>왜 시를까?</p>
+<p><br/><br/></p>
+<p><strong>Reason</strong> : 지금은 선형만 하고있어서 무어랑 경사랑 상관없는데</p>
+<p>이제 많은 실제 모델들은 비선형이다. 따라서 비선형에서도 사용 할 수 있는 경사하강법을 사용하는것!!!!!!!!</p>
+<p><br/><br/><br/></p>
+<h2 id="경사하강법"><a href="#경사하강법" class="headerlink" title="경사하강법"></a>경사하강법</h2><p><br/><br/></p>
+<p>결국 가장중요한건 gradient vector이다</p>
+<p>변수가 vector인 다변수 함수의 경우 편미분을 사용하여 진행</p>
+<p><strong>gradient</strong></p>
+<p><img src="/assets/images/image-20210129155122586.png" alt="image-20210129155122586"></p>
+<p>여기서 norm은 절대값을 대체하는 것</p>
+<p>eps : 종료조건 </p>
+<p>왜냐? 완전이 grad가 0이되는건 컴이라 불가능함</p>
+<p>var = init</p>
+<p>grad = gradient(var)</p>
+<p>while (norm(grad)&gt;eps):</p>
+<p>​    var = var-lr*grad</p>
+<p>​    grad = gradient(var)</p>
+<p>이제좀 gradient descent의 큰그림이 보인다</p>
+<p>결국은 어느방향으로 움직여야 함수값이 증가하는지 감소하는지를 알려주는게 gradient로</p>
+<p>gradient를 계속해서 update하여 norm이 0에 가까운 값이면 이제 최솟값을 보장해주는 이런 느낌적인 느낌 ㅇㅋ</p>
+<p><br/><br/></p>
+<hr>
+<p><br/><br/></p>
+<p><strong>근데 이제 문제는 이를 행렬을 이용한 수식으로 증명하고 전개하는것이다</strong>  </p>
+<p>요게 이제 어려운 Point 이건 손으로 작성하겠다.  </p>
+<p><strong>Further Question</strong>  </p>
+<p>강의영상 03:47부터 소개되는 내용인, d-차원 벡터(베타)에 대한 그레디언트 벡터를 구하는 계산을 각자 직접 손으로 해보기 바랍니다!  </p>
+<p>그럼  </p>
+<p>이것도 손으로 계산해서 update (with ipad)</p>
+<h2 id="딥러닝-학습방법-이해하기"><a href="#딥러닝-학습방법-이해하기" class="headerlink" title="딥러닝 학습방법 이해하기"></a>딥러닝 학습방법 이해하기</h2><p>딥러닝은 비선형 모델을 해석하는 것이다 </p>
+<p>그 전에 먼저 선형모델을 다루어 보자 </p>
+<p>신경망을 수식으로 분해</p>
+<p><img src="/assets/images/image-20210129160003010.png" alt="image-20210129160003010"></p>
+<p>이게 가장 중요한 수식</p>
+<p>다시 행렬 review를 해보면 X는 데이터들의 집합 x<del>i</del>는 i번째 data x<del>ij</del>는 i번쨰 data의 j번째 변수값   </p>
+<p>다시말해 nxd 인 X행렬은 n개의 data를 가지고 각데이터는 d개의 변수를가짐.</p>
+<p> W는 data를 다른 차원에 mapping해주는 역할을 한다. 데이터에 가중치를 곱하고 bias를 더해주는 이런느낌</p>
+ <br/>
+
+<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3> <br/>
+
+<ul>
+<li>분류문제를 풀때 선형모델의 출력과 softmax의 결합으로 특정벡터가 어느 클래스에 속하는지 알 수 있음  </li>
+<li>벡터를 확률로 변환하는 함수이다</li>
+</ul>
+<p>​    </p>
+<p>​    </p>
+<p><img src="/assets/images/image-20210201004646879.png" alt="image-20210201004646879"></p>
+<p>​    </p>
+<p>​    </p>
+<p>위와 같이 순차적으로 가중치와 bias를 계산한 값을 다음노드에 또 집어넣고 계속해서 순방향으로 전파 -&gt; forward propagation</p>
+<p>학습할때는 back propagation을 사용</p>
+<p>​     </p>
+<p>​    </p>
+<h2 id="Back-Propagation"><a href="#Back-Propagation" class="headerlink" title="Back Propagation"></a>Back Propagation</h2><p>​    </p>
+<p>선형회귀분석에서 B에 해당하는 gradient벡터를 계산해서 업데이트 했던것처럼 각층에 존재하는 parameter의 미분값을 계산해서 업데이트</p>
+<p><strong>각층의 가중치에 대한 gradient벡터를 계산하는 법</strong></p>
+<p>행렬들의 원소의 모든 개수만큼 경사하강법이 적용이 된다</p>
+<p>한층일때는 목적식에 대한 gradient 벡터를 동시에 계산할 수 있지만, 딥러닝의 경우 gradient 벡터를 순차적(back propagation)으로 계산하게된다</p>
+<p>​    </p>
+<p>​     </p>
+<p>손실함수 –&gt; L일떄 우측을 계산<img src="/assets/images/image-20210201005533383.png" alt="image-20210201005533383"></p>
+<p>위층에 있는 gradient를 계산한 다음에 chain rule을 이용해 아래층의 gradient를 계산</p>
+<p>​    </p>
+<p><img src="/assets/images/image-20210201011726383.png" alt="image-20210201011726383"></p>
+<p>이러하게 계속해서 각 가중치에 대한 gradient vector를 구한뒤 이들을 SGD를 사용해서 Loss function을 update시킨다</p>
+<h2 id="확률론-맛보기"><a href="#확률론-맛보기" class="headerlink" title="확률론 맛보기"></a>확률론 맛보기</h2><ul>
+<li>회귀분석에서 손실함수로 사용되는 L2 norm은 예측오차의 분산을 최소화하는 방향으로 학습하도록 유도</li>
+<li>Cross-Entropy는 모델예측의 불확실성을 최소화 하는 방향으로 학습하도록 유도</li>
+<li>분산 및 불확실성을 최소화 하는 방법을 알아야 함</li>
+</ul>
+<br/>
+
+<h3 id="이산확률변수-VS-연속확률변수"><a href="#이산확률변수-VS-연속확률변수" class="headerlink" title="이산확률변수 VS 연속확률변수"></a>이산확률변수 VS 연속확률변수</h3><p>위의 개념이 결국은 가장 중요하다</p>
+<p>이산은 경우의수를 다 고려해서 확률을 구함</p>
+<p>연속은 밀도함수를 적분해서 확률을 구함</p>
+<h3 id="조건부-확룰-변수"><a href="#조건부-확룰-변수" class="headerlink" title="조건부 확룰 변수"></a>조건부 확룰 변수</h3></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-29T15:00:00.000Z" title="2020. 12. 30. 오전 12:00:00">2020-12-30</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T16:17:18.481Z" title="2021. 4. 22. 오전 1:17:18">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></h1><div class="content"><p>Introduction and Motivation  </p>
+<p>Machine learning의 목적은 data로 부터 valuable patterns을 뽑아내는 것이다<br>Dataset에 맞게 Model을 설계, Model은 input과 output의 function을 describe 할 수 있어야 한다  </p>
+<blockquote>
+<p><strong>A model is said to learn from data if its performance on a given task improves after the data is taken into account.</strong>  </p>
+</blockquote>
+<p>Learning이란 data의 pattern이나 struct를 model의 parameter을 자동으로 optimize하며 찾아낸다.</p>
+<p>머신러닝 시스템의 근본적인 이해를 위해 수학적인 기반은 매우 중요하다  </p>
+<h2 id="Finding-Words-for-Intuition"><a href="#Finding-Words-for-Intuition" class="headerlink" title="Finding Words for Intuition"></a>Finding Words for Intuition</h2><ol>
+<li>Predictor : Input data에 맞는 prediction을 해내는 <strong>Algorithm</strong>  </li>
+<li>Data as vectors</li>
+</ol>
+<ul>
+<li>vector as array (computer science view)  </li>
+<li>vector as arrow with a direction and magnitude (physics view)  </li>
+<li>vector as an object that obeys addition and scaling (mathmatical view)  </li>
+</ul>
+<ol start="3">
+<li>Model : input data-set과 비슷한 data를 만들어 내기위해 사용한다. 좋은 모델은 data의 hidden pattern을 뽑아낼 수 있고, 어떠한 일이 다음에 일어날지 예측또한 할 수 있다.  </li>
+<li>Learning : 우리가 dataset과 model이 주어졌다고 가정하자. Model을 training하는 작업은 training data에 맞게 model의 parameter를 optimize하는 과정이다<br>대부분의 training 방법은 산을 오르는 과정과 비슷하다. 이 산의 정상은 maximum score를 의미한다.  </li>
+</ol>
+<p>우리는 model이 <strong>UNSEEN DATA</strong> 에서 잘 동작하기를 원한다.  따라서 우리는 model이 이전에 마주친 상황과 다른 상황에 자주 노출시켜 주어야 한다.  </p>
+<ul>
+<li>Represent data as vector  </li>
+<li>확률과 optimization view를 사용해 적절한 모델을 선정  </li>
+<li>다양한 numerical optimization 방법을 사용하여 model이 training에 사용된 data가 아닌 다른 data에서 잘 동작하도록 함에 초점을 맞추어 학습  </li>
+</ul>
+<p><img src="/assets/images/1-1.jpg">{: .align-center}  </p>
+<p>출처 : Marc Peter Deisenroth, Mathmatics for Machine Learning,(Cambridge University Press)</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-29T15:00:00.000Z" title="2020. 12. 30. 오전 12:00:00">2020-12-30</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:32:06.596Z" title="2021. 4. 22. 오전 2:32:06">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></h1><div class="content"><h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><ol>
+<li>Geometric vectors<br>우리가 흔히 중고등학교때 배운 vector의 개념    </li>
+<li>Polynomials<br>다항식 또한 vectors이다. 두 다항식은 더할수있고 scalar배또한 할 수 있다.<br>따라서 Polynomials are Instance of Vecors    </li>
+<li>Elements of $\Bbb{R}^n$<br>$a,b\in\Bbb{R}^3$ 일때 $a+b = c \in\Bbb{R}^3$<br>스칼라로 곱해도 속한다  </li>
+</ol>
+<p>Linear algebra는 이러한 비슷함에 초점을 둔다.</p>
+<p><img src="/assets/images/2-1.jpg">{: .align-center}  </p>
+<p>Vector space의 개념과 성질이 매우 ML에서 매우 중요하다.<br>Vector space란 작은 Vector의 집합들끼리 서로 더하고 Scailing하여서 나온 집합이다.  </p>
+<h2 id="2-1-Systems-of-linear-equations"><a href="#2-1-Systems-of-linear-equations" class="headerlink" title="2.1 Systems of linear equations"></a>2.1 Systems of linear equations</h2><p>Example 2.1  </p>
+<p><img src="/assets/images/2-2.jpg">{: .align-center}<br>Product N<sub>n</sub>을 위해 Resource R<sub>m</sub> 이 필요한경우</p>
+<ul>
+<li>제한량 : b<sub>j</sub>  </li>
+<li>Product i 생산을 위해 필요한 Resource R<sub>j</sub>의 양: a<sub>ij</sub> </li>
+<li>Product i 의 생산량 : x<sub>i</sub>  </li>
+</ul>
+<p>위와 같은 선형 방정식을 간단하게 만들기 위해 matrix를 사용  </p>
+<p><img src="/assets/images/2-3.jpg">{: .align-center}{: width=”50%” height=”50%”}  </p>
+<p><img src="/assets/images/2-4.jpg">{: .align-center}{: width=”50%” height=”50%”}  </p>
+<h2 id="2-2-Matrix"><a href="#2-2-Matrix" class="headerlink" title="2.2 Matrix"></a>2.2 Matrix</h2><p>행렬의 기본법칙은 이미 선형대수학 시간에 학습하였으니 넘어가겠다.  </p>
+<h2 id="2-3-Solving-Systems-of-Linear-Equation"><a href="#2-3-Solving-Systems-of-Linear-Equation" class="headerlink" title="2.3 Solving Systems of Linear Equation"></a>2.3 Solving Systems of Linear Equation</h2><p>2.3.1 Particular and General Solution  </p>
+<p>해를 구하는 방법을 알기에 앞서 Linear Equation의 해에대하여 알아보자.<br> <img src="\assets\images\2-5.jpg" alt="2-5" style="zoom: 150%;" /></p>
+<p>위의 행렬식을 보면 2개의 방정식과 4개의 미지수가 있다. 따라서 무수히 많은 근이 존재할 것이다.  </p>
+<p>Ax = b 라는 compact한 식으로 나타낸뒤 해를 첫번째 column C<del>1</del>의 42 두번째 column C<del>2</del>의 8배로 나타낼 수 있다</p>
+<img src="\assets\images\{67C011B5-DC0F-4C62-8CA3-527F494733BA}.png" alt="{67C011B5-DC0F-4C62-8CA3-527F494733BA}" style="zoom: 80%;" />
+
+
+
+<p>따라서 이의 해는 $[42,8,0,0]^T$ 로 나타낼수 있다. 이러한 식은 무수히 많은 해중 단 하나의 해이기 때문에 이를==Particular solution==이라고 부른다.</p>
+<p>이제 모든 해를 일반적으로 표현하기 위하여 수학적 techinque을 사용한다. 0을 더함으로서 양변의 equality는 보존됨으로, 0을 만들어 내보자.</p>
+<p>세번째 column을 1,2번째 column의 합으로 표현해 보면</p>
+<img src="\assets\images\{D93F0070-9F5C-491D-8000-5E3F81CF252A}.png" alt="{D93F0070-9F5C-491D-8000-5E3F81CF252A}" style="zoom:50%;" />
+
+<p>따라서 0  = 8C<del>1</del>+ 2C<del>2</del>- 1C<del>3</del> +0C<del>4</del> 로 나타낼수 있고 이들의 계수인 [8,2,-1,0]^T^ 가 바로 0을 만들어 내는 Vector이다.</p>
+<p>또한 이 해(Vector)의 scalar배수들 또한 같은 결과를 가진다.</p>
+<p><img src="C:\Users\fokke\Desktop\gitblog\jo-member.github.io\assets\images{55B28FCD-5464-434D-B00A-42FB30DA6CC5}.png" alt="{55B28FCD-5464-434D-B00A-42FB30DA6CC5}"></p>
+<p>따라서 이후 작성…..</p>
+<p>출처 : Marc Peter Deisenroth, Mathmatics for Machine Learning,(Cambridge University Press)</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-27T15:00:00.000Z" title="2020. 12. 28. 오전 12:00:00">2020-12-28</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T16:16:48.397Z" title="2021. 4. 22. 오전 1:16:48">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/blog/">blog</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/28/2020-12-28-first-post/">Blog 시작</a></h1><div class="content"><p>신년을 맞이하여 새롭게 무언가를 시작해본다<br>정리하고 증명하기 위해 공부의 흔적을 남겨보자</p>
+<p>네이버 Connect에서 진행하는 boostcamp AI tech의 BAT와 1차 코딩테스트를 통과하였다. 1차는 그리 어려운 알고리즘 없이 그저 구현하는 문제들이 출제 되었다.2차까지 잘보아서 꼭 붙었으면 좋겠다. 6개월동안 열정적으로 할 준비는 되어있다.</p>
+<p>분명 대학원 입시에 도움이 되겠지?</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-03-07T15:00:00.000Z" title="2020. 3. 8. 오전 12:00:00">2020-03-08</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:38:46.596Z" title="2021. 4. 22. 오전 2:38:46">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/03/08/2021-03-08-Boostcamp31.1%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/">Day31) Image Classification</a></h1><div class="content"><br/>
+
+
+
+<p>K Nearest Neighbors (k-NN)</p>
+<p>기존의 data가 가지고있는 label을 활용해서 새로운 data의 label을 분류하는 문제가 된다. 이렇게 된다면 미리 유사도를 정의해야 한다. 그리고 system 복잡도가 너무 높다. 따라서 data를 NN의 parameter에 녹여넣는 것이다.</p>
+<p>Yann Lecun의 CNN 개발 : 우편번호인식에 혁신을 이루어냄</p>
+<p>Using better activation function   </p>
+<p>annotation data의 효율적인 학습 기법 </p>
+<p>data 부족문제의 완화 : 대표적인 방법들</p>
+<ol>
+<li>Data augmentation</li>
+<li>Leveraging pre-trained information</li>
+<li>Leveraging unlabeled dataset for training</li>
+</ol>
+<p>Data augmentation</p>
+<p>Data를 통한 pattern의 분석</p>
+<p>Dataset is almost biased != real data<br>결국 우리가 사용하는  data들은 사람이 bias해서 찍은 사진들이 대부분이기 때문에 우리가 얻어놓은 training data까지 모두 표현하지 못하는 data들이다.</p>
+<p>ex) crop, rotate, Brightness, …</p>
+<p>Affine transformation</p>
+<p>변환전후에 선으로 유지가 되고, 길이의 비율과 평행관계가 유지가 되지만 각도가 달라지는. </p>
+<p>기본적인 틀을 맞춘 attine transofrmation</p>
+<p>mixing both images and labels</p>
+<p>RandAugment</p>
+<p>random하게 augmentation 방법을 수행후 잘나온것을 가져다 쓰자. 어떤걸 적용할까, 어떤 강도로 augmentation을 할까?</p>
+<p>이걸 policy리고 한다. Random sampling시</p>
+<p>dataset을 만들어야 하는데 이러한 data를 모을때 label이 필요하기 떄문에 이러한 data를  단기간에 수집하기가 쉽지가 않다.</p>
+<p><strong>Transfer learning</strong></p>
+<p>기존에 학습시킨 model에 조금 바꿔서 적용. 한데이터set에서 배운 지식을 다른 task에 적용</p>
+<p>한 dataset에 적용된 경우에 다른곳에도 적용할 수 있지 않을까?<br>Freeze 기존의 CNN layer’s parameter<br>적은 data로 부터</p>
+<p><img src="assets/images/image-20210308112418434.png" alt="image-20210308112418434"></p>
+<p>Pseudo-labeling이 좀 신기하다.</p>
+<p>Knowledge distillation</p>
+<p><img src="assets/images/image-20210308113809064.png" alt="image-20210308113809064"></p>
+<p>더 깊은 network -&gt; 더 높은 성능</p>
+<p>깊게 쌓을수록 gradient explosion이나 vanishing gradient가 발생하였다, 계산복잡도가 올라가서 속도의 저하, overfitting문제가 아니라 degradation problem이라는게 밝혀졌다.</p>
+<p>네트워크를 깊게 쌓기위한 network</p>
+<ol>
+<li>GoogLeNet</li>
+</ol>
+<p>하나의 layer에서 다양한 크기의 cnn filter를 사용하서 여러측면으로 image를 관찰하겠다. 한층에 이렇게 여러 filter를 사용하게 되면 계산복잡도가 올라가고, parameter숫자가 늘어나기 때문에, 1x1 filter를 추가해 주었다. 1x1 layer as bottle neck architecture</p>
+<ul>
+<li>공간크기는 변하지 않고, channel 수만 변화시켜준다.</li>
+</ul>
+<p>Overall architecture</p>
+<ul>
+<li>inception module을 깊게 쌓아서 전체 network 형성</li>
+<li>Auxiliary classifiers : gradient vanising 문제를 해결하기 위해 추가해준 classifiers. 중간중간에 gradient를 꼽자주는 역할을 한다.</li>
+<li>loss가 중간에서 부터 흘러들어가기 때문에 멀리있는 단까지 gradient 전달이 가능하다.</li>
+</ul>
+<p>Auxiliary classifier</p>
+<p><img src="assets/images/image-20210309113004104.png" alt="image-20210309113004104"></p>
+<h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><p>아직도 큰 영향력을 발휘하고 있는 network이다.</p>
+<p>최초로 100개 이상의 layer를 쌓았다. 최초로 인간 level의 성능을 뛰어넘었다.</p>
+<p>이러한 성과로 cvpr best paper를 받았다. 기존연구자들의 layer를 깊게 쌓는데 문제점</p>
+<p><img src="assets/images/image-20210309113203089.png" alt="image-20210309113203089"></p>
+<p>원래는 model parameter가 많으면 error가 줄어들 것이라고 생각했는데, 56 layer의 error가 더 크다는 결과가 나왔기 때문에, over fitting때문이 아니라는 결론이 나옴.</p>
+<p>대신에 최적화 문제에 대해서 56 layer이 최적화 되지 않은 결과이다.</p>
+<p>Í<img src="assets/images/image-20210309113447823.png" alt="image-20210309113447823"></p>
+<p>이렇게 만들어 버리면 학습의 부담감이 덜어지고 분할정복이 가능한 문제가 되지 않았는가?</p>
+<p>이를 해결해 주기 위해ㅐ</p>
+<p>shortcut connection을 통해 back prop과정에서 길이 하나가 더생기는 것이다.gradient. vanishing 문제가 해결이 되었다. 왜성능이 잘나올까?</p>
+<p>residual connection을 하나 추가할때마다 2배씩 path가 늘어난다. 다양한 경로를 통해서 굉장히 복잡한 mapping의 학습이 가능했다.</p>
+<p>initialization으로 He initialization을 사용했다. Reason ? -&gt; initialize를 작게 해주어야 이후에 더해줄때 균형이 맞는다.</p>
+<p>3x3 conv layer로 모두 이루어져 있다.</p>
+<p>Only a single FC layer at final output</p>
+<h2 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h2><p>channel 축으로 concatnate한다. 훨씬이전의 layer에 대한 정보들도 모두 이어준다. 상위 layer에서도 모든 하위 layer의 특징을 참조할 수 있도록 해주었다.</p>
+<p>더하기 두 신호를 합쳐버린다</p>
+<p>concatnate chanel은 늘어나지만 feature를 더욱 잘 보존</p>
+<p>fix된 3x3 만큼의 weight paramter가 이미 존재를 하고 2d offset을 위한 branch가 따로 존재 한다. 각각의 weight들을 벌려준다?</p>
+<h1 id="Semantic-segmentation"><a href="#Semantic-segmentation" class="headerlink" title="Semantic segmentation"></a>Semantic segmentation</h1><p>픽셀단위로 분류해보자</p>
+<p>영상속의 mask를 생성하게 되는데 같은 class이지만 서로다른 물체를 구분하지는 않는다.</p>
+<p>영상속에 자동차가 여러대 있어도다 같은 class (색) 으로 구분한다.</p>
+<p>영상내의 장면 content를 이해하는데 사용하는 필수적인 기술이다. object들이 구분되는 특징을 이해를 하여 </p>
+<h2 id="Fully-Convolutional-Networks"><a href="#Fully-Convolutional-Networks" class="headerlink" title="Fully Convolutional Networks"></a>Fully Convolutional Networks</h2><p>입력에서 부터 끝까지 NN으로 구성한다.<br>입력으로 임의의 해상도 출력도 입력에 맞춘 해상도, 중간의 layer들도 모두 미분가능한 layer들이다.</p>
+<p>각위치다 channel축으로 flattening이후 각각의 vector를 쌓아서 각 위치마다 vector가 하나씩 나오게 된다. </p>
+<p>Upsampling</p>
+<p>receptive field가 작기 때문에 upsampling을 통해서 강제로 resolution을 맞추어준다.</p>
+<p>일단은 작게 만들어서 receptive field를 최대한 키운다음에 upsampling한다.</p>
+<ol>
+<li>Transpose Convolution</li>
+</ol>
+<p>결과를 이렇게 그냥 더해도 되는건가?<br>cnn과 stride 사이즈를 조절해서 겹치는부분이 없게끔 조절해주어야 한다. (overlap problem)</p>
+<ol start="2">
+<li>Upsampling Convolution</li>
+</ol>
+<p>학습가능한 upsampling을 학습가능한 하나의 layer로 만들어주었다. </p>
+<p>해상도가 낮아지지만 semantic하고 Holistic </p>
+<p>중간층의 map을 upsampling한 이후에 </p>
+<p>높은 layer에 있는 feature map을 upsampling을 통해 해상도를 올리고 이에 맞춰서 중간층의 map들또한 upsampling한다. 이들을 concatnate하여서 각픽셀마다 class의 score를 뱉어주게 된다. </p>
+<p>최대한 많은 layer들을 합친것이 큰 도움이 된다.</p>
+<p>FCN은 end to end로 손으로 만든게 아니라 모두 NN이라 병렬처리도 가능하고 성능도 좋으며, low high feature모두 잘 포함한다.</p>
+<p>U-Net</p>
+<p>built upon fully convolutional networks</p>
+<p>with  <strong>skip connections</strong></p>
+<p>channel size가 줄고 해상도가 느는 expanding path</p>
+<p>fusion - concatnation을 사용한다.</p>
+<h2 id="DeepLab"><a href="#DeepLab" class="headerlink" title="DeepLab"></a>DeepLab</h2><p>pixel과 pixel사이의 관계를 이어준후 pixel간의 거리를 모델링하였다.<br>확산의 반복으로 물체의 경계에 잘맞는 segmetation을</p>
+<ul>
+<li>Dilated convolution</li>
+<li>parameter수는 늘어나지만 </li>
+</ul>
+<p>depthwise convolution</p>
+<p>channel별로 conv연산을 해서 값을 각각 뽑은후, 각 channel별로 pointwise convolution을 통하여 하나로 합쳐준다. </p>
+<p><img src="assets/images/image-20210309140019684.png" alt="image-20210309140019684"></p>
+<p>Instance segmentation으로 빠르게 발전을 하고있다.</p>
+<p>Instance segmantation : 같은 사람이여도 같은색이 아닌 따로따로 segmentation이 가능한 기능</p>
+<p>panoptic segmentation</p>
+<p>Instance segmentation을 포함하는 기술</p>
+<p>객체들을 구분하는 기술 : object detection</p>
+<p>scene understanding을 위한 기술</p>
+<p>bounding ob와 classification을 동시에 추정하는 기술이다.</p>
+<p>해당하는 box의 물체의 category까지 추정한다.<br>2개의 좌표로 bounging box를 결정한다. 나머지는 class에대한 probability를 결정해 준다. Bounding box localization</p>
+<p><strong>selective search</strong></p>
+<p>oversegmentation 이후 비슷한 색깔끼리 합쳐준다.</p>
+<h1 id="Two-stage-detector"><a href="#Two-stage-detector" class="headerlink" title="Two-stage detector"></a>Two-stage detector</h1><ol>
+<li>R-CNN</li>
+</ol>
+<p>기존의 image classification을 활용</p>
+<p>selective serch 로 region proposal을 구하고<br>적절한 크기로 warping을 해서 CNN (pretrained)에 넣어준후 category를 구해준다.<br>마지막 classifier은 SVM을 썼다.<br>단점 : model 하나하나마다 모두 cnn을 돌려야하고 selective search를 사용해서 학습을 통한 성능향상에 제한이있다.</p>
+<ol start="2">
+<li>Fast R-CNN</li>
+</ol>
+<p>recycle a pre-computed feature for multiple object detection</p>
+<p>영상전체에 대한 feature을 추출후 이를 재활용</p>
+<ul>
+<li>CNN에서 Convolutional feature map을 뽑아주고(warping x)</li>
+<li>ROI pooling layer로 feature map으로 부터 ROI feature를 뽑아낸다</li>
+<li>feature pooling이후 class와 bbox regression을 사용한다. </li>
+</ul>
+<p><img src="assets/images/image-20210311105154100.png" alt="image-20210311105154100"></p>
+<p>여전히 roi를 찾기 위해 selective search를 쓰고있다</p>
+<ol start="3">
+<li>Faster R-CNN</li>
+</ol>
+<p>최초의 endtoend object detection</p>
+<p>IoU = Area overlap/Area of Union, 높을수록 두영역이 많이 겹친다</p>
+<ul>
+<li>Anchor boxes- 9개의 actor box를 사용하였다. 미리 정해놓은 bbox의 크기</li>
+</ul>
+<p>Selective search를 대체하는 RPN을 제안하였다.</p>
+<p>그럴듯한 bbox만 남기기 위해 non maximum suppression을 사용하였다.</p>
+<h1 id="Single-stage-detector"><a href="#Single-stage-detector" class="headerlink" title="Single stage detector"></a>Single stage detector</h1><p>정확도 보다 속도를 선택한 것이다</p>
+<p>image를 gird로 나누어서 4개의 좌표와 confidence score를 예측한다.</p>
+<p>각각의 task보다 Instance segmentation과 Panoptic segmentation</p>
+<h1 id="Instance-Segmentation"><a href="#Instance-Segmentation" class="headerlink" title="Instance Segmentation"></a>Instance Segmentation</h1><p>Instance segmentation = Sementic segmentation + distuguishing instances</p>
+<h2 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h2><ol>
+<li><p>RPN</p>
+<p>기존의 ROI 풀링은 정수좌표만 지원을 했었는데, interpolation을 위해서 소수점 pixel level을 지원하였다. </p>
+</li>
+</ol>
+<h1 id="Panoptic-Segmentation"><a href="#Panoptic-Segmentation" class="headerlink" title="Panoptic Segmentation"></a>Panoptic Segmentation</h1><h2 id="UPSNet"><a href="#UPSNet" class="headerlink" title="UPSNet"></a>UPSNet</h2><p>FPN구조로 고해상도 feature를 뽑은 이후 Semantic Head 와 Instance Head로 나누어 predict를 하게 된다.</p>
+<h1 id="Landmark-localization"><a href="#Landmark-localization" class="headerlink" title="Landmark localization"></a>Landmark localization</h1><p>Facial landmark localizaiton</p>
+<p>Human pose estimation</p>
+<p>다양한 data를 사용한 학습</p>
+<h1 id="Multi-model-learning"><a href="#Multi-model-learning" class="headerlink" title="Multi-model learning"></a>Multi-model learning</h1><p>Challenges</p>
+<ol>
+<li>각각의 감각의 데이터가 모두 다른 representation을 띈다</li>
+<li>Feature space에 대하여 balance가 맞지 않는다.</li>
+<li>여러 modelity를 사용할 경우 특정 model에 bias될수 있다.</li>
+</ol>
+<p>대표적인 구조</p>
+<ol>
+<li>Matching</li>
+<li>Translating</li>
+<li>Referencing</li>
+</ol>
+<h2 id="Visual-data-amp-Text"><a href="#Visual-data-amp-Text" class="headerlink" title="Visual data &amp; Text"></a>Visual data &amp; Text</h2><p>Joint embedding</p>
+<ol>
+<li>Image tagging</li>
+</ol>
+<p>태그 -&gt; 이미지, 이미지 -&gt; 태그</p>
+<p>각 feature들은 차원을 맞춰주고 이둘의 Joint embedding을 만들어준다.</p>
+<p>같은 space에 이미지와 text를 embedding해주고 matching되는 image와 text 끼리 거리가 가까워 지게끔 학습을 진행한다.</p>
+<p>Metric Learning</p>
+<p><img src="assets/images/image-20210312111734568.png" alt="image-20210312111734568"></p>
+<p><img src="assets/images/image-20210312144707419.png" alt="image-20210312144707419"></p>
+<p>창 - 프로세스 (현재 진행중)<br>탭 - 쓰레드 (그냥 띄워진 창) </p>
+<ol>
+<li>쓰레드마다 갖는 메모리 공간 / 프로세스가 공유하는 메모리 공간이 있다.</li>
+<li>프로세스가 늘어나면 쓰레드 공유 공간이 늘어나게 된다.</li>
+</ol>
+<p>process: 코어수에 따라 병렬처리 가능<br>thread: 프로세스 위에 올라가있는 task<br><del>보통 1개의 process로 concurrent로 처리하는 것 보다, max core의 50</del>70%정도로 process를 나눠서 처리해주는 게 훨씬 좋은 성능을 낸다.</p>
+<p>—- ps. 파이썬은 멀티프로세싱 &gt;&gt; 멀티쓰레딩<br>search keyword: multi threading/processing, python global interpreter lock(GIL)</p>
+<p>mini task) [멀티 프로세싱/쓰레딩] 으로 10만까지의 소수 찾고 성능 비교 후 github에 올리기 (~3.15 월)</p>
+<p>—- <em>point</em> —-<br> 피어세션 뿐만 아니라, 앞으로 공부방향에 있어 수업 내용 외적으로 전체적인 그림을 그리며 공부를 이어나갈 것! (cs, ml pipeline 등…)</p>
+<p> Q) ml 엔지니어라면, 검색을 했을 때 가장 좋은 결과를 내기 위해서는 어떻게 해야 할까요?<br> A) 어떤 것이랑 어떤 것을 연결시킬 건지…등등 잘 생각해보자! ^_^</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-02-22T15:00:00.000Z" title="2020. 2. 23. 오전 12:00:00">2020-02-23</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:38:35.922Z" title="2021. 4. 22. 오전 2:38:35">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/02/23/2021-02-23-Boostcamp22/">Day22) Graph2</a></h1><div class="content"><h1 id="검색엔진에서의-그래프"><a href="#검색엔진에서의-그래프" class="headerlink" title="검색엔진에서의 그래프"></a>검색엔진에서의 그래프</h1><br/>
+
+<h1 id="페이지랭크의-배경"><a href="#페이지랭크의-배경" class="headerlink" title="페이지랭크의 배경"></a>페이지랭크의 배경</h1><h3 id="1-1-웹과-그래프"><a href="#1-1-웹과-그래프" class="headerlink" title="1.1 웹과 그래프"></a>1.1 웹과 그래프</h3><p>웹(방향성이 있는 그래프) = 웹페이지(node) + 하이퍼링크(edge)</p>
+<p>웹페이지는 추가적으로 키워드 정보를 포함하고있다.</p>
+<h3 id="2-2-구글이전의-검색엔진"><a href="#2-2-구글이전의-검색엔진" class="headerlink" title="2.2 구글이전의 검색엔진"></a>2.2 구글이전의 검색엔진</h3><ol>
+<li><p>웹을 거대한 디렉토리로 정리</p>
+<p>웹페이지의 수가 증가함에 따라 카테고리 수도 무한정 커지는 문제가 있다</p>
+<p>카테고리 분류가 모호할수가 있다.</p>
+</li>
+<li><p>키워드에 의존한 검색엔진</p>
+<p>악의적인 웹피이지에 취약하다</p>
+</li>
+</ol>
+<p>따라서 page rank라는 하나의 알고리즘을 구글이 만들었다</p>
+<p>페이지랭크의 핵심은 투표이다.</p>
+<p>웹페이지는 하이퍼 링크를 통해 투표를하게 된다.</p>
+<p>사용자가 입력한 키워드를 포함한 웹페이지에서 u가 v에 연결되어있다면 v는 신뢰가능</p>
+<p>많이 인용된 논문을 신뢰하는것과 비슷한 알고리즘</p>
+<p>웹페이지를 여러개 만들어서 간서의 수를 부풀릴수 있다.</p>
+<p>이런식의 악용은 온라인 sns에서도 흔히 발견이 된다.</p>
+<p>이러한 악용을 막기위해 가중투표를 사용한다.</p>
+<p>측정하려는 웹페이지의 관련성과 신뢰도 </p>
+<p>자시의 점수 / 나가는 이웃의 수 </p>
+<p><img src="/Users/jowon/workspace/jo-member.github.io/_posts/assets/images/image-20210223103102754.png" alt="image-20210223103102754"></p>
+<p>또한 페이지 랭크는 임의보행의 관점에서도 정의 할 수있다.</p>
+<p>웹서퍼는 현재 하이퍼링크중 하나를 균일한 확률로 클릭하는 방식으로 웹을 서핑한다.</p>
+<p><img src="assets/images/image-20210223103757983.png" alt="image-20210223103757983"></p>
+<p>이 과정을 무한히 수행하면 p(t) = p(t+1)이된다. 수렴한 p는 정상분포라고 부른다. 결국 이를 정리해보면 투표관점에서의 pagerank정의 수식과 비슷함을 확인할 수 있었더.</p>
+<h2 id="페이지랭크의-계산"><a href="#페이지랭크의-계산" class="headerlink" title="페이지랭크의 계산"></a>페이지랭크의 계산</h2><ol>
+<li><p>반복곱</p>
+<p>Power iteration은 각웹페이지에 페이지 랭크를 구할때 사용된다</p>
+<p>각웹페이지 i의 페이지 렝크 점수를 동일하게 (1/웹페이지수) 로 초기화 한다</p>
+<p>아래의 식을 사용하여 웹페이지의 점수를 갱신한다</p>
+<p><img src="assets/images/image-20210223105936645.png" alt="image-20210223105936645"></p>
+<p>페이지 랭크 점수가 수렴할때까지 계산을 반복한다.</p>
+<p><img src="assets/images/image-20210223110133426.png" alt="image-20210223110133426"></p>
+</li>
+<li><p>과연 반복곱이 할상 수렴을 할까요?</p>
+<p>수렴하지 않을수가 있다. -&gt; 들어오는 정점은 있지만 나가는 간선이 없는 spider trap에 의해 일어남</p>
+</li>
+<li><p>과연 수렴을 한다고 해도 이 결과가 합리적인 값일까요?</p>
+<p><img src="assets/images/image-20210223110453360.png" alt="image-20210223110453360"></p>
+</li>
+</ol>
+<p>이 문제점들에 대한 해결책 : 순간이동</p>
+<p>임의 보행관점에서</p>
+<p>(1) 현재 웹페이지에 하이퍼링크가 없다면 임의의 웹페이지로 순간이동을 한다</p>
+<p>(2) 현재 웹페이지에 하이퍼링크가 있다면</p>
+<p>$\alpha$의 확률로 파이퍼 링크중 하나를 균일한 확률로 선택하고 클릭한다</p>
+<p>(1-$\alpha$)의 확률로 임의의 웹페이지로 순간이동 한다</p>
+<p>이로 인해 spider trap이나 dead end에 갇히는 일이 사라졌다. </p>
+<p>순간이동의 도입은 수식이 바뀐다</p>
+<ol>
+<li><p>각 막다른 정점에서 다른모든 정점으로 가는 간선을 추가한 후</p>
+<p><img src="assets/images/image-20210223110837800.png" alt="image-20210223110837800"></p>
+<p>이제는 이 수식을 사용한다.</p>
+</li>
+</ol>
+<h1 id="그래프를-이용한-바이럴-마케팅"><a href="#그래프를-이용한-바이럴-마케팅" class="headerlink" title="그래프를 이용한 바이럴 마케팅"></a>그래프를 이용한 바이럴 마케팅</h1><h2 id="의사결정-기반의-전파"><a href="#의사결정-기반의-전파" class="headerlink" title="의사결정 기반의 전파"></a>의사결정 기반의 전파</h2><p>주변의 의사결정을 고려하여 의사결정을 할때 의사결정 기반의 전파모형을 사용한다</p>
+<p>—&gt; 선형임계치모형 (linear threshold model)</p>
+<p><img src="assets/images/image-20210223120102155.png" alt="image-20210223120102155"></p>
+<h2 id="확률적-전파"><a href="#확률적-전파" class="headerlink" title="확률적 전파"></a>확률적 전파</h2><p>코로나의 전파를 수학적으로 나타낼때는 확률적 모형을 사용해야 한다.</p>
+<p>Independent Cascade model</p>
+<p>바리럴 마케팅이란?</p>
+<p>소비자로 하여금 상품에대한 긍정적인 입소문을 내게 하는 기법</p>
+<p>바이럴 마케팅을 위해서는 소문의 시작점이 중요하다.</p>
+<p>시드 집합이 전파에 많은 영향을 미친다</p>
+<p>그래프. 전파모형, 시드집합의 크기가 주어졋을때 전파의 최대화를 위한 시드집합은 전파최대화 문제이다.</p>
+<p>어려운 문제이다. 그래프에 V개의 정점이 있는경우 시드집합이 k개일때 경우의 수는 vCk 이다</p>
+<p>이론적으로 전파최대화 문제는 풀기가 힘든 문제임이 증명이되어있다.</p>
+<ol>
+<li><p>대표적 휴리스틱으로 정점의 중심성 을 사용합니다.</p>
+<p>즉시드 크기가 k개로 고정이되어있을때 정점의 중심성이 높은수으로 k개 정점을 선택하는 방법이다.</p>
+<p>정점의 중심성으로는 페이지 랭크 점수, 연결 중심성, 근접 중심성, 매개 중심성등이있다. </p>
+</li>
+<li><p>탐욕 알고리즘</p>
+<p>시드 집합의 원소를 한번에 한명씩 선택을 한다.</p>
+<p>정점의 집합 : {1,2,….,V}</p>
+<p>각 집합에 대해 시뮬레이션을 반복하여 평균값을 사용한다. x라는정점이 최초의전파자로 선정이 되어있다. 이런 비교를 통해 뽑힌 집합은 x라고 하자. 이제 x를 포함한 크기가 2이 시드 집합을 찾는다.이를 목표의 크기까지 반복한다.</p>
+<p>최초전파자간의 조합을 고려하지 않는다.   </p>
+<p>탐욕 알고리즘은 항상 최고의 시드 집합을 찾는다는 보장이 없는 근사의 알고리즘이다</p>
+<p>항상 최적의 값이 아니라는 말이다.</p>
+<p>하지만 적어도 어느정도의 시드집합은 찾을 수 있다.</p>
+</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-02-21T15:00:00.000Z" title="2020. 2. 22. 오전 12:00:00">2020-02-22</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:38:31.467Z" title="2021. 4. 22. 오전 2:38:31">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/02/22/2021-02-22-Boostcamp21.1/">Day21) Graph</a></h1><div class="content"><p>그래프란 정점과 간선으로 이루어진 구조</p>
+<p>하나의 간선은 반드시 두개의 정점을 연결한다</p>
+<p>정점 : vertex,node</p>
+<p>간선 : Edge,link</p>
+<p>우리의 사회및 모든 다양한 것들은 구성요소간의 복잡한 살호작용으로 이루어진 복잡계이다</p>
+<p>이것을 표현하는 방식이 바로 그래프이다</p>
+<p>그래프란 복잡계를 간단하게 표현하는 방식이다</p>
+<p>정점 분류문제 (node classification) ex) 어떠한 계정이 어떠걸 리트윗했는지를 간선으로 표현. 사람(node)의 보수성, 진보성을 판별하는 </p>
+<p>랭킹 및 정보검색문제 : 웹이라는 거대한 그래프로부터 어떻게 중요한 웹페이지를 찾아낼까?</p>
+<p>군집분석문제 : 연결관계로 부터 사회적 무리(군집)을 찾아낼 수 있을까?</p>
+<p>정보전파 &amp; 바이럴 마케팅 문제 : 정보라는 것이 어떻게 네트워크를 통해 전파가 될까?</p>
+<p>본강의에서는 위의 문제들을 해결하는 기술들을 배우게될 예정</p>
+<p>1주일이라는 짧은 시간이라 기초를 배우고 직관적인 방법론적인 설명</p>
+<p>간선에 방향이 있는 directed graph vs undirected graph</p>
+<p>협업관계그래프, 페이스북 친구그래프 : undirectied</p>
+<p>인용그래프, 트윈터 팔로우 그래프 : directed</p>
+<p>간선에 가중치가 있는 그래프 : 전화그래프, 유사도 그래프</p>
+<p>간선에 가중치가 없는 그래프 : 페이스북 친구 그래프, 웹그래프</p>
+<p>동종 그래프 vs 이종그래프</p>
+<p>이종그래프는 두종류의 node를 가진다 . 서로다른 정점 사이에만 간선이 연결된다. Ex) 사용자,상품사이의 전자상거래 내역</p>
+<p>동종그래프는 단일종류의 정점을 가진다</p>
+<p>node의 집합 V, edge의 집합 : E, </p>
+<p>G = (V,E)</p>
+<p>N<del>out</del>(1), N<del>in</del>(1)이런거</p>
+<p>그래프의 표현 및 저장</p>
+<p>Networkx를 사용하여 그래프를 표현</p>
+<p>snap.py라는 라이브러리도 많이 사용한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>인접 리스트</p>
+<p>1 : [2.5]</p>
+<p>2 : [1,3,5]</p>
+<p>3: [2]</p>
+<p>5: [1,2]</p>
+<p>인접행렬</p>
+<p>간선이 있으면 1, 없으면 0</p>
+<p>방향성이 없으면 대각으로 대칭</p>
+<p>있으면 다름</p>
+<p>희소행렬을 사용하면 저장공간을 절약할 수 있음 (대부분의 원소가 0일때)</p>
+<h2 id="1-실제그래프-vs-랜덤그래프"><a href="#1-실제그래프-vs-랜덤그래프" class="headerlink" title="1. 실제그래프 vs 랜덤그래프"></a>1. 실제그래프 vs 랜덤그래프</h2><p>실제 그래프란 다양한 복잡계로부터 얻어진 그래프를 의미한다</p>
+<p>본수업에서는 MSN 메신저 그래프를 실제 그래프의 예시로 사용하겠다.</p>
+<p>랜덤그래프란 확률적 과정을 통해 생성된 그래프를 의미한다</p>
+<h3 id="에르되스-레니-랜덤그래프"><a href="#에르되스-레니-랜덤그래프" class="headerlink" title="에르되스-레니 랜덤그래프"></a>에르되스-레니 랜덤그래프</h3><p>임의의 두 node사이의 간선 존재여부가 동일한 확률분포로 나타내어짐</p>
+<p>G(n,p)는 n개의 정점, 두개의 정점 사이에 간선이 존재할 확률 = p</p>
+<h2 id="2-작은-세상-효과"><a href="#2-작은-세상-효과" class="headerlink" title="2. 작은 세상 효과"></a>2. 작은 세상 효과</h2><p>정점 u와 v사이의 경로란</p>
+<p>u에서 시작해서 v에서 끝나야 한다</p>
+<p>순열에서 연속된 정점은 반드시 간선으로 연결되어있어야 한다.</p>
+<p>경로, 거리, 및 지름</p>
+<p>경로는 여러가지지만 이중 가장 짧은 경로의 길이가 거리이다</p>
+<p>그래프에서 지름은 정점간 거리의 최댓값이다.</p>
+<p>작은 세상 효과</p>
+<p>임의의 두사람을 골랐을 때 이들은 몇단계의 지인을 거쳐야 연결되는가?</p>
+<p>위치타에서 보스턴까지 지인을 6단게거치면 가능</p>
+<p>MSN에서도 정점간의 평균거리는7정도밖에 되지 않는다</p>
+<p>단 거대연결구조만을 고려하였다.</p>
+<p>이러한 현상을 작은세상효과라고 한다.</p>
+<p>작은 세상효과는 높은 확률로 랜덤그래프에도 존재한다.</p>
+<p>체인 사이클 격자그래프에는 이 작은세상그래프효과가 존재하지 않는다.</p>
+<h2 id="연결성에-두터운-꼬리분포"><a href="#연결성에-두터운-꼬리분포" class="headerlink" title="연결성에 두터운 꼬리분포"></a>연결성에 두터운 꼬리분포</h2><p>연결성?</p>
+<p>정점의 Degree란 그정점과 연결된 간선의 수 : |N(v)| 라고 표현하기도 함</p>
+<p>랜덤그래프의 연결성 분포는 높은 확률로 정규분포와 유사하다</p>
+<p>실제 그래프는 연결성이 두터워서 hub 정점이 존재할 수있는데</p>
+<p>랜덤그래프에서는 정규분포를 띌 가능성이 높다</p>
+<h2 id="연결요소"><a href="#연결요소" class="headerlink" title="연결요소"></a>연결요소</h2><ol>
+<li>연결요소에 속하는 정점들은 경로로 연결될 수 있습니다.</li>
+<li>1의 조건을 만족하면서 정점을 추가할 수 없다.</li>
+</ol>
+<p>실제그래프에는 대다수의 정점을 포함하는 거대연결요소가 존재한다</p>
+<p>MSN메신저 그래프에는 99,9%의 정점이 하나의 거대연결요소에 포함된다</p>
+<p>정점들의 평균 연결성이 1보다 충분히 큰경우, 랜덤그래프에도 높은 확률로 거대연결 요소가 존재한다.</p>
+<p>군집이란 정점들의 집합</p>
+<p>같은 군집안에서의 정점 사이에는 많은 edge가 존재</p>
+<p>지역적 군집 계수 : 그 정점이 군집을 형성하려는 정도</p>
+<p>C<del>i</del> = 정점 i의 이웃쌍중 간선으로 직접 연결된 것의 비율</p>
+<p>정점i의 지역적 군집계수가 높으면 이웃들이 연결되어있다.-&gt; 정점 i와 이웃들이 군집을 형성한다</p>
+<p>전역 군집 계수</p>
+<p>전체 그래프에서 군집의 형성정도를 측정</p>
+<p>각 정점에서 지역적 군집계수의 평균이다. 단 지역적 군집계수가 정의가 안되면 짤</p>
+<p>세상에는 많은 군집이 존재한다 </p>
+<ol>
+<li><p>homophily : 유사한 정점끼리는</p>
+</li>
+<li><p>공통이웃이 있는경우 공통이웃이 두정점을 매개하는 역할</p>
+</li>
+</ol>
+<p><img src="/assets/images/image-20210222131012470.png" alt="image-20210222131012470"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-02-17T15:00:00.000Z" title="2020. 2. 18. 오전 12:00:00">2020-02-18</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:38:26.463Z" title="2021. 4. 22. 오전 2:38:26">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/02/18/2021-02-18-Boostcamp19.1/">Day16) Transformer</a></h1><div class="content"><h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><br/>
+
+<h2 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h2><p>ex) I go home</p>
+<p>I에 대한 input vector가 hidden state처럼 역할을 하여서</p>
+<p>I와 각각의 단어에 대한 내적을 한후 이에대한 softmax를 구하여 가중평균을 구한다.</p>
+<p>이렇게 encoding vector값을 구하게 되면 결국 자기자신과 내적한 값이 큰값을 가져, 자기 자신에 대한 특성만이 dominant하게 담길것이므로, 이를 해결해주기 위해 다른 architecture를 쓴다</p>
+<p>각 vector들이 3가지의 역할을 하고있는 것이다. 동일한 set의 vector에서 출발했더라도 각혁할에 따라 vector가 서로다른형태로 변환할수있게해주는 linear transformation matrix가 있다.</p>
+<p>한마디로 각각의 input이 서로다른 matrix에 적용이되어 각각이 key, quary,value가 된다는 의미이다.</p>
+<p>I 라는 word가 서로다른 matrix에 따라 quart, key, value값이 만들어지고 쿼리는 1개이고 이 쿼리 벡터와 각각의 key vector와의 내적값을 구하고 결과를 softmax에 통과시켜 가중치를 구한후 , 이값과 value vector를 각각 곱해주어 이들의 가중평균으로 최종적인 vector를 구하다. 결국 이 vector가 feature들이 담긴 encoding vector이다.</p>
+<p><img src="assets/images/image-20210218113022613.png" alt="image-20210218113022613"></p>
+<p>이러하게 행렬연산으로 위의 과정을 한번에 처리할 수 있다.</p>
+<h2 id="Multi-head-Attention"><a href="#Multi-head-Attention" class="headerlink" title="Multi-head Attention"></a>Multi-head Attention</h2><p><img src="assets/images/image-20210218115609302.png" alt="image-20210218115609302"></p>
+<p>쿼리,key,value를 만들때 여러 set의 matrix를 적용하여 여러 attention을 수행한다. 이러한 서로다른 선형변환 matrix를 head라고 부른다. 동일한 sequence에서 특정한 quary에 대해서 여러측면으로 정보를 뽑아야하는 경우가 있다. </p>
+<p><img src="assets/images/image-20210218115717813.png" alt="image-20210218115717813"></p>
+<p><img src="assets/images/image-20210218120149327.png" alt="image-20210218120149327"></p>
+<p>이후 하나의 선형변환 layer를 추가하여 우리가 원하는 shape의 output을 얻어낸다. 왜 이러한 shape으로 변환해야할까? for residual connection</p>
+<p>Residual connection을 사용했다. 이는 CV에서 널리쓰이던 Resnet에서 사용한 residue개념을 활용하여, attention 결과의 encoded vector와 원래 입력 vector를 더한다. 이러한 과정을 통해 gradient vanishing과 학습의 속도를 해결하였다.</p>
+<p>Layer Normalization</p>
+<p>주어진 sample에 대해서 그값들의 평균을 0 분산을 1로 만들어준후 우리가 원하는 평균과 분산을 만들어주는 선형변환으로 이루어져있다.<img src="assets/images/image-20210218122035821.png" alt="image-20210218122035821"></p>
+<p>표준화된 평균과 분산으로 만들어줌. 이후 affine transformation (ex : y = 2x+3)을 수행할 경우 평균은 3 분산은 4가 된다. 여기서의 2와 3은 NN이 optimize해야하는 paramter가 된다. 위의 transformer에도 이런식으로 적용이된다</p>
+<p><img src="assets/images/image-20210218122412734.png" alt="image-20210218122412734"></p>
+<p>affine transformation은 이제 parameter이라 학습하는? 왜성능이 올라갈까?</p>
+<p>Transformer에서의 self attention은 순서의 정보를 담고있지 않기 때문에 추가적인 작업이 필요하다. 이 작업을 transformer은 postition encoding에 sinusodial function을 적용하였다.</p>
+<p>Optimizer은 graident descent가 아닌 Adam을 사용하였다. Learning rate을 고정한 값을 사용하지 않고 학습중에 lr을 변경시켜주었다. </p>
+<h2 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h2><p><SOS>, 나는, 집에, 간다</p>
+<p>Masked Multi-Head Attention의 결과가가 얻어졌다면 이를 다시 multi-head attention에 넣어준다. 그데 이제 quary에만 이게 사용되고 encoding단의 encoded vector가 이제 key와 value값에 들어가게 된다. 이제 target language의 vocab size에 맞는 vector를 생성하는 linear transformation을 걸어준다. 그곳에 soft max를 취해서 다음 word를 찾아낸다. 이제 ground truth와의 softmax loss를 구해서 backpropagation으로 학습해 나간다.</p>
+<p><strong>Masked Self Attention</strong></p>
+<p>전체 sequence에 대한 정보를 허용하게 되면 첫번째 time step에서 SOS만이 주어졌는데 나는이라는 단어를 예측해야 하는데 나는이라는 값과 sos사이의 행렬곱값이 있기 때문에 이상황에는 이를 masking해주어야 한다.</p>
+<p><img src="assets/images/image-20210218135058123.png" alt="image-20210218135058123"></p>
+<p>이렇게 masking해준후 normalize를 해주게 된다. 가중평균의 합이 1이 되도록</p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/page/0/">Previous</a></div><div class="pagination-next"><a href="/page/2/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/">1</a></li><li><a class="pagination-link" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><a class="pagination-link" href="/page/4/">4</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/profile.png" alt="Won Cho"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Won Cho</p><p class="is-size-6 is-block">결정장애 ESFP의 험난한 일지</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">36</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_self" rel="noopener">Home</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Instagram" href="https://www.instagram.com/jo__member/"><i class="fab fa-instagram"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-02T15:00:00.000Z">2021-02-03</time></p><p class="title"><a href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-01T15:00:00.000Z">2021-02-02</time></p><p class="title"><a href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-28T15:00:00.000Z">2021-01-29</time></p><p class="title"><a href="/2021/01/29/2021-01-29-week2/">Week2</a></p><p class="categories"><a href="/categories/Further-Q/">Further_Q</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/boj/"><span class="tag">boj</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/books/"><span class="tag">books</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/math/"><span class="tag">math</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
@@ -54,6 +1170,22 @@
                 }
                 $('.justified-gallery').justifiedGallery();
             }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
             loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
         });</script></body></html>

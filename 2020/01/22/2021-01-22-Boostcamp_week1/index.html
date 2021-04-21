@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Week-1 - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="BOOST camp의 첫주가 끝이 났다 정신없이 지내다 아침에 일어나서 오후까지 컴퓨터만 보다보니 5일이 지나갔다. 앞으로의 주말계획은 논문 1편과 1주일치 내용 복습이다 다음주에 발표인 프로젝트는 어찌될지 모르겠다. 열심히 해보려 했는데 생각보다 쉽지가 않네…. 많은 사람들과 의견을 나누고 토론하는게 참 좋다. week 1 정리 시작 5. Variable"><meta property="og:type" content="blog"><meta property="og:title" content="Week-1"><meta property="og:url" content="https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="BOOST camp의 첫주가 끝이 났다 정신없이 지내다 아침에 일어나서 오후까지 컴퓨터만 보다보니 5일이 지나갔다. 앞으로의 주말계획은 논문 1편과 1주일치 내용 복습이다 다음주에 발표인 프로젝트는 어찌될지 모르겠다. 열심히 해보려 했는데 생각보다 쉽지가 않네…. 많은 사람들과 의견을 나누고 토론하는게 참 좋다. week 1 정리 시작 5. Variable"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210207172325227.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210207182037773.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/assets/images/image-20210208142607134.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210207185134044.png"><meta property="og:image" content="https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/assets/images/image-20210208144442565.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210208181111553.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/image-20210209135435503.png"><meta property="article:published_time" content="2020-01-21T15:00:00.000Z"><meta property="article:modified_time" content="2021-04-21T17:33:52.320Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/assets/images/image-20210207172325227.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/"},"headline":"Week-1","image":["https://jo-member.github.io/assets/images/image-20210207172325227.png","https://jo-member.github.io/assets/images/image-20210207182037773.png","https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/assets/images/image-20210208142607134.png","https://jo-member.github.io/assets/images/image-20210207185134044.png","https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/assets/images/image-20210208144442565.png","https://jo-member.github.io/assets/images/image-20210208181111553.png","https://jo-member.github.io/assets/images/image-20210209135435503.png"],"datePublished":"2020-01-21T15:00:00.000Z","dateModified":"2021-04-21T17:33:52.320Z","author":{"@type":"Person","name":"jo-member"},"description":"BOOST camp의 첫주가 끝이 났다 정신없이 지내다 아침에 일어나서 오후까지 컴퓨터만 보다보니 5일이 지나갔다. 앞으로의 주말계획은 논문 1편과 1주일치 내용 복습이다 다음주에 발표인 프로젝트는 어찌될지 모르겠다. 열심히 해보려 했는데 생각보다 쉽지가 않네…. 많은 사람들과 의견을 나누고 토론하는게 참 좋다. week 1 정리 시작 5. Variable"}</script><link rel="canonical" href="https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-01-21T15:00:00.000Z" title="2020. 1. 22. 오전 12:00:00">2020-01-22</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-21T17:33:52.320Z" title="2021. 4. 22. 오전 2:33:52">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Week-1</h1><div class="content"><p>BOOST camp의 첫주가 끝이 났다</p>
+<p>정신없이 지내다 아침에 일어나서 오후까지 컴퓨터만 보다보니 5일이 지나갔다.</p>
+<p>앞으로의 주말계획은 논문 1편과 1주일치 내용 복습이다</p>
+<p>다음주에 발표인 프로젝트는 어찌될지 모르겠다. 열심히 해보려 했는데 생각보다 쉽지가 않네….</p>
+<p>많은 사람들과 의견을 나누고 토론하는게 참 좋다.</p>
+<p><strong>week 1 정리 시작</strong></p>
+<h1 id="5-Variable"><a href="#5-Variable" class="headerlink" title="5. Variable"></a>5. Variable</h1><p>먼저 5강 Variable에서 새롭게 안 사실들이다</p>
+<p>이 리스트의 복사,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">b = [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line">a = b</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 코드를 했을때 b가 가르키는 메모리 주소를 a 가 가르키는 형태이다</p>
+<p>원래 파이썬에서 이런 처리를 해주었을때 앝은 복사가 일어남을 알고있었다. </p>
+<p>얕은 복사는 학교 객지프 시간에 배워서 개념은 알고있었다. 그때 프린터기기와 원본, 사본의 예시로 교수님께서 설명하셨던 것 같다.</p>
+<p>파이썬에서도 C의 포인터와 비슷한 개념이 있는듯 하다. C에서의 얕은 복사또한 포인터가 같은 메모리를 가르킨다.</p>
+<p>a가 독립적으로 b의 값을 가지게 하기 위해서 깊은복사나 아니면 b[:]이런식으로 해준다</p>
+<h1 id="6-Function-and-Console-I-O"><a href="#6-Function-and-Console-I-O" class="headerlink" title="6. Function and Console I/O"></a>6. Function and Console I/O</h1><p>여기서는 f - string을 얻어가자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;cho&#x27;</span></span><br><span class="line">age = <span class="number">24</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;hello my name is <span class="subst">&#123;name&#125;</span> and I&#x27;m <span class="subst">&#123;age&#125;</span> years old&quot;</span>)</span><br><span class="line"><span class="comment"># hello my name is cho and I&#x27;m 24 years old</span></span><br></pre></td></tr></table></figure>
+
+<p>이걸 잴 많이쓴다고 한다. </p>
+<p>나도 원래는 format을 많이 썼었는데 이참에 f-string을 써봐야 겠다</p>
+<h1 id="8-String-and-advanced-function-concept"><a href="#8-String-and-advanced-function-concept" class="headerlink" title="8. String and advanced function concept"></a>8. String and advanced function concept</h1><p>문자열 함수중에 좀 익숙하지 않은것들</p>
+<ul>
+<li>a.titile()</li>
+<li>a.startswith</li>
+<li>a.endswith</li>
+<li>a.isdigit()</li>
+</ul>
+<p>큰따옴표 선언이후 작은따옴표 사용 or back slash \</p>
+<p>2줄 이상저장법 : ‘’’ 3번사용</p>
+<p>지역변수와 전역변수의 개념을 파이썬에서 알아보았다</p>
+<p>global을 붙히면 함수내부에서 전역변수를 사용가능</p>
+<p><strong>이부분 function type hint는 잘 사용하지 않던거라 잊고있었다. 다시 remind 필요</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">type_hint_example</span>(<span class="params">name:<span class="built_in">str</span></span>)-&gt;<span class="built_in">str</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hello, <span class="subst">&#123;name&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">type_hint_example(<span class="string">&#x27;cho&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>이렇게 사용자가 타입을 알수있도록 (var:파라메터 타입) -&gt;리턴타입을 표시</p>
+<p><strong>그리고 함수의 설명을 위한 docstring</strong></p>
+<p>세개의 따옴표로 docstring 영역표시(함수명 아래)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_binary</span>(<span class="params">a,b</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    여기에 docstring을 작성</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    대충 작성해보면</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Returns the sum of two decimal numbers</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    	</span></span><br><span class="line"><span class="string">    	Parameters:</span></span><br><span class="line"><span class="string">    			a(int) : A decimal integer</span></span><br><span class="line"><span class="string">    			b(int) : Another decimal integer</span></span><br><span class="line"><span class="string">    	Returns :</span></span><br><span class="line"><span class="string">    			binary_sum(str)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    이런느낌으로 parameter과 리턴값들 함수의 역할을 작성해준다</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>이제까지 남들이 보는 코드라고 생각안하고 이런걸 몰랐었다</p>
+<br/>
+
+<br/>
+
+<ul>
+<li>dynamic typing으로 인해 함수의 interface를 알기 힘들기 때문에 아래와 같이 type hint를 줄수 있다</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_function</span>(<span class="params">var_name: var_type</span>) -&gt; return_type:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>사용자에게 명확하게 알려줄 수 있다.</li>
+<li>mypy또는 IDE,linter등을 통해 코드의 발생가능한 오류를 사전에 확인</li>
+<li>시스템의 전체적인 안정성</li>
+</ul>
+<br/>
+
+<p>함수작성 가이드 라인</p>
+<ul>
+<li><p>함수는 가능하지만 짧게 여러개를 만든다</p>
+</li>
+<li><p>함수 이름에 함수의 역할, 의도가 명확히 들어낼 것</p>
+</li>
+<li><p>하나의 함수에는 유사한 역할을 하는 코드만 포함</p>
+</li>
+<li><p>인자로 받은 값 자체를 바꾸진 말고 복사로 처리를 해서 다루어 주자</p>
+<br/></li>
+</ul>
+<p><strong>Coding Convention</strong></p>
+<p>일반적으로 4space를 권장함</p>
+<p>한줄은 79자까지</p>
+<p>연산자는 1칸이상 안 띄움</p>
+<p>주석은 항상 갱신</p>
+<p>코드의 마지막에는 한줄 추가</p>
+<p>소문자 엘 대문자 오 대문자 아이사용금지</p>
+<p>기준 : flack8 모듈로 체크</p>
+<h1 id="9-Data-structure"><a href="#9-Data-structure" class="headerlink" title="9. Data structure"></a>9. Data structure</h1><p>여기서는 namedtuple만 짚고 넘어가자</p>
+<p>named tuple이란 Tuple의 형태로 data의 variable들을 사전에 지정해서 저장한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"></span><br><span class="line"><span class="comment"># Basic example</span></span><br><span class="line">Point = namedtuple(<span class="string">&#x27;Point&#x27;</span>, [<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>])</span><br><span class="line"><span class="comment">#객체의 이름을 적어주고 뒤에 variable의 이름을 적어줌</span></span><br><span class="line">p = Point(<span class="number">11</span>, y=<span class="number">22</span>)</span><br><span class="line"><span class="built_in">print</span>(p[<span class="number">0</span>] + p[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="10-Pythonic-Code"><a href="#10-Pythonic-Code" class="headerlink" title="10. Pythonic Code"></a>10. Pythonic Code</h1><p>이부분 Pythonic Code가 상당히 생소했다</p>
+<p>이부분을 잘 짚고 넘어가야 추후 코드를 볼때 다시 인터넷을 뒤지거나 자료를 찾아보는 일이 없을것 같다</p>
+<p>그리고 이걸 잘하면 간지나고 있어보임</p>
+<p>List comprehension에서 주의해야 할점은</p>
+<ol>
+<li>이차원 리스트</li>
+<li>FIlter</li>
+</ol>
+<p>이차원 리스트를 보면</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">case1 = [<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>]</span><br><span class="line">case2 = [<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;F&#x27;</span>]</span><br><span class="line">result = [i+j <span class="keyword">for</span> i <span class="keyword">in</span> case1 <span class="keyword">for</span> j <span class="keyword">in</span> case2]</span><br><span class="line"><span class="comment"># [&#x27;AD&#x27;,&#x27;AE&#x27;,&#x27;AA&#x27;,&#x27;BD&#x27;,&#x27;BE&#x27;,&#x27;BA&#x27;,&#x27;CD&#x27;,&#x27;CE&#x27;,&#x27;CA&#x27;]</span></span><br><span class="line">result = [[i+j <span class="keyword">for</span> i <span class="keyword">in</span> case1] <span class="keyword">for</span> j <span class="keyword">in</span> case2]</span><br><span class="line"><span class="comment"># [[&#x27;AD&#x27;, &#x27;BD&#x27;, &#x27;CD&#x27;], [&#x27;AE&#x27;, &#x27;BE&#x27;, &#x27;CE&#x27;], [&#x27;AA&#x27;, &#x27;BA&#x27;, &#x27;CA&#x27;]]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>그리고 enumerate와 zip은 정말 많이 쓰이니 다시한번</p>
+<p>index와 요소들을 tuple로 묶어 반환해줌</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;i:j <span class="keyword">for</span> i,j <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="string">&#x27;hello my name is cho&#x27;</span>.split())&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이 코드가 좀 함축적으로 나타내고 있지 편한 기능들을</p>
+<ul>
+<li>zip : 2개이상의 list에서 하나씩 추출해서 tuple 형태로 리턴해줌 </li>
+<li>map 함수는 iterable한 객체 (반복가능한 타입)과 함수를 주어 반환값들을 하나하나 계산해서 묶어줌, 근데 이후에 list든 뭐든 변환이 필요</li>
+</ul>
+<p>또 map함수는 iteration을 생성하기 때문에 generator로</p>
+<p>자 이제 진짜 중요한데 몰랐던거</p>
+<p><strong>iter 과 next함수</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+
+<p> 이런 반복문에서 내부적으로 __iter__과  __next__가 사용된다</p>
+<p>iterable한 객체에 next와 iter함수를 적용시켜 보자</p>
+<p>iter을 사용하면 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cities = [<span class="string">&quot;Seoul&quot;</span>, <span class="string">&quot;Busan&quot;</span>, <span class="string">&quot;Jeju&quot;</span>]</span><br><span class="line">iter_obj= <span class="built_in">iter</span>(cities)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(iter_obj))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(iter_obj))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(iter_obj))</span><br><span class="line"><span class="built_in">next</span>(iter_obj)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Generator</strong></p>
+<p>iterable object의 특수한 형태</p>
+<p>얘가 여기에 저장되어있대, 이것만 알고 호출시에 메모리에 올라감</p>
+<p><strong>yield</strong>를 쓰면 한번에 하나의 element <strong>return</strong> 리턴임 yeild는</p>
+<p>메모리의 주소값만 가지고있다가 yield가 던져줌</p>
+<p><strong>제너레이터를 쓰는경우</strong></p>
+<ul>
+<li>list형태의 데이터를 반환해주는 함수</li>
+<li>데이터의 크기가 매우커서 쓸때, 호출할때만 그걸 메모리에 올려서 사용하는 경우</li>
+</ul>
+<p>아래 코드의 차이를 알아보자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">x = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line">y = (j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> y:</span><br><span class="line">    <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> y:</span><br><span class="line">    <span class="built_in">print</span>(j)</span><br><span class="line">    </span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">보면 list로 만들어준 x는 2번 for문을 실핼했을때 모두 출력이 되었는데</span></span><br><span class="line"><span class="string">generator로 만들어준 y는 첫번째 for 문은 출력이 되는데 두번째 for문은 출력이 안된다</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h2 id="Module-and-Project"><a href="#Module-and-Project" class="headerlink" title="Module and Project"></a>Module and Project</h2><br/>
+
+<p>여기서 좀 생소한데 중요한 개념인 package가 나온다</p>
+<ul>
+<li>하나의 대형 프로젝트를 만드는 코드의 묶음</li>
+<li>다양한 모듈들의 합, 폴더로 연결됨</li>
+<li>__init__, main등 키워드 파일명이 사용됨</li>
+<li>다양한 오픈소스들이 package로 관리가 된다</li>
+</ul>
+<br/>
+
+<p><strong>__init__</strong> </p>
+<p>현재 폴더가 패키지임을 알리는 초기화 스크립트</p>
+<p>없을 경우 패키지로 간주하지 않음</p>
+<p>하위폴더와 py파일을 모두 포함함</p>
+<p>import 와 all을 사용한다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">&#x27;image&#x27;</span>, <span class="string">&#x27;sound&#x27;</span>, <span class="string">&#x27;stage&#x27;</span>]</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> image</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> sound</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> stage</span><br></pre></td></tr></table></figure>
+
+<p>이런느낌으로 현재사용할</p>
+<p><br/><br/></p>
+<p><strong>__main__</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sound <span class="keyword">import</span> echo</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;main&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hello game&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(echo.echo_play())</span><br><span class="line"><span class="comment">#이런 파일로다가 </span></span><br></pre></td></tr></table></figure>
+
+<p>from game.graphic.render impoer render_test()</p>
+<p>from .render import render_test()</p>
+<ul>
+<li> 현재 디렉토리 기준</li>
+</ul>
+<p>from ..sound.echo</p>
+<p>..2개면 상위 디렉토리로 가자</p>
+<p><br/><br/></p>
+<h2 id="File-Exeption-Log-Handling"><a href="#File-Exeption-Log-Handling" class="headerlink" title="File/Exeption/Log Handling"></a>File/Exeption/Log Handling</h2><p><br/><br/></p>
+<ol>
+<li>예상불가능한 예외</li>
+<li>인터프리터 과정에서 발생하는 예외, 개발자 실수</li>
+<li>리스트의 범위를 넘어가는 값 호출, 정수 0으로 나눔</li>
+<li>수행 불가시 인터프리터가 자동 호출</li>
+</ol>
+<p>예상이 불가능 한 예외 발생시 exception handling의 대처가 필요하다</p>
+<br/>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    예외 발생 가능 코드</span><br><span class="line"><span class="keyword">except</span> &lt;Exception <span class="type">Type</span>&gt;:</span><br><span class="line">    예외 발생시 대응되는 코드</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="number">10</span>/i)</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Not divided by 0&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="comment">#일반적으로 전체를 Exception으로 잡는거는 좋지 않다</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="built_in">print</span>(i,<span class="string">&#x27;-----&#x27;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    value = <span class="built_in">input</span></span><br><span class="line">    <span class="keyword">for</span> difit <span class="keyword">in</span> value:</span><br><span class="line">        <span class="keyword">if</span> digit <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">&#x27;0123456789&#x27;</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&#x27;숫자가 아닙니다&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;정수=&#x27;</span>,<span class="built_in">int</span>(value))</span><br><span class="line"><span class="comment"># raise 구문 사용시 무조건 error를 발생시킨다</span></span><br><span class="line"><span class="comment"># assert isinstance(decimal_number, int)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>파이썬에서는 try except구문을 권장한다</p>
+<h3 id="Python-File-I-O"><a href="#Python-File-I-O" class="headerlink" title="Python File I/O"></a>Python File I/O</h3><p>read() txt 파일 안에 있는 내용을 문자열로 반환</p>
+<p>f = open(‘i_have_a_dream.txt’,’r’)</p>
+<p>contents = f.read()</p>
+<p>여기서 f는 주소를 가지고 있는거임</p>
+<p>print(contents)</p>
+<p>f.close()</p>
+<p>파이썬에서 with는 무엇인가를 사용후 반납해야 하는 경우 주로 사용이 된다</p>
+<p>파일을 열고 닫을때 닫는걸 까먹을 수 있으니 파이썬의 with구문과 함께 사용한다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;i_have_a_dream.txt&quot;</span>,<span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> my_file:</span><br><span class="line">    contents = my_file.read()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(contents),contents)</span><br></pre></td></tr></table></figure>
+
+<p>with가 끝날때 자동으로 close해줌</p>
+<p>indentation이 있을때는 with안의 영역이 계속 사용되고 끝나면 자동으로 반납하는 개념</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;i_have_a_dream.txt&quot;</span>,<span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    content_list = f.readlines() <span class="comment">#readlines 함수사용시 한줄씩 읽어옴</span></span><br><span class="line">    <span class="built_in">type</span>(content_list) <span class="comment">#list형태로 순차적으로 가져오기 때문에 list가 출력됨</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;i_have_a_dream.txt&quot;</span>,<span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">        line = f.readline() <span class="comment"># readlines가 아닌 readline을 쓰면 한줄만올림</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> line:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">str</span>(i) + <span class="string">&#x27;===&#x27;</span> + line.replace(<span class="string">&#x27;\n&#x27;</span>,<span class="string">&#x27;&#x27;</span>))</span><br><span class="line">        i+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>data가 너무커서 한번에 메모리에 올릴수 없다면 한줄씩 읽어서 해주고 싶은 작업을 해준다</p>
+<p>encoding = ‘utf8’</p>
+<p>이걸 이렇게 정해주어야지 헙업도 하고 그럼</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;i_have_a_dream.txt&quot;</span>,mode = <span class="string">&#x27;a&#x27;</span>, encoding) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#위와 같이 mode를 a 로 설정하면 쓰기 읽기 다 가능하다 </span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    os.mkdir(<span class="string">&#x27;abc&#x27;</span>) <span class="comment">#현제 디렉토리에 새로운 dir를 만든다</span></span><br><span class="line"><span class="keyword">except</span> FileExistsError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Already created&quot;</span>)</span><br><span class="line">os.path.isfile(file.ipynb)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/assets/images/image-20210207172325227.png" alt="image-20210207172325227"></p>
+<p>위와 같은 예제를 반드시 확인해 보자</p>
+<p>먼저 if not os.path.isdir을 사용하면 현재 dir에 log라는 dir이있는지 확인한다</p>
+<p>그이후 log안에 count_log가 업다면</p>
+<p>생성해주고 닫는다</p>
+<p>with구문 시작시 log를 열어서 그위에 for문을 순회하며 count_log에 문장을 추가한다</p>
+<h3 id="Pickle"><a href="#Pickle" class="headerlink" title="Pickle"></a>Pickle</h3><p>파이썬의 객체를 영속화하는 built in 객체</p>
+<p>객체는 원래 memory에 있어야 한다 이 memory에 있는거를 이 객체를 실행중 정보를 저장하고 이후에 불러올때 사용한다</p>
+<p>객체는 원래 interpreter가 끝날때 같이 사라지기 떄문에 이를 저장할 수 있는 pickle을 사용하는 것이다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;list.pickle&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="comment"># pickle은 binary 파일이라 wb</span></span><br><span class="line">test = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">pickle.dump(test,f)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;list.pickle&quot;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">test_pickle = pickle.load(f)</span><br><span class="line">test_pickle</span><br><span class="line">f.close()</span><br><span class="line"><span class="comment">#이러면 pickle을 불러와서 이전의 test값을 프로그램 종료후에도 읽어올 수 있다</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h3><p>레벨별로 기록을 남길 필요가있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logging.debug(<span class="string">&quot;틀렸자나&quot;</span>) <span class="comment">#debugging</span></span><br><span class="line">logging.info(<span class="string">&quot;확인해&quot;</span>) <span class="comment">#</span></span><br><span class="line">logging.warning(<span class="string">&quot;조심해&quot;</span>)</span><br><span class="line">logging.error(<span class="string">&quot;에러났어&quot;</span>)</span><br><span class="line">logging.critical(<span class="string">&quot;망했다&quot;</span>) <span class="comment">#프로그램이 완전히 의도치않게 종료가 되었을때</span></span><br></pre></td></tr></table></figure>
+
+<p>개발시점,운영시점마다 다른 log가 남을 수 있도록 지원함</p>
+<p>Debug/info/warning/error/critical</p>
+<ol>
+<li>debug : 개발시 기록을 남겨야 하는 로그 정보를 남김</li>
+<li>Info : 처리가 진행되는 동안의 정보를 알림</li>
+<li>warning : 사용자가 잘못 정보를 입력하거나 처리는 가능하나 개발시 의도치 않는 정보가 들어왔을때</li>
+<li>error : 잘못된 처리로 인해 에러가 났으나, 프로그램 동작은 가능 할 때</li>
+<li>critical : 잘못된 처리로 데이터 손실이나 더이상 프로그램이 동작할 수 없음을 알림</li>
+</ol>
+<p>위의 코드를 돌려보면 조심해,에러났어,망했다만 표시가 된다</p>
+<p>그 이유는 logging level이 warning이상으로 setting이 되어있어서 이다</p>
+<p>파이썬의 로깅레벨은 기본적으로 warning부터 이다</p>
+<p><code>logging.basicConfig(level = logging.DEBUG)</code></p>
+<p><code>steam_handler = logging.FileHandler(&#39;my.log&#39;,mode = &#39;w&#39;,encoding = &#39;utf8&#39;)</code></p>
+<p><code>logger.addHandler(steam_handler)</code></p>
+<p>이러한 코드 작성시 1. configparser 실행 설정을 파일에 저장 2. argparser 실행시점에</p>
+<ol>
+<li><p>configparser</p>
+<p>프로그램의 실행 설정을 file에 저장함</p>
+<p>section, key,value값의 형태로 설정된 파일을 사용</p>
+<p>설정파일을 Dict Type으로 호출후 사용</p>
+</li>
+</ol>
+<p><img src="/assets/images/image-20210207182037773.png" alt="image-20210207182037773"></p>
+<p>configparser를 사용하여 불러오고</p>
+<ol start="2">
+<li><p>argparser</p>
+<p>console 창에서 프로그램 실행시 setting정보를 저장함</p>
+<p>comand-Line-Option이라고 많이부름</p>
+<p><img src="assets/images/image-20210208142607134.png" alt="image-20210208142607134"></p>
+<p><img src="/assets/images/image-20210207185134044.png" alt="image-20210207185134044"></p>
+</li>
+</ol>
+<p>보통 cmd 창에서 명령어를 실행할 때 -나 –를 붙혀서 log파일을 실행한다</p>
+<p>ex) ls –help</p>
+<p>help하는 이름으로 실행을 시켜보아라 이런느낌 arg값을 넣어준다</p>
+<p>보통 -한개는 짧을 때, –는 길때</p>
+<p>parser.add_argument사용시 입력을 받아 args에 저장해준다</p>
+<p>그때 지정해준 format인 -a면 a에 저장을 해주고</p>
+<p>-b나 –b_value면 b에 저장해준다</p>
+<p>사용자가 cmd창에서 실험을 할 수 있게 해준다</p>
+<p>epoch값, lr값,momentum값,cuda여부등을 바로 실행시에 지정해줄수 있다.</p>
+<br/>
+
+<br/>
+
+<h2 id="Python-data-handling"><a href="#Python-data-handling" class="headerlink" title="Python data handling"></a>Python data handling</h2><p>이부분에서 xml, json,csv파일들에 대한 개념을 정리하고 간다</p>
+<p>정규식도 꼭 몰랐던 부분이니 짚고 넘어가자</p>
+<br/>
+
+<h3 id="Comma-Separate-Value"><a href="#Comma-Separate-Value" class="headerlink" title="Comma Separate Value"></a>Comma Separate Value</h3><ul>
+<li>엑셀 양식의 데이터를 프로그램에 상관없이 쓰기 위한 데이터 형식이라고 생각하면 쉬움</li>
+<li>TSV,SSV등으로 구분해서 만들기도 함</li>
+</ul>
+<p>notepad로도 열 수 있고, 쉼표로 구분이 되어있다.</p>
+<p><img src="assets/images/image-20210208144442565.png" alt="image-20210208144442565"></p>
+<p>위에서 data_header라는게 있다.</p>
+<p>여기에는 데이터의 필드가 담겨있ㅇ며 데이터 저장시 ,로 분리를 하는 코드이다</p>
+<p>첫번째 data는 무조건 data의 필드이다 ex) data,index이런 느낌으로 카테고리이다</p>
+<p>따라서 첫줄이라면 ,로 나누어서 data_header라는 리스트에 저장해준다</p>
+<p>이후 줄부터는 ,로 나누어서 한줄씩 리스트에 저장해준다</p>
+<br/>
+
+<ul>
+<li><p>text파일 형태로 데이터 처리시 문장내에 들어가있는 “,” 등에 대해 전처리 과정이 필요하다</p>
+</li>
+<li><p>파이썬에서는 간단히 CSV파일을 처리하기 위해 csv객체를 제공함</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line">reader = csv.reader(f, delimiter = <span class="string">&#x27;,&#x27;</span>, quotechar = <span class="string">&#x27;&quot;&#x27;</span>,quoting = csv.QUOTE_ALL)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>delimiter : 글자를 나누는 기준 (default : ‘,’ ) </li>
+<li>lineterminator : 중바꿈기준 (default : \r\n)</li>
+<li>quotechar : 문자열을 둘러싸는 신호 문자 (default : “ )</li>
+<li>quoting : 데이터를 나누는 기준이 quotechar에 의해 둘러싸인 라벨</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line">seoung_nam_data = []</span><br><span class="line">header = []</span><br><span class="line">rownum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;korea_floating_population_data.csv&quot;</span>,<span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;cp949&quot;</span>) <span class="keyword">as</span> p_file:</span><br><span class="line">    csv_data = csv.reader(p_file) <span class="comment">#csv 객체를 이용해서 csv_data 읽기</span></span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> csv_data:	 <span class="comment">#읽어온 데이터를  한 줄씩 처리</span></span><br><span class="line">        <span class="keyword">if</span> rownum == <span class="number">0</span>:</span><br><span class="line">            header = row <span class="comment">#첫 번째 줄은 데이터 필드로 따로 저장</span></span><br><span class="line">        location = row[<span class="number">7</span>]</span><br><span class="line">        <span class="comment">#“행정구역”필드 데이터 추출, 한글 처리로 유니코드 데이터를 cp949로 변환</span></span><br><span class="line">        <span class="keyword">if</span> location.find(<span class="string">u&quot;성남시&quot;</span>) != -<span class="number">1</span>:</span><br><span class="line">            seoung_nam_data.append(row)</span><br><span class="line">        <span class="comment">#”행정구역” 데이터에 성남시가 들어가 있으면 seoung_nam_data List에 추가</span></span><br><span class="line">        rownum +=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;seoung_nam_floating_population_data.csv&quot;</span>,<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf8&quot;</span>) <span class="keyword">as</span> s_p_file:</span><br><span class="line">    writer = csv.writer(s_p_file, delimiter=<span class="string">&#x27;\t&#x27;</span>, quotechar=<span class="string">&quot;&#x27;&quot;</span>, quoting=csv.QUOTE_ALL)</span><br><span class="line">    <span class="comment"># csv.writer를 사용해서 csv 파일 만들기 delimiter 필드 구분자</span></span><br><span class="line">    <span class="comment"># quotechar는 필드 각 데이터는 묶는 문자, quoting는 묶는 범위</span></span><br><span class="line">    writer.writerow(header)		 <span class="comment">#제목 필드 파일에 쓰기</span></span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> seoung_nam_data:</span><br><span class="line">        writer.writerow(row)	 <span class="comment">#seoung_nam_data에 있는 정보 list에 쓰기</span></span><br></pre></td></tr></table></figure>
+
+<p>위는 유동인구 데이터중 성남의 데이터만을 수집하는 코드이다</p>
+<p>window에서 관리되는 코드는 cp949이다</p>
+<p>vscode는 utf8이기 떄문에 encoding을 바꾸어 주어햐 한다</p>
+<p>따라서 읽을 때 cp949로 읽는다고 별도로 지정한다</p>
+<p>encoding은 cp949, </p>
+<p>utf8로 왠만하면 저장하기 왠만하면 작은 ‘ 이걸로 나누고</p>
+<p>보통 csv는 다른도구를 사용하기 때문에 지금은 이거에 집착할 필요가 없다 왠만하면 pandas를 사용하기 때문에</p>
+<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>HTML</p>
+<ul>
+<li><p>제목, 단락, 링크 등 요소 표시를 위해 Tag를 사용</p>
+</li>
+<li><p>모든 요소들은 꺾쇠 괄호 안에 둘러 쌓여있음</p>
+</li>
+<li><p>&lt;title&gt; Hello, World &lt;/title&gt;</p>
+</li>
+<li><p>보통 HTML도 일종의 프로그램이기 떄문에 규칙을 분석하여 데이터의 추출이 가능하다</p>
+</li>
+<li><p>추출된 데이터를 바탕으로 하여 다양한 분석이 가능</p>
+</li>
+</ul>
+<p>string, 정규식 (regex), beautifulSoup</p>
+<h3 id="Refular-expression"><a href="#Refular-expression" class="headerlink" title="Refular expression"></a>Refular expression</h3><ul>
+<li>복잡한 문자열 패턴을 정의하는 문자 표현 공식</li>
+<li>특정한 규칙을 가진 문자열의 집합을 추출</li>
+</ul>
+<p>기본문법</p>
+<p>문자클래스 [ ] : [와] 사이의 문자들과 매치라는 의미</p>
+<p>ex) [abc] : 해당글자가 a,b,c중 하나가 있다</p>
+<p>- : 범위를 지정가능</p>
+<br/>
+
+<p>정규식 표현을 위해 원래의미가 아닌 다른용도로 사용되는 문자들</p>
+<p>. ^ $ * + ? { } [ ] : ( )</p>
+<p>.은 전체를 의미한다</p>
+<p>* 는 앞에있는글자를을 반복해서 나올 수 있음</p>
+<p>+를 하게 되면 앞에 있는 글자를 최소 1회이상 반복</p>
+<p>앞에있는글자를 최소한 1회 이상 반보기냐추배</p>
+<p>{숫자} : 반복횟수를 지정해줄 수 있다</p>
+<p>? : 반복횟수가 1회</p>
+<p>| : or ex) (0|1){3}     0이나 1이 3번 반복 </p>
+<p>정규식 추출 연습</p>
+<ol>
+<li>Expression부분을 수정해가면 Zip로 끝나는 파일명만 추출</li>
+<li>Expression에 (http)(.+)(zip)</li>
+</ol>
+<p>정규식 in python</p>
+<ul>
+<li>re모듈을 import 하여 사용 : import re</li>
+<li>함수 : search - 한개만 찾기, findall - 전체찾기</li>
+<li>추출된 패턴은 tuple로 반환됨</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">url= <span class="string">&quot;https://bit.ly/3rxQFS4&quot;</span></span><br><span class="line">html= urllib.request.urlopen(url)</span><br><span class="line">html_contents= <span class="built_in">str</span>(html.read())</span><br><span class="line">id_results= re.findall(<span class="string">r&quot;([A-Za-z0-9]+\*\*\*)&quot;</span>,html_contents)</span><br><span class="line"><span class="comment">#findall전체찾기, 패턴대로데이터찾기</span></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> id_results:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+
+<p>urllib의 request한의 urlopen함수를 쓰면 해당 주소에 해당하는 cotents를 가져옴</p>
+<p>findall로 해당패턴을 가진 모든 data를 찾아서 tuple의 형태로 list에 담기게됨</p>
+<p>따라서 for loop으로 찍어내면 하나씩 나온다</p>
+<h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><p>tag어ㅣ tag사이에 값이 표시되고 구조적인 정보를 표현할 수 있음</p>
+<p>HTML과 문법이 비슷, 대표적인 데이터 저장방식</p>
+<p>XML은 컴퓨터간의 정보를 주고받기 매우유용한 저장방식으로 쓰임</p>
+<p>정규표현ㅅㄱ으로 Parsing이 가능함</p>
+<p>가장많이 쓰이는 parser인 beautifulsoup</p>
+<p>lxml과 html의 </p>
+<p><img src="/assets/images/image-20210208181111553.png" alt="image-20210208181111553"></p>
+<p> from bs4 import BeautifulSoup </p>
+<p>soup = BeautifulSOup(book_xml,’lxml’)</p>
+<p>soup.find_all(“author”)</p>
+<p>tag를 찾는 함수 find_all</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;US08621662-20140107.XML&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf8&quot;</span>) <span class="keyword">as</span> patent_xml:</span><br><span class="line">    xml = patent_xml.read()  <span class="comment"># File을 String으로 읽어오기</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(xml, <span class="string">&quot;xml&quot;</span>)  <span class="comment"># xml parser 호출</span></span><br><span class="line"></span><br><span class="line">invention_title_tag = soup.find(<span class="string">&quot;invention-title&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(invention_title_tag.get_text())</span><br><span class="line"></span><br><span class="line">publication_reference_tag = soup.find(<span class="string">&quot;publication-reference&quot;</span>)</span><br><span class="line">p_document_id_tag = publication_reference_tag.find(<span class="string">&quot;document-id&quot;</span>)</span><br><span class="line">p_country = p_document_id_tag.find(<span class="string">&quot;country&quot;</span>).get_text()</span><br><span class="line">p_doc_number = p_document_id_tag.find(<span class="string">&quot;doc-number&quot;</span>).get_text()</span><br><span class="line">p_kind = p_document_id_tag.find(<span class="string">&quot;kind&quot;</span>).get_text()</span><br><span class="line">p_date = p_document_id_tag.find(<span class="string">&quot;date&quot;</span>).get_text()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(p_doc_number, p_kind, p_date)</span><br><span class="line"></span><br><span class="line">application_reference_tag = soup.find(<span class="string">&quot;application-reference&quot;</span>)</span><br><span class="line">a_document_id_tag = publication_reference_tag.find(<span class="string">&quot;document-id&quot;</span>)</span><br><span class="line">a_country = p_document_id_tag.find(<span class="string">&quot;country&quot;</span>).get_text()</span><br><span class="line">a_doc_number = p_document_id_tag.find(<span class="string">&quot;doc-number&quot;</span>).get_text()</span><br><span class="line">a_date = p_document_id_tag.find(<span class="string">&quot;date&quot;</span>).get_text()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a_country, a_doc_number, a_date)</span><br></pre></td></tr></table></figure>
+
+<p>이중으로 tag가 쌓여있는 정보는 이중으로 코드도 작성해 주어야 한다</p>
+<p>연습 ipg140107.xml분석</p>
+<p>분할된 특허문서로 부터 특허의 등록번호,등록일자,출원번호등등을 뽑아 CSV파일로 만들어보자</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>파이썬에서 json 모듈을 이용하여손쉽게 파싱 및 저장 가능</p>
+<p>데이터 write와 read는 모두 dict 와 상호호환 가능</p>
+<p>대부분 요즘은 json을 사용한다</p>
+<p><img src="/assets/images/image-20210209135435503.png" alt="image-20210209135435503"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Week-1</p><p><a href="https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/">https://jo-member.github.io/2020/01/22/2021-01-22-Boostcamp_week1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-01-22</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/01/22/2021-01-22-Boostcamp5/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Day5</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/01/21/2021-01-21-Boostcamp4/"><span class="level-item">Day4</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#5-Variable"><span class="level-left"><span class="level-item">1</span><span class="level-item">5. Variable</span></span></a></li><li><a class="level is-mobile" href="#6-Function-and-Console-I-O"><span class="level-left"><span class="level-item">2</span><span class="level-item">6. Function and Console I/O</span></span></a></li><li><a class="level is-mobile" href="#8-String-and-advanced-function-concept"><span class="level-left"><span class="level-item">3</span><span class="level-item">8. String and advanced function concept</span></span></a></li><li><a class="level is-mobile" href="#9-Data-structure"><span class="level-left"><span class="level-item">4</span><span class="level-item">9. Data structure</span></span></a></li><li><a class="level is-mobile" href="#10-Pythonic-Code"><span class="level-left"><span class="level-item">5</span><span class="level-item">10. Pythonic Code</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Module-and-Project"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">Module and Project</span></span></a></li><li><a class="level is-mobile" href="#File-Exeption-Log-Handling"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">File/Exeption/Log Handling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Python-File-I-O"><span class="level-left"><span class="level-item">5.2.1</span><span class="level-item">Python File I/O</span></span></a></li><li><a class="level is-mobile" href="#Pickle"><span class="level-left"><span class="level-item">5.2.2</span><span class="level-item">Pickle</span></span></a></li><li><a class="level is-mobile" href="#Logging"><span class="level-left"><span class="level-item">5.2.3</span><span class="level-item">Logging</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Python-data-handling"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">Python data handling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Comma-Separate-Value"><span class="level-left"><span class="level-item">5.3.1</span><span class="level-item">Comma Separate Value</span></span></a></li><li><a class="level is-mobile" href="#Web"><span class="level-left"><span class="level-item">5.3.2</span><span class="level-item">Web</span></span></a></li><li><a class="level is-mobile" href="#Refular-expression"><span class="level-left"><span class="level-item">5.3.3</span><span class="level-item">Refular expression</span></span></a></li><li><a class="level is-mobile" href="#XML"><span class="level-left"><span class="level-item">5.3.4</span><span class="level-item">XML</span></span></a></li><li><a class="level is-mobile" href="#JSON"><span class="level-left"><span class="level-item">5.3.5</span><span class="level-item">JSON</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-02T15:00:00.000Z">2021-02-03</time></p><p class="title"><a href="/2021/02/03/2021-02-03-Boostcamp13.1/">Day13) CNN1</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-01T15:00:00.000Z">2021-02-02</time></p><p class="title"><a href="/2021/02/02/2021-02-02-Boostcamp12.1/">Day12) Optimization</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-28T15:00:00.000Z">2021-01-29</time></p><p class="title"><a href="/2021/01/29/2021-01-29-week2/">Week2</a></p><p class="categories"><a href="/categories/Further-Q/">Further_Q</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics/">Introduction and Motivation</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-29T15:00:00.000Z">2020-12-30</time></p><p class="title"><a href="/2020/12/30/2020-12-30-ML&amp;Mathmatics2/">Linear Algebra</a></p><p class="categories"><a href="/categories/Mathmatics-for-ML/">Mathmatics_for_ML</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
