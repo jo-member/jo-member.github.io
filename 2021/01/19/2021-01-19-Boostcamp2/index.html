@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Day2 - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="VariableVariable &amp;amp; Memory변수란? 변수 &amp;#x3D; 값  변수는 메모리 주소를 가지고 있고 변수에 들어가는 값은 주소에 해당됨   ex) A &amp;#x3D; 8 : A라는 이름을 가진 메모리주소에 8을 저장해라"><meta property="og:type" content="blog"><meta property="og:title" content="Day2"><meta property="og:url" content="https://jo-member.github.io/2021/01/19/2021-01-19-Boostcamp2/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="VariableVariable &amp;amp; Memory변수란? 변수 &amp;#x3D; 값  변수는 메모리 주소를 가지고 있고 변수에 들어가는 값은 주소에 해당됨   ex) A &amp;#x3D; 8 : A라는 이름을 가진 메모리주소에 8을 저장해라"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/assets/images/5-1.png"><meta property="og:image" content="https://jo-member.github.io/assets/images/5-2.png"><meta property="article:published_time" content="2021-01-18T15:00:00.000Z"><meta property="article:modified_time" content="2021-04-22T04:23:55.361Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="AI, Deep_learning, python, nlp, cv"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/assets/images/5-1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2021/01/19/2021-01-19-Boostcamp2/"},"headline":"Day2","image":["https://jo-member.github.io/assets/images/5-1.png","https://jo-member.github.io/assets/images/5-2.png"],"datePublished":"2021-01-18T15:00:00.000Z","dateModified":"2021-04-22T04:23:55.361Z","author":{"@type":"Person","name":"jo-member"},"description":"VariableVariable &amp; Memory변수란? 변수 &#x3D; 값  변수는 메모리 주소를 가지고 있고 변수에 들어가는 값은 주소에 해당됨   ex) A &#x3D; 8 : A라는 이름을 가진 메모리주소에 8을 저장해라"}</script><link rel="canonical" href="https://jo-member.github.io/2021/01/19/2021-01-19-Boostcamp2/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-01-18T15:00:00.000Z" title="2021. 1. 19. 오전 12:00:00">2021-01-19</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-04-22T04:23:55.361Z" title="2021. 4. 22. 오후 1:23:55">2021-04-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Day2</h1><div class="content"><h1 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h1><h2 id="Variable-amp-Memory"><a href="#Variable-amp-Memory" class="headerlink" title="Variable &amp; Memory"></a>Variable &amp; Memory</h2><h3 id="변수란"><a href="#변수란" class="headerlink" title="변수란?"></a>변수란?</h3><ul>
+<li><p>변수 = 값</p>
+</li>
+<li><p>변수는 메모리 주소를 가지고 있고 변수에 들어가는 값은 주소에 해당됨</p>
+</li>
+</ul>
+<p>ex) A = 8 : A라는 이름을 가진 메모리주소에 8을 저장해라</p>
+<span id="more"></span>
+
+<p>※ 폰노이만 구조</p>
+<p><img src="/assets/images/5-1.png">{: .align-center}</p>
+<hr>
+<h3 id="Dynamic-Typing"><a href="#Dynamic-Typing" class="headerlink" title="Dynamic Typing"></a>Dynamic Typing</h3><p>코드의 실행시점에 타입을 결정 - 컴파일러 언어가 아닌 인터프리터 언어</p>
+<h3 id="연산자와-피연산자"><a href="#연산자와-피연산자" class="headerlink" title="연산자와 피연산자"></a>연산자와 피연산자</h3><p>문자간에도 연산이 가능함 (concatnate)</p>
+<p>데이터 형변환</p>
+<p>float(), int()와 같은 함수로 데이터의 형변환 가능</p>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="인덱싱"><a href="#인덱싱" class="headerlink" title="인덱싱"></a>인덱싱</h3><ul>
+<li>list 에 있는 값들은 주소값을 가짐 -&gt; 주소를 사용하여 값을 호출</li>
+</ul>
+<h3 id="슬라이싱"><a href="#슬라이싱" class="headerlink" title="슬라이싱"></a>슬라이싱</h3><ul>
+<li>[시작 index : 끝 index : 간격]</li>
+</ul>
+<h3 id="리스트의-연산"><a href="#리스트의-연산" class="headerlink" title="리스트의 연산"></a>리스트의 연산</h3><p>두개의 리스트 사이에도 concatnation이 가능</p>
+<ul>
+<li>append : 리스트에 요소 추가</li>
+<li>extend : 새로운 리스트 추가</li>
+<li>insert : index에 요소 추가</li>
+<li>remove : 리스트에 특정 요소 삭제</li>
+<li>del : index를 주고 해당 index요소 삭제</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">b = [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">b = a </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>이때 a,b는 앝은 복사를 하게되어 주소를 공유하게됨</p>
+<p>따라서 값만 복사하고 싶을시 b = a[:]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">a,b,c = t</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="이차원-리스트"><a href="#이차원-리스트" class="headerlink" title="이차원 리스트"></a>이차원 리스트</h3><ul>
+<li><strong>이차원 리스트를 복사하는 법?</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">copy_score = copy.deepcopy(midterm_score)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<h1 id="Function-amp-Console"><a href="#Function-amp-Console" class="headerlink" title="Function &amp; Console"></a>Function &amp; Console</h1><h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><h3 id="함수란"><a href="#함수란" class="headerlink" title="함수란?"></a>함수란?</h3><ul>
+<li>어떤 일을 수행하는 코드의 덩어리</li>
+<li>반복적인 수행을 1회 작성후 지속적인 호출로 대체 가능</li>
+<li>코드를 논리적인 단위로 구분하여 정리해놓을수 있음</li>
+<li><strong>캡슐화</strong> : 코드의 세부적인 내용을 모르고 인터페이스만 알아도 타인의 코드를 사용가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculate_rectangle_area</span>(<span class="params">x,y</span>):</span></span><br><span class="line">    result = x * y</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">rectangle_x = <span class="number">10</span></span><br><span class="line">rectangle_y = <span class="number">20</span>               </span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(calculate_rectangle_area(rectangle_x,rectangle_y))</span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>메인 프로그램 수행</li>
+<li>함수호출</li>
+<li>함수수행 &amp; return</li>
+<li>다시 메인 프로그램 수행</li>
+</ol>
+<p>return 값과 parameter에 대한 개념을 다시 상기</p>
+<h2 id="Console-in-out"><a href="#Console-in-out" class="headerlink" title="Console in/out"></a>Console in/out</h2><p>어떻게 프로그램과 데이터를 주고 받을 것인가??</p>
+<h3 id="Print-Formatting"><a href="#Print-Formatting" class="headerlink" title="Print Formatting"></a>Print Formatting</h3><ol>
+<li>%string</li>
+<li>format 함수</li>
+<li>fstring</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;%s %s&#x27;</span> %(<span class="string">&#x27;one&#x27;</span>,<span class="string">&#x27;two&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#123;&#125; &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="string">&#x27;one&#x27;</span>,<span class="string">&#x27;two&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;%d %d&#x27;</span> %(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#123;&#125; &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="number">1</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>1. %-format</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;product : %s, price : %f&quot;</span> %(<span class="string">&#x27;apple&#x27;</span>,<span class="number">5.243</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<p>%10s : 10칸</p>
+<p>%10.1f : 10칸에 소숫점 1자리까지 출력</p>
+<h1 id="Conditional-amp-Loop"><a href="#Conditional-amp-Loop" class="headerlink" title="Conditional &amp; Loop"></a>Conditional &amp; Loop</h1><h2 id="조건문-반복문-대부분-생략"><a href="#조건문-반복문-대부분-생략" class="headerlink" title="조건문,반복문 - 대부분 생략"></a>조건문,반복문 - 대부분 생략</h2><p><strong>is 연산은 memory의 주소를 비교!!!</strong></p>
+<p>값의 비교인 ==와 주소의 비교인 is는 다른 연산임</p>
+<p>-5부터 256까지는 파이썬안에 정적 memory로 저장되어있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">b = -<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">is</span> b)</span><br></pre></td></tr></table></figure>
+
+<p>결과는 True</p>
+<p>but when </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = -<span class="number">6</span></span><br><span class="line"></span><br><span class="line">b = -<span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">is</span> b)</span><br></pre></td></tr></table></figure>
+
+<p>결과는 False</p>
+<p>all() - 모두 true면 true 아니면 false</p>
+<p>any() - 하나라도 true면 true 아니면 false</p>
+<p><strong>삼항 연산자</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">value = <span class="number">12</span></span><br><span class="line">is_even = <span class="literal">True</span> <span class="keyword">if</span> value%<span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="String-and-advanced-function-concept"><a href="#String-and-advanced-function-concept" class="headerlink" title="String and advanced function concept"></a>String and advanced function concept</h1><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h3 id="string-특징"><a href="#string-특징" class="headerlink" title="string 특징"></a>string 특징</h3><ul>
+<li><p>string은 1byte의 크기로 한글자씩 memory에 할당됨</p>
+</li>
+<li><p>문자열 또한 2진수로 컴퓨터가 규칙에 의해 변환해서 저장</p>
+</li>
+<li><p>문자열은 list와 같은 형태로 data를 처리하기 때문에 slicing, indexing과 같은 특징들을 똑같이 가짐</p>
+</li>
+</ul>
+<h3 id="문자열-함수"><a href="#문자열-함수" class="headerlink" title="문자열 함수"></a>문자열 함수</h3><ul>
+<li>len(a)  : 문자열 길이를 return</li>
+<li>a.upper() : 대문자로 변환</li>
+<li>a.lower() : 소문자로 변환</li>
+<li>a.capitalize() : 첫문자를 대문자로 변환</li>
+<li>a.titile()  : 제목형태로 (첫번째 띄어쓰기, 첫문자 대문자)로 변환</li>
+<li>a.count(‘abc’) : ‘abc’가 들어간 횟수 return</li>
+<li>a.find(‘abc’) : ‘abc’가 들어간 offset return</li>
+<li>a.rfind(‘abc’) : same as find</li>
+<li>a.startswith(‘abc’) : ‘abc’로 시작하는지 여부 return</li>
+<li>a.endswith(‘abc’) : ‘abc’로 끝나는지 여부 return</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;It\&#x27;s OK&quot;</span>)</span><br><span class="line">a = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">Happy new year</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="/assets/images/5-2.png">{: .align-center}</p>
+<h2 id="Function-2"><a href="#Function-2" class="headerlink" title="Function 2"></a>Function 2</h2><h3 id="Call-by-object-reference"><a href="#Call-by-object-reference" class="headerlink" title="Call by object reference"></a>Call by object reference</h3><ul>
+<li><p>Call by value </p>
+<p>함수의 인자를 넘길때 값을 넘김</p>
+<p>함수 내부에서 인자값 변경시 호출자에 영향을 안줌</p>
+</li>
+<li><p>Call by reference</p>
+<p>like C에서의 pointer 사용</p>
+<p>swap구현할때 call by value가 아닌 call by refernce로</p>
+</li>
+<li><p>Call by object reference</p>
+</li>
+</ul>
+<p><strong>파이썬은 객체의 주소가 함수로 전달되는 방식</strong></p>
+<p>이건 좀 특이한 경우</p>
+<p>함수에 객체가 넘어갔을때 주소가 넘어가고 그 함수 안에서 새로운 객체 생성또한 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span>(<span class="params">eggs</span>):</span></span><br><span class="line">    eggs.append(<span class="number">1</span>)<span class="comment"># 기존객체의주소값에[1] 추가</span></span><br><span class="line">    eggs =[<span class="number">2</span>,<span class="number">3</span>]<span class="comment"># 새로운객체생성</span></span><br><span class="line">    ham =[<span class="number">0</span>]</span><br><span class="line">    spam(ham)</span><br><span class="line">    <span class="built_in">print</span>(ham)<span class="comment"># [0, 1]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Scoping-Rule"><a href="#Scoping-Rule" class="headerlink" title="Scoping Rule"></a>Scoping Rule</h3><ul>
+<li>변수가 사용되는 범위</li>
+<li>지역변수 (local variable)</li>
+<li>전역변수 (global variable)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">t</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line">    t =<span class="number">20</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;In Function :&quot;</span>,t)</span><br><span class="line"></span><br><span class="line">x =<span class="number">10</span></span><br><span class="line">test(x)</span><br><span class="line"><span class="built_in">print</span>(t)</span><br><span class="line"><span class="comment"># t는 함수안에서 사용하는 지역변수이기 때문에 함수 밖에서는 사용불가</span></span><br></pre></td></tr></table></figure>
+
+<p>함수 내부에서 전역변수 사용시</p>
+<p>global 키워드를 사용하면 함수내부에서도 global variable 수정, 접근 가능</p>
+<h3 id="Recursive-Function"><a href="#Recursive-Function" class="headerlink" title="Recursive Function"></a>Recursive Function</h3><ul>
+<li>자기자신을 호출하는 함수</li>
+<li>피보나치 수열같은 점화식을 표현할때 사용한다.</li>
+<li>재귀함수는 종료조건이 있어 종료조건 전까지 반복 수행</li>
+</ul>
+<h3 id="Function-Type-Hint"><a href="#Function-Type-Hint" class="headerlink" title="Function Type Hint"></a>Function Type Hint</h3><ul>
+<li>파이썬의 가장 큰 특징 : dynamic typing</li>
+</ul>
+<p>-&gt; 처음 사용하는 사용자가 interface를 알기힘든 단점이 존재한다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">type_hint_example</span>(<span class="params">name:<span class="built_in">str</span></span>)-&gt;<span class="built_in">str</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hello, <span class="subst">&#123;name&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Docstring"><a href="#Docstring" class="headerlink" title="Docstring"></a>Docstring</h3><p>파이썬 함수에 대한 상세 정보를 기입</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">a,b</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    여기에 상세 정보를 기입</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>vscode에서 python docstring generator를 깔면 쉽고 명확하게 docstring 작성 가능</p>
+<h3 id="Coding-Convention"><a href="#Coding-Convention" class="headerlink" title="Coding Convention"></a>Coding Convention</h3><p>명확한 규칙은 없지만</p>
+<p>팀마다 코드를 잘 이해하기 위해서 서로서로 가독성이 좋게 작성해야한다</p>
+<p>들여쓰기는 4space 나 tap중 1개로 통합하여 사용하자</p>
+<p>또한 1줄은 79자를 넘어가면 안된다</p>
+<p>불필요한 공백은 피하자</p>
+<p>연산자는 1칸씩만 띄우자</p>
+<p>소문자 l, 대문자 O, 대문자 I 금지</p>
+<p>flack8이라는 모듈로 체크 가능</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Day2</p><p><a href="https://jo-member.github.io/2021/01/19/2021-01-19-Boostcamp2/">https://jo-member.github.io/2021/01/19/2021-01-19-Boostcamp2/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-01-19</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/01/20/2021-01-20-Boostcamp3/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Day3</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/18/2021-01-18-Boostcamp1/"><span class="level-item">Day1</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Variable"><span class="level-left"><span class="level-item">1</span><span class="level-item">Variable</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Variable-amp-Memory"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Variable &amp; Memory</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#변수란"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">변수란?</span></span></a></li><li><a class="level is-mobile" href="#Dynamic-Typing"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">Dynamic Typing</span></span></a></li><li><a class="level is-mobile" href="#연산자와-피연산자"><span class="level-left"><span class="level-item">1.1.3</span><span class="level-item">연산자와 피연산자</span></span></a></li></ul></li><li><a class="level is-mobile" href="#List"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">List</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#인덱싱"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">인덱싱</span></span></a></li><li><a class="level is-mobile" href="#슬라이싱"><span class="level-left"><span class="level-item">1.2.2</span><span class="level-item">슬라이싱</span></span></a></li><li><a class="level is-mobile" href="#리스트의-연산"><span class="level-left"><span class="level-item">1.2.3</span><span class="level-item">리스트의 연산</span></span></a></li><li><a class="level is-mobile" href="#이차원-리스트"><span class="level-left"><span class="level-item">1.2.4</span><span class="level-item">이차원 리스트</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Function-amp-Console"><span class="level-left"><span class="level-item">2</span><span class="level-item">Function &amp; Console</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Function"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Function</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#함수란"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">함수란?</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Console-in-out"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Console in/out</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Print-Formatting"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">Print Formatting</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Conditional-amp-Loop"><span class="level-left"><span class="level-item">3</span><span class="level-item">Conditional &amp; Loop</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#조건문-반복문-대부분-생략"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">조건문,반복문 - 대부분 생략</span></span></a></li></ul></li><li><a class="level is-mobile" href="#String-and-advanced-function-concept"><span class="level-left"><span class="level-item">4</span><span class="level-item">String and advanced function concept</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#String"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">String</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#string-특징"><span class="level-left"><span class="level-item">4.1.1</span><span class="level-item">string 특징</span></span></a></li><li><a class="level is-mobile" href="#문자열-함수"><span class="level-left"><span class="level-item">4.1.2</span><span class="level-item">문자열 함수</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Function-2"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">Function 2</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Call-by-object-reference"><span class="level-left"><span class="level-item">4.2.1</span><span class="level-item">Call by object reference</span></span></a></li><li><a class="level is-mobile" href="#Scoping-Rule"><span class="level-left"><span class="level-item">4.2.2</span><span class="level-item">Scoping Rule</span></span></a></li><li><a class="level is-mobile" href="#Recursive-Function"><span class="level-left"><span class="level-item">4.2.3</span><span class="level-item">Recursive Function</span></span></a></li><li><a class="level is-mobile" href="#Function-Type-Hint"><span class="level-left"><span class="level-item">4.2.4</span><span class="level-item">Function Type Hint</span></span></a></li><li><a class="level is-mobile" href="#Docstring"><span class="level-left"><span class="level-item">4.2.5</span><span class="level-item">Docstring</span></span></a></li><li><a class="level is-mobile" href="#Coding-Convention"><span class="level-left"><span class="level-item">4.2.6</span><span class="level-item">Coding Convention</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/Further-Q/"><span class="level-start"><span class="level-item">Further_Q</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-07T15:00:00.000Z">2021-03-08</time></p><p class="title"><a href="/2021/03/08/2021-03-08-Boostcamp31.1%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/">Day31) Image Classification</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-22T15:00:00.000Z">2021-02-23</time></p><p class="title"><a href="/2021/02/23/2021-02-23-Boostcamp22/">Day22) Graph2</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-21T15:00:00.000Z">2021-02-22</time></p><p class="title"><a href="/2021/02/22/2021-02-22-Boostcamp21.1/">Day21) Graph</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-17T15:00:00.000Z">2021-02-18</time></p><p class="title"><a href="/2021/02/18/2021-02-18-Boostcamp19.1/">Day16) Transformer</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-16T15:00:00.000Z">2021-02-17</time></p><p class="title"><a href="/2021/02/17/2021-02-15-Boostcamp18.1/">Day18) Sequence to sequence with Attention</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
