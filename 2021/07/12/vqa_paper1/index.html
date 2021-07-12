@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>VQA: Visual Question Answering vs Competition Baseline - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="VQA task의 시초격인 논문이다. VQA challenge의 전반적인 개요와 dataset, Base model등을 다루고 있다."><meta property="og:type" content="blog"><meta property="og:title" content="VQA: Visual Question Answering vs Competition Baseline"><meta property="og:url" content="https://jo-member.github.io/2021/07/12/vqa_paper1/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="VQA task의 시초격인 논문이다. VQA challenge의 전반적인 개요와 dataset, Base model등을 다루고 있다."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/2021/07/12/images/image-20210712145742160.png"><meta property="og:image" content="https://jo-member.github.io/2021/07/12/images/image-20210712150251708.png"><meta property="og:image" content="https://jo-member.github.io/2021/07/12/images/image-20210712153623216.png"><meta property="og:image" content="https://jo-member.github.io/2021/07/12/images/image-20210712160208777.png"><meta property="og:image" content="https://jo-member.github.io/2021/07/12/images/image-20210712161607350.png"><meta property="og:image" content="https://jo-member.github.io/2021/07/12/images/image-20210712163712232.png"><meta property="article:published_time" content="2021-07-12T05:42:40.000Z"><meta property="article:modified_time" content="2021-07-12T07:54:58.380Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="Vision"><meta property="article:tag" content="NLP"><meta property="article:tag" content="Multimodal"><meta property="article:tag" content="VQA"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="../images/image-20210712145742160.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2021/07/12/vqa_paper1/"},"headline":"VQA: Visual Question Answering vs Competition Baseline","image":["https://jo-member.github.io/2021/07/12/images/image-20210712145742160.png","https://jo-member.github.io/2021/07/12/images/image-20210712150251708.png","https://jo-member.github.io/2021/07/12/images/image-20210712153623216.png","https://jo-member.github.io/2021/07/12/images/image-20210712160208777.png","https://jo-member.github.io/2021/07/12/images/image-20210712161607350.png","https://jo-member.github.io/2021/07/12/images/image-20210712163712232.png"],"datePublished":"2021-07-12T05:42:40.000Z","dateModified":"2021-07-12T07:54:58.380Z","author":{"@type":"Person","name":"jo-member"},"description":"VQA task의 시초격인 논문이다. VQA challenge의 전반적인 개요와 dataset, Base model등을 다루고 있다."}</script><link rel="canonical" href="https://jo-member.github.io/2021/07/12/vqa_paper1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-07-12T05:42:40.000Z" title="2021. 7. 12. 오후 2:42:40">2021-07-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-07-12T07:54:58.380Z" title="2021. 7. 12. 오후 4:54:58">2021-07-12</time></span><span class="level-item"><a class="link-muted" href="/categories/Paper-Review/">Paper Review</a></span></div></div><h1 class="title is-3 is-size-4-mobile">VQA: Visual Question Answering vs Competition Baseline</h1><div class="content"><p>VQA task의 시초격인 논문이다.</p>
+<p>VQA challenge의 전반적인 개요와 dataset, Base model등을 다루고 있다.</p>
+<span id="more"></span>
+
+<p><img src="../images/image-20210712145742160.png" alt="image-20210712145742160"></p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><ul>
+<li>VQA란 Vision, NLP, knowledge representation을 모두 접목시킨 multi-discipline task이다</li>
+<li><img src="../images/image-20210712150251708.png" alt="image-20210712150251708" style="zoom:50%;" /></li>
+<li>위와 같이 어떠한 image가 주어지고, image가 없으면 맞추기 힘든 질문들로 구성되어있다. </li>
+<li>Answer의 유형에 따라 open-ended questions 과 multiple-choice task로 나누어 진다.</li>
+<li>Open-ended question은 answer가 다양해 질 수 있지만, multiple-choice task의 경우에는 미리 정해진 answer list중 하나가 답안이여야 한다.</li>
+<li>이 논문에서는 두가지의 answer유형  전부 다루고 있다. (우리의 VQA task는 multiple-choice task 만을 다루고 있기 때문에 open-ended 는생략)</li>
+</ul>
+<h2 id="2-Dataset"><a href="#2-Dataset" class="headerlink" title="2. Dataset"></a>2. Dataset</h2><h3 id="Image-data"><a href="#Image-data" class="headerlink" title="Image data"></a>Image data</h3><ol>
+<li><p>MS COCO dataset</p>
+<ul>
+<li>Object Detection과 image captioning에서 사용되는 dataset</li>
+<li>containing multiple objects and rich contextual information</li>
+<li>123,287 training and validation images and 81,434 test images</li>
+</ul>
+</li>
+<li><p>Abstract Scene dataset</p>
+<ul>
+<li>The dataset contains 20 “paperdoll” human models [2] spanning genders, races, and ages with 8 different expressions.</li>
+<li>Paperdoll로 real한 상황을 표현함</li>
+<li>we create a new abstract scenes dataset containing 50K scenes</li>
+</ul>
+</li>
+</ol>
+<h3 id="Question-data"><a href="#Question-data" class="headerlink" title="Question data"></a>Question data</h3><p>간단한 question이 아닌 복잡하고 어려운 question을 만들어내기 위해 </p>
+<blockquote>
+<p>“We have built a smart robot. It understands a lot about images. It can recognize and name all the objects, it knows where the objects are, it can recognize the scene (e.g., kitchen, beach), people’s expressions and poses, and properties of objects (e.g., color of objects, their texture). Your task is to stump this smart robot! Ask a question about this scene that this smart robot probably can not answer, but any human can easily answer while looking at the scene in the image.”</p>
+</blockquote>
+<p>이러한 요청을 주어 question을 만들어 내도록 하였다.</p>
+<h3 id="Answer-data"><a href="#Answer-data" class="headerlink" title="Answer data"></a>Answer data</h3><p>18개의 선택지를 구성</p>
+<ul>
+<li><strong>Correct</strong> : The most common (out of ten) correct answer</li>
+<li><strong>Plausible</strong> : To generate incorrect, but still plausible answers we ask three subjects to answer the questions without seeing the image</li>
+<li><strong>Popular</strong> : These are the 10 most popular answers. For instance, these are “yes”, “no”, “2”, “1”, “white”, “3”, “red”, “blue”, “4”, “green” for real images</li>
+<li><strong>Random</strong> : Correct answers from random questions in the dataset</li>
+</ul>
+<h2 id="3-Model"><a href="#3-Model" class="headerlink" title="3. Model"></a>3. Model</h2><p><img src="../images/image-20210712153623216.png" alt="image-20210712153623216"></p>
+<p><img src="../images/image-20210712160208777.png" alt="image-20210712160208777"></p>
+<p>VQA를 위한 Base model과 Competition에서 제공해준 Baseline의 구조도이다.</p>
+<ol>
+<li><p>Image channel</p>
+<ul>
+<li>Image로 부터 embedding vector를 뽑아내는 역할을 한다.<br>Pretrained된 VGGNet을 사용하였으면 기존 VGGNet의 마지막 Fully-Connected MLP의 layer에서 4096 dim으로 뽑아내었다.</li>
+</ul>
+<ul>
+<li>인공지능 경진대회측에서 제공한 baseline에서는 pretrained된 Resnet-50을 사용하여 마지막 Fully-Connected MLP의 layer에서 768 dim으로 뽑아내고 있다. 이후 논문과 다르게 별도의 Fully-Connected layer를 통과시켜주지 않는다. 애초에 question channel과 dimension을 맞추어주었다. 마지막 target dimension은 83으로 train data의 label 개수이다.</li>
+</ul>
+</li>
+<li><p>Question channel</p>
+<ul>
+<li>Question으로 부터 embedding vector를 뽑아내는 역할을 한다.<br>Each question word is encoded with 300-dim embedding by a fully-connected layer + tanh non-linearity which is then fed to the LSTM. Cell state, hidden state dim = 512<br>Concate last cell state and last hidden state representations 을 하여 1024의 차원을 만들어주었다.</li>
+<li>인공지능 경진대회측에서 제공한 baseline에서는 huggingface를 사용하여 pretrained된 RoBERTa-base model을 통해 embedding vector를 뽑아 내었다.  뽑아낸 embedding vector의 dim이 768이라 Image channel의 last dimension또한 768로 맞춰준것이다. </li>
+</ul>
+</li>
+<li><p>Multi-Layer Perceptron</p>
+<ul>
+<li><p>이부분은 둘의 구조가 동일하다. 각 channel에서 나온 embedding vector들을 element wise multiplication해준다.</p>
+</li>
+<li><p>이후 layer을 추가해주어 차원을 늘려준뒤, 마지막 layer에서 target label의 개수만큼의 dimension을 뽑아낸다.</p>
+</li>
+<li><p>이부분에서 궁금했던점은 각 channel의 embedding vector를 합치는 방법에 따른 성능의 차이였다.</p>
+<ol>
+<li>Concat</li>
+<li>Element-wise Multiplication</li>
+<li>Element-wise Add</li>
+</ol>
+<p>이와 관련된 논문을 찾아보았다.</p>
+<p>Component Analysis for Visual Question Answering Architectures 이라는 논문에서 각 fusion 방식에 따른 성능을 실험해보았다.</p>
+<img src="../images/image-20210712161607350.png" alt="image-20210712161607350" style="zoom:50%;" />
+
+<p>위 논문의 결과에 따라 3가지 fusion 방식중 Multiplication 방식을 계속해서 고수했다.</p>
+<p>또한 위논문에서는 BERT를 사용하여 question문장을 embedding만 하고 GRU를 사용하여 최종 vector를 뽑아내고 있다. 이러한 방식도 시도해 볼만 할것 같다.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-Result"><a href="#4-Result" class="headerlink" title="4. Result"></a>4. Result</h2><img src="../images/image-20210712163712232.png" alt="image-20210712163712232" style="zoom:50%;" />
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>VQA: Visual Question Answering vs Competition Baseline</p><p><a href="https://jo-member.github.io/2021/07/12/vqa_paper1/">https://jo-member.github.io/2021/07/12/vqa_paper1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Vision/">Vision</a><a class="link-muted mr-2" rel="tag" href="/tags/NLP/">NLP</a><a class="link-muted mr-2" rel="tag" href="/tags/Multimodal/">Multimodal</a><a class="link-muted mr-2" rel="tag" href="/tags/VQA/">VQA</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/07/12/VQA/"><span class="level-item">VQA (Visual Question Answering)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://jo-member.github.io/2021/07/12/vqa_paper1/';
+            this.page.identifier = '2021/07/12/vqa_paper1/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'jo-member' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#1-Introduction"><span class="level-left"><span class="level-item">1</span><span class="level-item">1. Introduction</span></span></a></li><li><a class="level is-mobile" href="#2-Dataset"><span class="level-left"><span class="level-item">2</span><span class="level-item">2. Dataset</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Image-data"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Image data</span></span></a></li><li><a class="level is-mobile" href="#Question-data"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Question data</span></span></a></li><li><a class="level is-mobile" href="#Answer-data"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Answer data</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-Model"><span class="level-left"><span class="level-item">3</span><span class="level-item">3. Model</span></span></a></li><li><a class="level is-mobile" href="#4-Result"><span class="level-left"><span class="level-item">4</span><span class="level-item">4. Result</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">26</span></span></a></li><li><a class="level is-mobile" href="/categories/Competition/"><span class="level-start"><span class="level-item">Competition</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Paper-Review/"><span class="level-start"><span class="level-item">Paper Review</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-12T05:42:40.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/vqa_paper1/">VQA: Visual Question Answering vs Competition Baseline</a></p><p class="categories"><a href="/categories/Paper-Review/">Paper Review</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-12T03:09:10.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/VQA/">VQA (Visual Question Answering)</a></p><p class="categories"><a href="/categories/Competition/">Competition</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T11:52:06.000Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/Pstage3-Image-Segmentation-Detection/">Pstage3_Image_Segmentation_Detection</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-22T06:29:38.000Z">2021-04-22</time></p><p class="title"><a href="/2021/04/22/Pstage2-KLUE/">Pstage2_KLUE</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-07T15:00:00.000Z">2021-03-08</time></p><p class="title"><a href="/2021/03/08/2021-03-08-Boostcamp31.1/">Image Classification</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
