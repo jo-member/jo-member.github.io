@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Pstage4_수식인식 - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Pstage4_수식인식기술스택: AWS, Git, OpenCV, Pytorch, Streamlit, wandb발표시간: 15:00 - 15:20발표트랙: TRACK 4캠퍼 ID: T1076, T1104, T1116, T1200, T1220, T1224캠퍼 이름: 원 조, 광원 송, 찬엽 신, jaesub huh, Geumji Tak프로젝트(대회): OCR"><meta property="og:type" content="blog"><meta property="og:title" content="Pstage4_수식인식"><meta property="og:url" content="https://jo-member.github.io/2021/04/22/[OCR-04]%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="Pstage4_수식인식기술스택: AWS, Git, OpenCV, Pytorch, Streamlit, wandb발표시간: 15:00 - 15:20발표트랙: TRACK 4캠퍼 ID: T1076, T1104, T1116, T1200, T1220, T1224캠퍼 이름: 원 조, 광원 송, 찬엽 신, jaesub huh, Geumji Tak프로젝트(대회): OCR"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%206.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%207.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%208.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%209.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2010.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2011.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2012.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2013.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2014.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2015.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2016.png"><meta property="og:image" content="https://jo-member.github.io/images/_2021-06-16__10.07.43.png"><meta property="og:image" content="https://jo-member.github.io/images/_2021-06-16__10.14.13.png"><meta property="og:image" content="https://jo-member.github.io/images/Untitled%2017.png"><meta property="og:image" content="https://jo-member.github.io/images/_2021-06-16__10.31.11.png"><meta property="og:image" content="https://jo-member.github.io/images/%5BOCR-04%5D%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669.png"><meta property="og:image" content="https://jo-member.github.io/images/1234.png"><meta property="og:image" content="https://jo-member.github.io/images/1_u9U3YjxT9c9A1FIaDMonHw.png"><meta property="article:published_time" content="2021-04-22T06:29:38.000Z"><meta property="article:modified_time" content="2021-07-12T10:21:09.909Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="nlp"><meta property="article:tag" content="Vision"><meta property="article:tag" content="OCR"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/Untitled%206.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2021/04/22/[OCR-04]%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669/"},"headline":"Pstage4_수식인식","image":["https://jo-member.github.io/images/Untitled%206.png","https://jo-member.github.io/images/Untitled%207.png","https://jo-member.github.io/images/Untitled%208.png","https://jo-member.github.io/images/Untitled%209.png","https://jo-member.github.io/images/Untitled%2010.png","https://jo-member.github.io/images/Untitled%2011.png","https://jo-member.github.io/images/Untitled%2012.png","https://jo-member.github.io/images/Untitled%2013.png","https://jo-member.github.io/images/Untitled%2014.png","https://jo-member.github.io/images/Untitled%2015.png","https://jo-member.github.io/images/Untitled%2016.png","https://jo-member.github.io/images/_2021-06-16__10.07.43.png","https://jo-member.github.io/images/_2021-06-16__10.14.13.png","https://jo-member.github.io/images/Untitled%2017.png","https://jo-member.github.io/images/_2021-06-16__10.31.11.png","https://jo-member.github.io/images/%5BOCR-04%5D%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669.png","https://jo-member.github.io/images/1234.png","https://jo-member.github.io/images/1_u9U3YjxT9c9A1FIaDMonHw.png"],"datePublished":"2021-04-22T06:29:38.000Z","dateModified":"2021-07-12T10:21:09.909Z","author":{"@type":"Person","name":"jo-member"},"description":"Pstage4_수식인식기술스택: AWS, Git, OpenCV, Pytorch, Streamlit, wandb발표시간: 15:00 - 15:20발표트랙: TRACK 4캠퍼 ID: T1076, T1104, T1116, T1200, T1220, T1224캠퍼 이름: 원 조, 광원 송, 찬엽 신, jaesub huh, Geumji Tak프로젝트(대회): OCR"}</script><link rel="canonical" href="https://jo-member.github.io/2021/04/22/[OCR-04]%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/rss2.xml" title="Jo Member" type="application/rss+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time datetime="2021-04-22T06:29:38.000Z" title="2021. 4. 22. 오후 3:29:38">2021-04-22</time></span><span class="level-item">Updated&nbsp;<time datetime="2021-07-12T10:21:09.909Z" title="2021. 7. 12. 오후 7:21:09">2021-07-12</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Pstage4_수식인식</h1><div class="content"><h1 id="Pstage4-수식인식"><a href="#Pstage4-수식인식" class="headerlink" title="Pstage4_수식인식"></a>Pstage4_수식인식</h1><p>기술스택: AWS, Git, OpenCV, Pytorch, Streamlit, wandb<br>발표시간: 15:00 - 15:20<br>발표트랙: TRACK 4<br>캠퍼 ID: T1076, T1104, T1116, T1200, T1220, T1224<br>캠퍼 이름: 원 조, 광원 송, 찬엽 신, jaesub huh, Geumji Tak<br>프로젝트(대회): OCR</p>
+<h3 id="Github-Repository"><a href="#Github-Repository" class="headerlink" title="Github Repository"></a>Github Repository</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/bcaitech1/p4-ocr-hansarang"></a></p>
+<p><strong>팀 소개</strong></p>
+<h2 id="🎸-조원"><a href="#🎸-조원" class="headerlink" title="🎸 조원                                                                                                           "></a>🎸 조원                                                                                                           <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jo-member"><git></git></a></h2><ul>
+<li><p>SATRN (Locality Feedforward, Shallow CNN) 구현</p>
+</li>
+<li><p>Augmentation (Resize &amp; Noramlization&amp; pixel 평균에 따른 이진화…) 제안 &amp; 실험</p>
+</li>
+<li><p>Ensemble (soft voting) 구현 &amp; 실험</p>
+</li>
+<li><p>teacherforcing ratio scheduling 실험</p>
+</li>
+<li><p>Beam search 구현</p>
+</li>
+<li><p>부족한 token에 대한추가 Data 생성</p>
+</li>
+<li><p><a target="_blank" rel="external nofollow noopener noreferrer" href="http://boostcamp.stages.ai/competitions/43/discussion/post/363">BERT를 사용한 misspelled된 수식 잡아내기 제안</a></p>
+</li>
+<li><p>CSTR 논문 reading &amp; 공유</p>
+</li>
+</ul>
+<p><strong>협업</strong></p>
+<ul>
+<li><em><strong>Git의 Discussion, Pull &amp; Request, Wiki를 활용하여 토론, 자료, 결과공유</strong></em></li>
+<li><em><strong>Wandb를 사용하여 실험공유</strong></em></li>
+</ul>
+<p><strong>수식인식 Competition Overall</strong></p>
+<ul>
+<li><p><em><strong>상세개요</strong></em></p>
+<p>  수식 이미지를 latex 포맷의 텍스트로 변환하는 문제입니다. 수식은 여러 자연과학 분야에서 어려운 개념들은 간단하고 간결하게 표현하는 방법으로서 널리 사용되어 왔습니다. Latex 또한 여러 과학 분야에서 사용되는 논문 및 기술 문서 작성 포맷으로서 현재까지도 널리 사용되고 있습니다.</p>
+<p>  <img src="/images/Untitled%206.png"></p>
+<p>  일반적인 OCR과 달리 분수, 시그마, 극한과 같은 표현을 인식하기 위해 multi line recognition을 특징으로 가집니다.</p>
+</li>
+<li><p><em><strong>Dataset</strong></em></p>
+<p>  Scale : 각각의 image scale은 제각각</p>
+<p>  Label : Latex 형식의 수식</p>
+<ul>
+<li><p>Train Data</p>
+<ul>
+<li>Hand Written Data : 50000</li>
+<li>Printed Data            : 50000</li>
+</ul>
+</li>
+<li><p>Evaluation Data</p>
+<ul>
+<li>Public : 6000</li>
+<li>Private : 6000</li>
+</ul>
+</li>
+<li><p>Prediction</p>
+<ul>
+<li>241개의 token class중 하나를 생성한 뒤 이들의 sequence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em><strong>평가 Metric</strong></em></p>
+<h3 id="0-9-x-“Sentence-Accuracy”-0-1-x-1-“WER”"><a href="#0-9-x-“Sentence-Accuracy”-0-1-x-1-“WER”" class="headerlink" title="0.9 x “Sentence Accuracy” + 0.1 x (1-“WER”)"></a><strong>0.9 x “Sentence Accuracy” + 0.1 x (1-“WER”)</strong></h3><ul>
+<li><p>Sentence Accuracy</p>
+<p>  전체 추론 결과(수식) 중에서 몇 개의 수식이 정답(ground truth)과 정확히 일치하는 지</p>
+<p>  <img src="/images/Untitled%207.png"></p>
+</li>
+<li><p>WER (Word Error Rate)</p>
+<p>  단어 단위로 삽입(insertion), 삭제(deletion), 대체(substitution)된 글자 개수를 계산</p>
+<p>  <img src="/images/Untitled%208.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Problem &amp; Solving</strong></p>
+<h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
+<li><p><em><strong>부족한 token data</strong></em></p>
+<p>  <img src="/images/Untitled%209.png"></p>
+<p>  Train data에 등장하는 token들중 빈도수가 가장적은 50개를 뽑아보았다.</p>
+<p>  10회 미만으로 등장한 token들에 대한 추가적인 data가 필요하다고 판단되었다. </p>
+<p>  <a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.hostmath.com/">사이트</a>를 활용하여 부족한 token들을 포함하는 수식을 train파일에 50개 정도의 data를 추가해주었다.</p>
+<p>  train_100003.jpg    \ominus \vdots \nexists \rightleftarrows A \supsetneq B</p>
+<p>  <img src="/images/Untitled%2010.png"></p>
+</li>
+<li><p><em><strong>세로형태의 수식 이미지</strong></em></p>
+<p>  <img src="/images/Untitled%2011.png"></p>
+</li>
+<li><p><em><strong>다양한 Aspect Ratio</strong></em></p>
+<p>  <img src="/images/Untitled%2012.png"></p>
+</li>
+<li><p><em><strong>잘못된 labeling</strong></em></p>
+<p>  P = 1이 아닌</p>
+<p>  P = 으로 labeling 되어있음</p>
+<p>  <img src="/images/Untitled%2013.png"></p>
+</li>
+<li><p><em><strong>선이 그어져 있거나 형광팬이 칠해져 있는 case</strong></em></p>
+<p>  <img src="/images/Untitled%2014.png"></p>
+</li>
+</ul>
+<h2 id="Augmentation"><a href="#Augmentation" class="headerlink" title="Augmentation"></a>Augmentation</h2><ul>
+<li><p><em><strong>Resize</strong></em></p>
+</li>
+<li><p><em><strong>Rotate</strong></em></p>
+<p>  OCR task에서 세로로 되어진 image들은 모두 noise로 작용</p>
+<p>  EDA에서 적당한 Aspect ratio의 threshold를 찾은 뒤, threshold 미만인 data들에 한하여 Rotate</p>
+</li>
+<li><p><em><strong>Normalization</strong></em></p>
+<p>  이미지의 각 pixel  값들을 0-1의 값으로 normalize 시켜준다</p>
+</li>
+<li><p><em><strong>이진화 &amp; 가로선 제거</strong></em></p>
+</li>
+</ul>
+<h2 id="Model-SATRN"><a href="#Model-SATRN" class="headerlink" title="Model (SATRN)"></a>Model (SATRN)</h2><ul>
+<li><p><em><strong>Locality-aware feedforward layer</strong></em></p>
+<p>  <img src="/images/Untitled%2015.png"></p>
+<p>  Base-line model에 구현된 Fully-connected feed forward에서 논문에서 제시하고 있는 Convolutuon feed forward로 교체</p>
+</li>
+<li><p><em><strong>Adaptive 2D Positional Encoding</strong></em></p>
+<p>  <img src="/images/Untitled%2016.png"></p>
+<p>  Baseline에서 구현된 일반적인 2D positional encoding에서 논문에서 제시한 학습가능한 adaptive 2D positional encoding으로 변경</p>
+</li>
+<li><p><em><strong>Backbone</strong></em></p>
+<ol>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://arxiv.org/pdf/1905.11946.pdf">EfficientNet</a></li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://arxiv.org/pdf/1608.06993.pdf">DenseNet</a></li>
+<li>ShallowCNN</li>
+</ol>
+</li>
+<li><p><em><strong>Mini SATRN for fast experiment</strong></em></p>
+<p>  다양한 실험을 빠르게 진행하기 위해 SATRN의 size를 줄여서 Mini SATRN으로 다양한 실험을 진행</p>
+</li>
+<li><p><em><strong>SATRN의 layer parameter 수정</strong></em></p>
+<ol>
+<li><p>Increase number of Decoder Layer</p>
+<p> <img src="/images/_2021-06-16__10.07.43.png"></p>
+<p> mini model 기준, Decoder layer를 추가할수록 성능이 향상</p>
+</li>
+<li><p>Change Activation Function</p>
+<p> <img src="/images/_2021-06-16__10.14.13.png"></p>
+<p> ShallowCNN의 activation function을 ReLU대신 mish를 사용</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Post-Processing"><a href="#Post-Processing" class="headerlink" title="Post - Processing"></a>Post - Processing</h2><ul>
+<li><p><em><strong>Beam search</strong></em></p>
+<p>  Token을 뽑을 때 argmax를 사용하여 하나의 token만을 뽑는게 아닌 각 step마다 beam size k 만큼의 token을 뽑아 최대한 적합한 sequence를 선택하려 시도함</p>
+</li>
+<li><p><em><strong>Ensemble</strong></em></p>
+<p>  다양한 augementation을 거친 model들을 한번에 불러와서 soft voting을 사용하여 ensemble</p>
+<p>  Baseline에는 빠져있는 torch.nograd로 memory 절약</p>
+<p>  <img src="/images/Untitled%2017.png"></p>
+</li>
+<li><p><em><strong>Use Language Model (x)</strong></em></p>
+<p>  <a target="_blank" rel="external nofollow noopener noreferrer" href="http://boostcamp.stages.ai/competitions/43/discussion/post/363">관련 토론 link</a></p>
+</li>
+</ul>
+<h2 id="OCR-Demo"><a href="#OCR-Demo" class="headerlink" title="OCR Demo"></a>OCR Demo</h2><p>데모페이지 주소 : <a target="_blank" rel="external nofollow noopener noreferrer" href="http://35.74.99.158:8501/">http://35.74.99.158:8501/</a></p>
+<p><img src="/images/_2021-06-16__10.31.11.png"></p>
+<p><img src="/images/%5BOCR-04%5D%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669.png"></p>
+<p><img src="/images/1234.png"></p>
+<p><img src="/images/1_u9U3YjxT9c9A1FIaDMonHw.png"></p>
+<p><strong>Paper Review</strong></p>
+<p>프로젝트 진행을 위해 읽은 논문의 목록은 다음과 같음</p>
+<p><a href="../images/CSTR.pdf">CSTR.pdf</a></p>
+<p><a href="/images/Misspelling_Correction_with_Pre-trained_Contextual_Language_Model.pdf">Misspelling Correction with Pre-trained Contextual Language Model.pdf</a></p>
+<p><a href="/images/CRNN__.pdf">CRNN.pdf</a></p>
+<p><a href="/images/An_Attentional_Scene_Text_Recognizer_with_Flexible_Rectification.pdf">An_Attentional_Scene_Text_Recognizer_with_Flexible_Rectification.pdf</a></p>
+<p><a href="/images/CBAM.pdf">CBAM.pdf</a></p>
+<p><a href="/images/Towards_End-to-end_Text_Spotting_with_Convolutional_Recurrent_Neural_Networks.pdf">Towards End-to-end Text Spotting with Convolutional Recurrent Neural Networks.pdf</a></p>
+<p><a href="/images/TextBoxes_A_Fast_Text_Detector_with_a_Single_Deep_Neural_Network.pdf">TextBoxes_A Fast Text Detector with a Single Deep Neural Network.pdf</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Pstage4_수식인식</p><p><a href="https://jo-member.github.io/2021/04/22/[OCR-04] 2021 춘하계 단기개발 총결산 f82316ab87ef4617ab2e8ce26be53669/">https://jo-member.github.io/2021/04/22/[OCR-04] 2021 춘하계 단기개발 총결산 f82316ab87ef4617ab2e8ce26be53669/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-04-22</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/nlp/">nlp</a><a class="link-muted mr-2" rel="tag" href="/tags/Vision/">Vision</a><a class="link-muted mr-2" rel="tag" href="/tags/OCR/">OCR</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/04/22/Pstage2-KLUE/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Pstage2_KLUE</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/03/08/2021-03-08-Boostcamp31.1/"><span class="level-item">Image Classification</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://jo-member.github.io/2021/04/22/[OCR-04]%202021%20%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8%20%E1%84%83%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8E%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A1%E1%86%AB%20f82316ab87ef4617ab2e8ce26be53669/';
+            this.page.identifier = '2021/04/22/[OCR-04] 2021 춘하계 단기개발 총결산 f82316ab87ef4617ab2e8ce26be53669/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'jo-member' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Pstage4-수식인식"><span class="level-left"><span class="level-item">1</span><span class="level-item">Pstage4_수식인식</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#Github-Repository"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">Github Repository</span></span></a></li></ul><li><a class="level is-mobile" href="#🎸-조원"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">🎸 조원                                                                                                           </span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#0-9-x-“Sentence-Accuracy”-0-1-x-1-“WER”"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">0.9 x “Sentence Accuracy” + 0.1 x (1-“WER”)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#EDA"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">EDA</span></span></a></li><li><a class="level is-mobile" href="#Augmentation"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Augmentation</span></span></a></li><li><a class="level is-mobile" href="#Model-SATRN"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Model (SATRN)</span></span></a></li><li><a class="level is-mobile" href="#Post-Processing"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Post - Processing</span></span></a></li><li><a class="level is-mobile" href="#OCR-Demo"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">OCR Demo</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/categories/Competition/"><span class="level-start"><span class="level-item">Competition</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T08:50:01.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/swin-transformer/">swin_transformer</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T08:49:42.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/fpn/">fpn</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T08:49:30.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/cstr/">cstr</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T08:49:13.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/satrn/">satrn</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T05:42:40.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/vqa_paper1/">VQA: Visual Question Answering vs Competition Baseline</a></p><p class="categories"><a href="/categories/PaperReview/">PaperReview</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
