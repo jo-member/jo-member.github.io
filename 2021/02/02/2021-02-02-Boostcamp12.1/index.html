@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Optimization - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="1. Optimization 용어들의 명확한 정리가 필요    Concept of Optimization Generalization Under fitting vs Over fitting Cross Validation Bias-varience tradeoff Bootstraping Bagging and Boosting"><meta property="og:type" content="blog"><meta property="og:title" content="Optimization"><meta property="og:url" content="https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="1. Optimization 용어들의 명확한 정리가 필요    Concept of Optimization Generalization Under fitting vs Over fitting Cross Validation Bias-varience tradeoff Bootstraping Bagging and Boosting"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202104727640.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202105239108.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202110006947.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203102311593.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202111433121.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202112531987.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203103339210.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202124747331.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202124858966.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202125049389.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202125200078.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202125632498.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202131206191.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202131442725.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202131704296.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115218626.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203114526003.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115235418.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203113548662.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115548370.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115810360.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203125504680.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203130233448.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203130519597.png"><meta property="article:published_time" content="2021-02-01T15:00:00.000Z"><meta property="article:modified_time" content="2021-07-12T04:36:34.282Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="Basic"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/image-20210202104727640.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/"},"headline":"Optimization","image":["https://jo-member.github.io/images/image-20210202104727640.png","https://jo-member.github.io/images/image-20210202105239108.png","https://jo-member.github.io/images/image-20210202110006947.png","https://jo-member.github.io/images/image-20210203102311593.png","https://jo-member.github.io/images/image-20210202111433121.png","https://jo-member.github.io/images/image-20210202112531987.png","https://jo-member.github.io/images/image-20210203103339210.png","https://jo-member.github.io/images/image-20210202124747331.png","https://jo-member.github.io/images/image-20210202124858966.png","https://jo-member.github.io/images/image-20210202125049389.png","https://jo-member.github.io/images/image-20210202125200078.png","https://jo-member.github.io/images/image-20210202125632498.png","https://jo-member.github.io/images/image-20210202131206191.png","https://jo-member.github.io/images/image-20210202131442725.png","https://jo-member.github.io/images/image-20210202131704296.png","https://jo-member.github.io/images/image-20210203115218626.png","https://jo-member.github.io/images/image-20210203114526003.png","https://jo-member.github.io/images/image-20210203115235418.png","https://jo-member.github.io/images/image-20210203113548662.png","https://jo-member.github.io/images/image-20210203115548370.png","https://jo-member.github.io/images/image-20210203115810360.png","https://jo-member.github.io/images/image-20210203125504680.png","https://jo-member.github.io/images/image-20210203130233448.png","https://jo-member.github.io/images/image-20210203130519597.png"],"datePublished":"2021-02-01T15:00:00.000Z","dateModified":"2021-07-12T04:36:34.282Z","author":{"@type":"Person","name":"jo-member"},"description":"1. Optimization 용어들의 명확한 정리가 필요    Concept of Optimization Generalization Under fitting vs Over fitting Cross Validation Bias-varience tradeoff Bootstraping Bagging and Boosting"}</script><link rel="canonical" href="https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-02-01T15:00:00.000Z" title="2021. 2. 2. 오전 12:00:00">2021-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-07-12T04:36:34.282Z" title="2021. 7. 12. 오후 1:36:34">2021-07-12</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Optimization</h1><div class="content"><br/>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Optimization - Jo Member</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jo Member"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jo Member"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="1. Optimization 용어들의 명확한 정리가 필요    Concept of Optimization Generalization Under fitting vs Over fitting Cross Validation Bias-varience tradeoff Bootstraping Bagging and Boosting"><meta property="og:type" content="blog"><meta property="og:title" content="Optimization"><meta property="og:url" content="https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/"><meta property="og:site_name" content="Jo Member"><meta property="og:description" content="1. Optimization 용어들의 명확한 정리가 필요    Concept of Optimization Generalization Under fitting vs Over fitting Cross Validation Bias-varience tradeoff Bootstraping Bagging and Boosting"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202104727640.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202105239108.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202110006947.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203102311593.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202111433121.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202112531987.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203103339210.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202124747331.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202124858966.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202125049389.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202125200078.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202125632498.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202131206191.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202131442725.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210202131704296.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115218626.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203114526003.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115235418.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203113548662.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115548370.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203115810360.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203125504680.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203130233448.png"><meta property="og:image" content="https://jo-member.github.io/images/image-20210203130519597.png"><meta property="article:published_time" content="2021-02-01T15:00:00.000Z"><meta property="article:modified_time" content="2021-07-12T04:36:34.282Z"><meta property="article:author" content="jo-member"><meta property="article:tag" content="Basic"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/image-20210202104727640.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/"},"headline":"Optimization","image":["https://jo-member.github.io/images/image-20210202104727640.png","https://jo-member.github.io/images/image-20210202105239108.png","https://jo-member.github.io/images/image-20210202110006947.png","https://jo-member.github.io/images/image-20210203102311593.png","https://jo-member.github.io/images/image-20210202111433121.png","https://jo-member.github.io/images/image-20210202112531987.png","https://jo-member.github.io/images/image-20210203103339210.png","https://jo-member.github.io/images/image-20210202124747331.png","https://jo-member.github.io/images/image-20210202124858966.png","https://jo-member.github.io/images/image-20210202125049389.png","https://jo-member.github.io/images/image-20210202125200078.png","https://jo-member.github.io/images/image-20210202125632498.png","https://jo-member.github.io/images/image-20210202131206191.png","https://jo-member.github.io/images/image-20210202131442725.png","https://jo-member.github.io/images/image-20210202131704296.png","https://jo-member.github.io/images/image-20210203115218626.png","https://jo-member.github.io/images/image-20210203114526003.png","https://jo-member.github.io/images/image-20210203115235418.png","https://jo-member.github.io/images/image-20210203113548662.png","https://jo-member.github.io/images/image-20210203115548370.png","https://jo-member.github.io/images/image-20210203115810360.png","https://jo-member.github.io/images/image-20210203125504680.png","https://jo-member.github.io/images/image-20210203130233448.png","https://jo-member.github.io/images/image-20210203130519597.png"],"datePublished":"2021-02-01T15:00:00.000Z","dateModified":"2021-07-12T04:36:34.282Z","author":{"@type":"Person","name":"jo-member"},"description":"1. Optimization 용어들의 명확한 정리가 필요    Concept of Optimization Generalization Under fitting vs Over fitting Cross Validation Bias-varience tradeoff Bootstraping Bagging and Boosting"}</script><link rel="canonical" href="https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/rss2.xml" title="Jo Member" type="application/rss+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/jo-member"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time datetime="2021-02-01T15:00:00.000Z" title="2021. 2. 2. 오전 12:00:00">2021-02-02</time></span><span class="level-item">Updated&nbsp;<time datetime="2021-07-12T04:36:34.282Z" title="2021. 7. 12. 오후 1:36:34">2021-07-12</time></span><span class="level-item"><a class="link-muted" href="/categories/Boostcamp/">Boostcamp</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Optimization</h1><div class="content"><br>
 
 <h1 id="1-Optimization"><a href="#1-Optimization" class="headerlink" title="1. Optimization"></a>1. Optimization</h1><ul>
 <li>용어들의 명확한 정리가 필요</li>
 </ul>
-<br/>
+<br>
 
 <h2 id="Concept-of-Optimization"><a href="#Concept-of-Optimization" class="headerlink" title="Concept of Optimization"></a>Concept of Optimization</h2><ul>
 <li>Generalization</li>
@@ -18,13 +19,13 @@
 
 
 
-<h3 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h3><br/>
+<h3 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h3><br>
 
 <p>일반화 성능을 높힌다?</p>
 <p>일반화란 :  Training error각 0 이라고 해서 Test error가 0인것은 아니기 때문에 </p>
 <p>좋은 generalization : network의 Test data 성능이 학습데이터와 비슷하게 나온다</p>
 <p><img src="/images/image-20210202104727640.png"></p>
-<h3 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h3><br/>
+<h3 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h3><br>
 
 <p>Training data에서 validation data를 나누어서 training된 모델이 validation data 기준으로 얼마나 잘 동작하는지를 판단</p>
 <p><strong>나누는 기준??????</strong></p>
@@ -33,11 +34,11 @@
 <p>학습데이터를 K개씩으로 나누어 하나씩 바꾸어가며 validation data로 설정하고 training과 validation을 반복진행</p>
 <p>Test data는 저얼대 model 학습에 사용되어서는 안된다!!</p>
 <p> <img src="/images/image-20210202105239108.png"></p>
-<br/>
+<br>
 
 
 
-<h3 id="Bias-varience-tradeoff"><a href="#Bias-varience-tradeoff" class="headerlink" title="Bias-varience tradeoff"></a>Bias-varience tradeoff</h3><img src="/images/image-20210202110006947.png"  style="zoom:80%;" />
+<h3 id="Bias-varience-tradeoff"><a href="#Bias-varience-tradeoff" class="headerlink" title="Bias-varience tradeoff"></a>Bias-varience tradeoff</h3><img src="/images/image-20210202110006947.png" style="zoom:80%;">
 
 
 
@@ -49,7 +50,7 @@
 </ul>
 <p>bias와 varience는 trade off관계에 있다</p>
 <p><img src="/images/image-20210203102311593.png"></p>
-<h3 id="Bootstrapping"><a href="#Bootstrapping" class="headerlink" title="Bootstrapping"></a>Bootstrapping</h3><br/>
+<h3 id="Bootstrapping"><a href="#Bootstrapping" class="headerlink" title="Bootstrapping"></a>Bootstrapping</h3><br>
 
 <ul>
 <li><p>Any test or matric that uses random sampling with replacement</p>
@@ -57,7 +58,7 @@
 <li><p>학습 data가 100개가 있으면 80개씩 random으로 뽑아서 모델을 여러개를 만들어서 하나의 입력에 대한 consensus를 보고 모델을 수정하는법</p>
 </li>
 </ul>
-<h3 id="Bagging-amp-Boosting"><a href="#Bagging-amp-Boosting" class="headerlink" title="Bagging &amp; Boosting"></a>Bagging &amp; Boosting</h3><br/>
+<h3 id="Bagging-amp-Boosting"><a href="#Bagging-amp-Boosting" class="headerlink" title="Bagging &amp; Boosting"></a>Bagging &amp; Boosting</h3><br>
 
 <ul>
 <li><p>Bagging (Bootstrapping aggregating)</p>
@@ -76,9 +77,9 @@
 </ul>
 </li>
 </ul>
-<br/>
+<br>
 
-<h2 id="Gradient-Descent-Method"><a href="#Gradient-Descent-Method" class="headerlink" title="Gradient Descent Method"></a>Gradient Descent Method</h2><br/>
+<h2 id="Gradient-Descent-Method"><a href="#Gradient-Descent-Method" class="headerlink" title="Gradient Descent Method"></a>Gradient Descent Method</h2><br>
 
 
 
@@ -106,7 +107,7 @@
 <li>Adam</li>
 <li>…</li>
 </ul>
-<br/>
+<br>
 
 
 
@@ -118,7 +119,7 @@
 <li>B가 momentum, a<del>t+1</del>가 accumulation, a는 momentum을 포함하고 있어서 한번 흘러가기 시작한 gradient를 유지시켜줌</li>
 </ul>
 <p>momentum을 사용하면 SGD에서 local minimum에 빠졌던 문제를 해결할수도 있다. Momentum으로 기존의 local minimum을 빠져나와 더 좋은 minimum으로 갈수도 있다는 것이다.</p>
-<br/>
+<br>
 
 <h3 id="NAG-Nesterov-Accelerated-Gradient"><a href="#NAG-Nesterov-Accelerated-Gradient" class="headerlink" title="NAG (Nesterov Accelerated Gradient)"></a>NAG (Nesterov Accelerated Gradient)</h3><ul>
 <li>a<del>t+1</del>  &lt;= Ba<del>t</del> + $\nabla$ L(W<del>t</del> - $\eta$Ba<del>t+1</del>)</li>
@@ -128,7 +129,7 @@
 <li>NAG를 쓰면 convergance ratio가 좋다</li>
 </ul>
 <p><img src="/images/image-20210203103339210.png"></p>
- <br/>
+ <br>
 
 <h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><ul>
 <li><p>adapts the learning rate </p>
@@ -141,34 +142,34 @@
 </ul>
 <p>G가 결국 계속커지기 때문에 W가 업데이트가 안되고 학습이 멈추는 현상이 발생</p>
 <p>따라서 G의 문제를 해결하는게 뒤의 optimizer인 Adadelta</p>
- <br/>
+ <br>
 
 <h3 id="Adadelta"><a href="#Adadelta" class="headerlink" title="Adadelta"></a>Adadelta</h3><p><img src="/images/image-20210202124858966.png"></p>
 <p>엄청난 양의 memory가 필요</p>
 <p>이를 해결하기 위해 감마, 1-감마 : exponential moving average(EMA)</p>
 <p>There is no learning rate in Adadelta!!</p>
-<br/>
+<br>
 
-<h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h3><br/>
+<h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h3><br>
 
 <p><img src="/images/image-20210202125049389.png"></p>
-<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><br/>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><br>
 
 <ul>
 <li><p>adaptive moment estimation</p>
 <p><img src="/images/image-20210202125200078.png"></p>
 </li>
 </ul>
-<br/>
+<br>
 
-<h1 id="2-Regulization"><a href="#2-Regulization" class="headerlink" title="2. Regulization"></a>2. Regulization</h1><br/>
+<h1 id="2-Regulization"><a href="#2-Regulization" class="headerlink" title="2. Regulization"></a>2. Regulization</h1><br>
 
 <ul>
 <li>For good generalization</li>
 <li>학습을 방해하는게 요점</li>
 <li>Overfitting 방지 이런거</li>
 </ul>
-<br/>
+<br>
 
 <p>종류</p>
 <ol>
@@ -179,16 +180,16 @@
 <li>Dropout</li>
 <li>Batch Normalization</li>
 </ol>
-<br/>
+<br>
 
-<h3 id="Early-stopping"><a href="#Early-stopping" class="headerlink" title="Early stopping"></a>Early stopping</h3><br/>
+<h3 id="Early-stopping"><a href="#Early-stopping" class="headerlink" title="Early stopping"></a>Early stopping</h3><br>
 
 <ul>
 <li>중간에 학습을 멈추어 validation data를 만드는</li>
 </ul>
 <h3 id="Parameter-norm-penalty"><a href="#Parameter-norm-penalty" class="headerlink" title="Parameter norm penalty"></a>Parameter norm penalty</h3><p><img src="/images/image-20210202125632498.png"></p>
 <p>weight가 작을수록 좋다? -&gt; function space내에서 부드러운 함수일수록 generalization performance가 높을것이다</p>
-<h3 id="Data-augmentation"><a href="#Data-augmentation" class="headerlink" title="Data augmentation"></a>Data augmentation</h3><br/>
+<h3 id="Data-augmentation"><a href="#Data-augmentation" class="headerlink" title="Data augmentation"></a>Data augmentation</h3><br>
 
 
 
@@ -198,13 +199,13 @@
 </ul>
 <h3 id="Label-smoothing"><a href="#Label-smoothing" class="headerlink" title="Label smoothing"></a>Label smoothing</h3><p><img src="/images/image-20210202131206191.png"></p>
 <p>이러한 방법으로 dataset을 확장시켜 model을 training 해보면 성능향상이 뚜렸하다</p>
-<br/>
+<br>
 
 
 
-<br/>
+<br>
 
-<h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><br/>
+<h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><br>
 
 <ul>
 <li><p>내가 적용하고자 하는 statistics를 정규화</p>
@@ -224,18 +225,18 @@
 <li>Regression Task, Classification Task, Probabilistic Task의 Loss 함수(or 클래스)는 Pytorch에서 어떻게 구현이 되어있을까요?</li>
 <li>올바르게(?) cross-validation을 하기 위해서는 어떻 방법들이 존재할까요? </li>
 <li>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</li>
-<li><a target="_blank" rel="noopener" href="https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9">TimeseriesCV</a></li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9">TimeseriesCV</a></li>
 </ul>
-<br/>
+<br>
 
-<h1 id="Further-Question-1"><a href="#Further-Question-1" class="headerlink" title="Further Question 1"></a>Further Question 1</h1><br/>
+<h1 id="Further-Question-1"><a href="#Further-Question-1" class="headerlink" title="Further Question 1"></a>Further Question 1</h1><br>
 
-<h2 id="Pytorch-내부에서의-Loss-function-구현"><a href="#Pytorch-내부에서의-Loss-function-구현" class="headerlink" title="Pytorch 내부에서의 Loss function 구현"></a>Pytorch 내부에서의 Loss function 구현</h2><br/>
+<h2 id="Pytorch-내부에서의-Loss-function-구현"><a href="#Pytorch-내부에서의-Loss-function-구현" class="headerlink" title="Pytorch 내부에서의 Loss function 구현"></a>Pytorch 내부에서의 Loss function 구현</h2><br>
 
 <ol>
 <li>Regression Task의 Loss function</li>
 </ol>
-<br/>
+<br>
 
 <ul>
 <li><code>torch.nn.L1Loss</code>(<em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
@@ -246,9 +247,9 @@
 <p><img src="/images/image-20210203114526003.png"></p>
 <p>내부적으로 reduction을 mean으로 설정시 우리가 알고있는 sum을 n으로 나눈 값을 loss로 사용(기본값 : mean)</p>
 <p>reduction을 sum으로 설정시 n으로 나누는게 사라진 그저 차이의 norm의 sum값</p>
-<br/>
+<br>
 
-<br/>
+<br>
 
 <ul>
 <li><code>torch.nn.MSELoss</code>(<em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
@@ -257,27 +258,27 @@
 <p>위의 L1 loss와 다른점은 차이의 제곱</p>
 <p><img src="/images/image-20210203115235418.png"></p>
 <p><img src="/images/image-20210203113548662.png"></p>
-<br/>
+<br>
 
-<br/>
+<br>
 
 <ol start="2">
 <li>Classification Task의 Loss function</li>
 </ol>
-<br/>
+<br>
 
 <ul>
 <li><code>torch.nn.BCELoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
 </ul>
 <p>내가 이 loss function을 사용했을때는 분류문제중, 2개의 label 사이에서 classification을 할때는 BCELoss를 사용하고 NN의 출력단에 sigmoid함수를 적용해주었다.</p>
-<p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#torch.nn.BCEWithLogitsLoss"><code>nn.BCEWithLogitsLoss</code></a>하지만 이 함수를 사용시 sigmoid가 내부적으로 포함되어있다</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#torch.nn.BCEWithLogitsLoss"><code>nn.BCEWithLogitsLoss</code></a>하지만 이 함수를 사용시 sigmoid가 내부적으로 포함되어있다</p>
 <p><img src="/images/image-20210203115548370.png"></p>
 <p>loss function을 보면 </p>
 <ul>
 <li><code>torch.nn.CrossEntropyLoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>ignore_index: int = -100</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
 </ul>
 <p><img src="/images/image-20210203115810360.png"></p>
-<br/>
+<br>
 
 <ol start="3">
 <li>Probabilistic Task의 Loss function</li>
@@ -286,20 +287,20 @@
 <li><code>torch.nn.NLLLoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>ignore_index: int = -100</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li>
 </ul>
 <p>The negative log likelihood loss. It is useful to train a classification problem with C classes.</p>
-<br/>
+<br>
 
-<h1 id="Further-Question-2"><a href="#Further-Question-2" class="headerlink" title="Further Question 2"></a>Further Question 2</h1><br/>
+<h1 id="Further-Question-2"><a href="#Further-Question-2" class="headerlink" title="Further Question 2"></a>Further Question 2</h1><br>
 
-<h2 id="올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요"><a href="#올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요" class="headerlink" title="올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?"></a>올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?</h2><br/>
+<h2 id="올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요"><a href="#올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요" class="headerlink" title="올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?"></a>올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?</h2><br>
 
 <p>일정한 k개로 data를 나누어 그중에 하나를 validation data로 사용하는 -&gt; k-fold cv</p>
 <p>validation</p>
 <p>hyper paramter : 우리가 정하는 값 ex) lr, network 깊이, loss function 종류, 등등</p>
 <p>cross validation으로 최적의 hyper parameter를 찾고 이걸 고정한 상태에서 전체 training data를 사용해서 학습을 시킨다</p>
 <p>모형의 파라미터 추정에는 트레이닝셋을 사용하고, 하이퍼파라미터 설정에는 밸리데이션 셋을 사용합니다</p>
-<h1 id="Further-Question-3"><a href="#Further-Question-3" class="headerlink" title="Further Question 3"></a>Further Question 3</h1><br/>
+<h1 id="Further-Question-3"><a href="#Further-Question-3" class="headerlink" title="Further Question 3"></a>Further Question 3</h1><br>
 
-<h2 id="Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요"><a href="#Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요" class="headerlink" title="Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?"></a>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</h2><br/>
+<h2 id="Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요"><a href="#Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요" class="headerlink" title="Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?"></a>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</h2><br>
 
 <p>시간의 정보를 가진 data를 기존의 k-fold cv를 사용하여 섞어 버린다면 , 과거와 미래가 뒤섞여 안된다</p>
 <p>for time series data we utilize hold-out cross-validation where a subset of the data (<em>split temporally</em>) is reserved for validating the model performance.</p>
@@ -320,9 +321,9 @@
 <p>Nested CV에는 오류 추정을 위한 외부 loop와 hyperparameter추정을 위한 Inner loop가 있다</p>
 <p>내부루프는 train data set을 나누는 걸로 앞서 설명한일반적인 CV구조이다</p>
 <p>이제 data set를 여러 train과 test set으로 나누는 외부루프가 추가되었고 각 분할된 오류의 평균을 구한다</p>
-<br/>
+<br>
 
-<h3 id="Nested-CV-for-Time-series-data"><a href="#Nested-CV-for-Time-series-data" class="headerlink" title="Nested CV for Time series data"></a>Nested CV for Time series data</h3><br/>
+<h3 id="Nested-CV-for-Time-series-data"><a href="#Nested-CV-for-Time-series-data" class="headerlink" title="Nested CV for Time series data"></a>Nested CV for Time series data</h3><br>
 
 <ol>
 <li><strong>Predict second half</strong></li>
@@ -338,7 +339,7 @@
 <p>따라서 앞서 말한 Nested CV와 같이 많은 train과 test data set을 만들어 이들의 오류값을 구해 평균을 내어준다</p>
 <p>예를 들면  1일을 test set으로 간주하고 나머지를 train set으로 해주는 것이다</p>
 <p><img src="/images/image-20210203130519597.png"></p>
-</div><div class="article-licensing box"><div class="licensing-title"><p>Optimization</p><p><a href="https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/">https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-02-02</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Basic/">Basic</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/02/03/2021-02-03-Boostcamp13.2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Computer Vision application</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/02/01/2021-02-01-Boostcamp11/"><span class="level-item">딥러닝 기초</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+</div><div class="article-licensing box"><div class="licensing-title"><p>Optimization</p><p><a href="https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/">https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jo-member</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-02-02</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Basic/">Basic</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/02/03/2021-02-03-Boostcamp13.2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Computer Vision application</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/02/01/2021-02-01-Boostcamp11/"><span class="level-item">딥러닝 기초</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
             this.page.url = 'https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/';
             this.page.identifier = '2021/02/02/2021-02-02-Boostcamp12.1/';
         };
@@ -347,7 +348,7 @@
             s.src = '//' + 'jo-member' + '.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
-        })();</script></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#1-Optimization"><span class="level-left"><span class="level-item">1</span><span class="level-item">1. Optimization</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Concept-of-Optimization"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Concept of Optimization</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Generalization"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">Generalization</span></span></a></li><li><a class="level is-mobile" href="#Cross-validation"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">Cross validation</span></span></a></li><li><a class="level is-mobile" href="#Bias-varience-tradeoff"><span class="level-left"><span class="level-item">1.1.3</span><span class="level-item">Bias-varience tradeoff</span></span></a></li><li><a class="level is-mobile" href="#Bootstrapping"><span class="level-left"><span class="level-item">1.1.4</span><span class="level-item">Bootstrapping</span></span></a></li><li><a class="level is-mobile" href="#Bagging-amp-Boosting"><span class="level-left"><span class="level-item">1.1.5</span><span class="level-item">Bagging &amp; Boosting</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Gradient-Descent-Method"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Gradient Descent Method</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Momentum"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">Momentum</span></span></a></li><li><a class="level is-mobile" href="#NAG-Nesterov-Accelerated-Gradient"><span class="level-left"><span class="level-item">1.2.2</span><span class="level-item">NAG (Nesterov Accelerated Gradient)</span></span></a></li><li><a class="level is-mobile" href="#Adagrad"><span class="level-left"><span class="level-item">1.2.3</span><span class="level-item">Adagrad</span></span></a></li><li><a class="level is-mobile" href="#Adadelta"><span class="level-left"><span class="level-item">1.2.4</span><span class="level-item">Adadelta</span></span></a></li><li><a class="level is-mobile" href="#RMSprop"><span class="level-left"><span class="level-item">1.2.5</span><span class="level-item">RMSprop</span></span></a></li><li><a class="level is-mobile" href="#Adam"><span class="level-left"><span class="level-item">1.2.6</span><span class="level-item">Adam</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#2-Regulization"><span class="level-left"><span class="level-item">2</span><span class="level-item">2. Regulization</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#Early-stopping"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">Early stopping</span></span></a></li><li><a class="level is-mobile" href="#Parameter-norm-penalty"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">Parameter norm penalty</span></span></a></li><li><a class="level is-mobile" href="#Data-augmentation"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">Data augmentation</span></span></a></li><li><a class="level is-mobile" href="#Label-smoothing"><span class="level-left"><span class="level-item">2.1.4</span><span class="level-item">Label smoothing</span></span></a></li><li><a class="level is-mobile" href="#Batch-Normalization"><span class="level-left"><span class="level-item">2.1.5</span><span class="level-item">Batch Normalization</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#Further-Question-1"><span class="level-left"><span class="level-item">3</span><span class="level-item">Further Question 1</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Pytorch-내부에서의-Loss-function-구현"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Pytorch 내부에서의 Loss function 구현</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Further-Question-2"><span class="level-left"><span class="level-item">4</span><span class="level-item">Further Question 2</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Further-Question-3"><span class="level-left"><span class="level-item">5</span><span class="level-item">Further Question 3</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Nested-CV-for-Time-series-data"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">Nested CV for Time series data</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">27</span></span></a></li><li><a class="level is-mobile" href="/categories/Competition/"><span class="level-start"><span class="level-item">Competition</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-12T05:42:40.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/vqa_paper1/">VQA: Visual Question Answering vs Competition Baseline</a></p><p class="categories"><a href="/categories/PaperReview/">PaperReview</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-12T03:09:10.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/VQA/">VQA (Visual Question Answering)</a></p><p class="categories"><a href="/categories/Competition/">Competition</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T11:52:06.000Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/Pstage3-Image-Segmentation-Detection/">Pstage3_Image_Segmentation_Detection</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-22T06:29:38.000Z">2021-04-22</time></p><p class="title"><a href="/2021/04/22/Pstage2-KLUE/">Pstage2_KLUE</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-07T15:00:00.000Z">2021-03-08</time></p><p class="title"><a href="/2021/03/08/2021-03-08-Boostcamp31.1/">Image Classification</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+        })();</script></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#1-Optimization"><span class="level-left"><span class="level-item">1</span><span class="level-item">1. Optimization</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Concept-of-Optimization"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Concept of Optimization</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Generalization"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">Generalization</span></span></a></li><li><a class="level is-mobile" href="#Cross-validation"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">Cross validation</span></span></a></li><li><a class="level is-mobile" href="#Bias-varience-tradeoff"><span class="level-left"><span class="level-item">1.1.3</span><span class="level-item">Bias-varience tradeoff</span></span></a></li><li><a class="level is-mobile" href="#Bootstrapping"><span class="level-left"><span class="level-item">1.1.4</span><span class="level-item">Bootstrapping</span></span></a></li><li><a class="level is-mobile" href="#Bagging-amp-Boosting"><span class="level-left"><span class="level-item">1.1.5</span><span class="level-item">Bagging &amp; Boosting</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Gradient-Descent-Method"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Gradient Descent Method</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Momentum"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">Momentum</span></span></a></li><li><a class="level is-mobile" href="#NAG-Nesterov-Accelerated-Gradient"><span class="level-left"><span class="level-item">1.2.2</span><span class="level-item">NAG (Nesterov Accelerated Gradient)</span></span></a></li><li><a class="level is-mobile" href="#Adagrad"><span class="level-left"><span class="level-item">1.2.3</span><span class="level-item">Adagrad</span></span></a></li><li><a class="level is-mobile" href="#Adadelta"><span class="level-left"><span class="level-item">1.2.4</span><span class="level-item">Adadelta</span></span></a></li><li><a class="level is-mobile" href="#RMSprop"><span class="level-left"><span class="level-item">1.2.5</span><span class="level-item">RMSprop</span></span></a></li><li><a class="level is-mobile" href="#Adam"><span class="level-left"><span class="level-item">1.2.6</span><span class="level-item">Adam</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#2-Regulization"><span class="level-left"><span class="level-item">2</span><span class="level-item">2. Regulization</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#Early-stopping"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">Early stopping</span></span></a></li><li><a class="level is-mobile" href="#Parameter-norm-penalty"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">Parameter norm penalty</span></span></a></li><li><a class="level is-mobile" href="#Data-augmentation"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">Data augmentation</span></span></a></li><li><a class="level is-mobile" href="#Label-smoothing"><span class="level-left"><span class="level-item">2.1.4</span><span class="level-item">Label smoothing</span></span></a></li><li><a class="level is-mobile" href="#Batch-Normalization"><span class="level-left"><span class="level-item">2.1.5</span><span class="level-item">Batch Normalization</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#Further-Question-1"><span class="level-left"><span class="level-item">3</span><span class="level-item">Further Question 1</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Pytorch-내부에서의-Loss-function-구현"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Pytorch 내부에서의 Loss function 구현</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Further-Question-2"><span class="level-left"><span class="level-item">4</span><span class="level-item">Further Question 2</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Further-Question-3"><span class="level-left"><span class="level-item">5</span><span class="level-item">Further Question 3</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Nested-CV-for-Time-series-data"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">Nested CV for Time series data</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Boostcamp/"><span class="level-start"><span class="level-item">Boostcamp</span></span><span class="level-end"><span class="level-item tag">27</span></span></a></li><li><a class="level is-mobile" href="/categories/Competition/"><span class="level-start"><span class="level-item">Competition</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Mathmatics-for-ML/"><span class="level-start"><span class="level-item">Mathmatics_for_ML</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/PaperReview/"><span class="level-start"><span class="level-item">PaperReview</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T05:42:40.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/vqa_paper1/">VQA: Visual Question Answering vs Competition Baseline</a></p><p class="categories"><a href="/categories/PaperReview/">PaperReview</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-07-12T03:09:10.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/VQA/">VQA (Visual Question Answering)</a></p><p class="categories"><a href="/categories/Competition/">Competition</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-04-25T11:52:06.000Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/Pstage3-Image-Segmentation-Detection/">Pstage3_Image_Segmentation_Detection</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-04-22T06:29:38.000Z">2021-04-22</time></p><p class="title"><a href="/2021/04/22/Pstage2-KLUE/">Pstage2_KLUE</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-03-07T15:00:00.000Z">2021-03-08</time></p><p class="title"><a href="/2021/03/08/2021-03-08-Boostcamp31.1/">Image Classification</a></p><p class="categories"><a href="/categories/Boostcamp/">Boostcamp</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Jo Member" height="28"></a><p class="is-size-7"><span>&copy; 2021 jo-member</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

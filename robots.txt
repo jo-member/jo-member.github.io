@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jo-member.github.io/sitemap.xml
