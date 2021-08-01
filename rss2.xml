@@ -40,66 +40,6 @@
     </item>
     
     <item>
-      <title>swin_transformer</title>
-      <link>https://jo-member.github.io/2021/07/12/swin-transformer/</link>
-      <guid>https://jo-member.github.io/2021/07/12/swin-transformer/</guid>
-      <pubDate>Mon, 12 Jul 2021 08:50:01 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://jo-member.github.io/2021/07/12/swin-transformer/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>fpn</title>
-      <link>https://jo-member.github.io/2021/07/12/fpn/</link>
-      <guid>https://jo-member.github.io/2021/07/12/fpn/</guid>
-      <pubDate>Mon, 12 Jul 2021 08:49:42 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://jo-member.github.io/2021/07/12/fpn/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>cstr</title>
-      <link>https://jo-member.github.io/2021/07/12/cstr/</link>
-      <guid>https://jo-member.github.io/2021/07/12/cstr/</guid>
-      <pubDate>Mon, 12 Jul 2021 08:49:30 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://jo-member.github.io/2021/07/12/cstr/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>satrn</title>
-      <link>https://jo-member.github.io/2021/07/12/satrn/</link>
-      <guid>https://jo-member.github.io/2021/07/12/satrn/</guid>
-      <pubDate>Mon, 12 Jul 2021 08:49:13 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://jo-member.github.io/2021/07/12/satrn/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>VQA: Visual Question Answering vs Competition Baseline</title>
       <link>https://jo-member.github.io/2021/07/12/vqa_paper1/</link>
       <guid>https://jo-member.github.io/2021/07/12/vqa_paper1/</guid>
@@ -618,6 +558,154 @@
       
       
       <comments>https://jo-member.github.io/2021/02/04/2021-02-04-Boostcamp14.2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>CNN1</title>
+      <link>https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/</link>
+      <guid>https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/</guid>
+      <pubDate>Tue, 02 Feb 2021 15:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h1 id=&quot;CNN&quot;&gt;&lt;a href=&quot;#CNN&quot; class=&quot;headerlink&quot; title=&quot;CNN&quot;&gt;&lt;/a&gt;CNN&lt;/h1&gt;&lt;br/&gt;
+
+&lt;h2 id=&quot;Convolution-연산-이해하기&quot;&gt;&lt;a href=&quot;#Convolution-연산-이해하기&quot; class=&quot;headerlink&quot; title=&quot;Convolution 연산 이해하기&quot;&gt;&lt;/a&gt;Convolution 연산 이해하기&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image-20210202134359041.png&quot; alt=&quot;image-20210202134359041&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image-20210202134617666.png&quot; alt=&quot;image-20210202134617666&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;x라는 입력벡터 상에서 커널사이즈 만큼 움직여 가며 연산&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p><br/><br/></p><h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><br/><h2 id="Convolution-연산-이해하기"><a href="#Convolution-연산-이해하기" class="headerlink" title="Convolution 연산 이해하기"></a>Convolution 연산 이해하기</h2><ul><li><p>지금까지 배운 MLP는 fully connected. 가중치 행들이 i번째 위치마다 필요해서 i가 커지면 가중치 행렬의 크기가 커지게 됨</p><p><img src="/images/image-20210202134359041.png" alt="image-20210202134359041"></p></li><li><p>우리가 이제부터 볼 Convolution 연산은 커널이라는 고정된 가중치 행렬을 사용하여 고정된 커널을 입력벡터에서 옮겨가며 적용</p><p><img src="/images/image-20210202134617666.png" alt="image-20210202134617666"></p></li><li><p>x라는 입력벡터 상에서 커널사이즈 만큼 움직여 가며 연산</p></li></ul><span id="more"></span><br/><h2 id="다양한-차원에서의-Convolution"><a href="#다양한-차원에서의-Convolution" class="headerlink" title="다양한 차원에서의 Convolution"></a>다양한 차원에서의 Convolution</h2><p><br/>                                              <img src="/images/image-20210202164217282.png" alt="image-20210202164217282"></p><p>​                                                      <img src="/images/image-20210202135650652.png" alt="image-20210202135650652"></p><h2 id="2차원-Convolution-연산"><a href="#2차원-Convolution-연산" class="headerlink" title="2차원 Convolution 연산"></a>2차원 Convolution 연산</h2><p><img src="/images/image-20210202155309174.png" alt="image-20210202155309174"></p><p>입력을 kernal size에 맞춰서 입력위치에 해당하는 index만큼 옮겨다니면서, 성분곱을 연산하는</p><p>2D 이미지 다른 kernel을 적용하여 Convolution filter를 적용하면 kernel에 맞는 특성을 가지는 2D 이미지가 나온다</p><ul><li><p>입력크기를 (H,W), 커널크기를 (K<del>H</del>, K<del>W</del>), 출력크기를 (O<del>H</del>, O<del>W</del>)라 할때</p><p><img src="/images/image-20210202160533754.png" alt="image-20210202160533754"></p></li></ul><p><br/><br/><br/><br/><br/><br/></p><p><img src="/images/image-20210202163834784.png" alt="image-20210202163834784"></p><ul><li>channel이 여러개인 2차원 입력의 경우 2차원 Convolution을 채널 개수만큼 적용한다 (2차원 이미지더라도, RGB가있어서 3 channel)</li><li>채널이 여러개인 입력인 경우 커널도 채널의 개수만큼 있어야 한다</li><li>채널이 여러개일때는 각커널을 적용한 각각의 채널의 결과를 더해준다</li></ul><p><img src="/images/image-20210203133123225.png" alt="image-20210203133123225"></p><br/><br/><p><strong>만약 출력의 channel을 늘리고 싶다면???</strong></p><p>커널의 개수를 여러개 만들면 된다. </p><p><img src="/images/image-20210202163929154.png" alt="image-20210202163929154"></p><p>feature map의 채널 숫자를 늘리는 보통 이렇게 많이 사용한다</p><p><br/><br/><br/></p><h2 id="Convolution-연산의-Backpropagation"><a href="#Convolution-연산의-Backpropagation" class="headerlink" title="Convolution 연산의 Backpropagation"></a>Convolution 연산의 Backpropagation</h2><br/><ul><li>Convolution연산은 모든 입력데이터에 공통으로 커널이 적용되기 때문에 역전파 계산시에도 convolution이 나오게 된다</li></ul><h2 id="Stack-of-Convolution"><a href="#Stack-of-Convolution" class="headerlink" title="Stack of Convolution"></a>Stack of Convolution</h2><p><img src="/images/image-20210203133602208.png" alt="image-20210203133602208"></p><p>MLP때와 마찬가지로 non-linear activation을 사이에 적용했다</p><p><strong>연산을 정의하는 Parameter의 숫자</strong>가 중요</p><p>첫번째 Convolutional filter의 parameter수 : 5*5*3*4 = 300 개</p><p>두번째 Convolutional filter의 parameter수 : 5*5*4*10 = 1000개</p><h2 id="Convolution-NN"><a href="#Convolution-NN" class="headerlink" title="Convolution NN"></a>Convolution NN</h2><ul><li>CNN은 Convolution layer + Pooling layer + fully connected layer</li><li>Convolution &amp; pooling layer : feature extraction</li><li>fully connected layer : decision making</li></ul><p>점점 뒤의 fully connected layer를 줄이는 추세 </p><p>reason : parameter의 수</p><p>우리가 일반적으로 우리의 모델의 parameter 숫자가 늘어날수록 학습이 어렵고 generalize performace가 떨어진다</p><p>따라서 CNN은 parameter수를 줄이는데 집중한다</p><p><strong>어떤 뉴럴네트워크에 대해서 parameter숫자를 계산해보자</strong></p><br/><h2 id="Stride-amp-Padding"><a href="#Stride-amp-Padding" class="headerlink" title="Stride &amp; Padding"></a>Stride &amp; Padding</h2><p>skip</p><br/><br/><h2 id="Convolution-Arithmatic"><a href="#Convolution-Arithmatic" class="headerlink" title="Convolution Arithmatic"></a>Convolution Arithmatic</h2><br/><p><img src="/images/image-20210203155819848.png" alt="image-20210203155819848"></p><p>우리가 사용하는 kernel을 계산해보면 </p><p>일단 3*3의 width 와 height이며 kernel의 channel은 입력의 channel과 같아야 하므로 128이다</p><p>따라서 하나의 kernel의 size  = 3*3*128이다</p><p>이제 이 kernel의 갯수를 찾으려면 output의 channel인 64이다</p><p>따라서 총 parameter의 개수는 3*3*128*64 = 73728이다</p><p>이제 padding과 stride는 parameter 수와는 연관이 없다</p><p>ex)<img src="/images/image-20210203160420099.png" alt="image-20210203160420099"></p><p>사실 alexnet은 network가 2 path로 나누어짐</p><ol><li><p>일단 첫번째 layer의 kernel = 11x11x3 =  363</p><p>이게 48개 있으므로 parameter개수 = 17424개</p><p>원래는 이제 96짜리 channel을 만들었어야 되는데 2개로 나누어서 48 channel로 만들어줌</p><p>따라서 총 parameter수 = 34848</p></li><li><p>kernel  = 5x5x48 = 1200</p><p>이게 128개 그리고 총 2개 있으니 -&gt; 1200x128x2 = 307k</p></li><li><p>kernel = 3x3x128 = 1152 이게 2개 -&gt; 2304</p><p>이게 192개 그리고 총  -&gt; 2304x192x2 = 884k</p></li><li><p>똑같은 방법 -&gt; 663k</p><p>쭉쭉</p><p>그러다가 Fully connected layer의 parameter 개수</p></li></ol><p>13x13x128x2x2048x2 = 177M</p><p>16M</p><p>4M</p><p>보면 dense layer에서 parameter숫자가 너무 커진다</p><p>결국은 parameter를 줄이기 위해서는 convolution layer를 깊게 쌓고 뒤의 dense layer를 최대한 줄이는 방향으로 발전하고 있다</p><h3 id="1x1-convolution"><a href="#1x1-convolution" class="headerlink" title="1x1 convolution"></a>1x1 convolution</h3><p><img src="/images/image-20210203162452918.png" alt="image-20210203162452918"></p><p>여기서 parameter수를 계산해보면 1x1x128x32 = 4096</p><p>demension을 줄인다!!!</p><p>깊이는 깊어지지만 parameter수를 줄이는 역할을 한다</p><p>e.g) bottle neck architecture</p><br/><h1 id="Modern-Convolutional-Neural-Networks"><a href="#Modern-Convolutional-Neural-Networks" class="headerlink" title="Modern Convolutional Neural Networks"></a>Modern Convolutional Neural Networks</h1><br/><ul><li><p>ILSVRC에서 우승하거나 좋은 성능을 거둔 model들에 대한 parameter 개수, depth 등등</p><br/></li></ul><h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><br/><h3 id="ILSVRC"><a href="#ILSVRC" class="headerlink" title="ILSVRC"></a>ILSVRC</h3><ul><li><p>Imagenet Large-Scale Visual Recognition Challenge</p></li><li><p>1000 different categories</p></li><li><p>over 1 millions images</p></li></ul><h3 id="AlexNet-1"><a href="#AlexNet-1" class="headerlink" title="AlexNet"></a>AlexNet</h3><ul><li>gpu의 성능이 부족해서 한번에 계산이 안되서 2개로 나눠서 따로 training을 시킴</li></ul><p><strong>Receptive field</strong> : 하나의 kernel이 볼수있는 이미지 level에서의 영역은 커짐, 그러나 parameter가 늘어나게 됨</p><ul><li>5 Convolutional layer</li><li>3 Dense layer</li></ul><h3 id="Key-idea"><a href="#Key-idea" class="headerlink" title="Key idea"></a>Key idea</h3><ul><li><p>use ReLU function (non-linear func, 마지막 slope가 1이라 gradient가 사라지거나 네트워크를 망칠 확률이 적음)</p><ul><li><p>preserve properties of linear model</p></li><li><p>overcome the gradient vanishing problem</p></li><li><p>이전에 많이 활용하던 tanh나 sigmoid는 값이 크면 output의 gradient가 0에 가깝게 나온다</p></li></ul></li><li><p>GPI implementation (2 GPU)</p></li><li><p>Overlapping Pooling, Local response normalization</p></li><li><p>Data augmentation</p></li><li><p>Dropout</p></li></ul><p>지금 보면 별로 대단한게 아니지만, 그당시에는 혁신적인 방법</p><p>일반적인 standard 를 잡았다!</p><br/><h2 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h2><br/><ul><li><p>Increasing depth with 3x3 convolution filter</p></li><li><p>1x1 convolution filter</p></li><li><p>Dropout (p=0.5)</p></li><li><p>VFF16,VGG19</p></li></ul><h3 id="Why-3x3"><a href="#Why-3x3" class="headerlink" title="Why 3x3????"></a>Why 3x3????</h3><p>kernel size가 커지면서 가지는 이점 : Receptive field가 커진다</p><p>ex) </p><p>3x3을 2번 하게 되면 output의 1개의 값은 input의 5x5를 보게된다 -&gt; 이게 바로 Receptive field</p><p>3x3을 3번 하게 되면 output의 1개의 값은 input의 6x6을 보게된다</p><p>따라서 3x3을 2개 사용하는 것과, 5x5를 1개 사용하는 것은 receptive field의 관점에서는 같다</p><p>따라서 이둘의 parameter의 개수를 비교해 보면 (chaneel : 128)</p><p>3x3 2개 : 3x3x128x128x2 = 294k</p><p>5x5 1개 : 5x5x128x128 = 409k</p><p>따라서 3x3 2개를 쓰는게 parameter의 숫자 감소 측면에서 이득이다</p><p>왜이런일이 일어날까?</p><p>사실상 3x3x3 = 27, 6x6 = 36 | 3x3 = 9, 5x5 = 25 이런 맥락이다</p><p>뒤의 대부분을보면 kernel은 7x7을 벗어나지 않는다</p><br/><h2 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h2><br/><p><img src="/images/image-20210203180018567.png" alt="image-20210203180018567"></p><p>보면 전체 network 안에 작은 network 구조들이 반복되고 있다 (network in network)</p><ul><li>Inception block 활용</li></ul><p><img src="/images/image-20210203180125687.png" alt="image-20210203180125687"></p><p>하나의 입력에 대해서 여러개의 receptive field를 가지는 filter를 거치고 이들을 concatenation</p><p>하지만 그보다 중요한게 중간중간에 추가로 들어간 1x1 Conv</p><p><img src="/images/image-20210203180311444.png" alt="/image-20210203180311444"></p><ol><li>3x3x128x128 = 147456</li><li>1x1x128x32 = 4096, 3x3x32x128 = 36864 -&gt;합은 :  40960</li></ol><p>parameter 수가 1/4로 줄었다 —-&gt; 사용하는게 이득이다!!!</p><p><strong>과연 AlexNet,VGGNet, GoogLeNet 중 parameter수가 작은것은?</strong></p><ol><li>AlexNet(8 layer) : 60M</li><li>VGGNet(19-layer) : 110M</li><li>GoogLeNet(22 layer) : 4M</li></ol><br/><br/><h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul><li>Deeper neural networks are hard to train</li><li>Overfitting is usually caused by an excessive number of parameters</li></ul><h3 id="Identity-map"><a href="#Identity-map" class="headerlink" title="Identity map"></a>Identity map</h3><p><img src="/images/image-20210203182236058.png" alt="image-20210203182236058"></p><p><img src="/images/image-20210203182359483.png" alt="image-20210203182359483"></p><p>x와 output의 차원을 맞춰주기 위해서 1x1 convolution으로 사용하는것 </p><ul><li>Convolution 연산과 batch norm의 순서??????</li><li>더 자세한 ResNet의 구조????</li></ul><h3 id="Bottleneck-architecture"><a href="#Bottleneck-architecture" class="headerlink" title="Bottleneck  architecture"></a>Bottleneck  architecture</h3><p>3x3의 연산을 하기 전에 channel 수를 줄이게 되면 parameter의 숫자를 줄일수 있지 않을까?</p><p><img src="/images/image-20210203183155786.png" alt="image-20210203183155786"></p><br/><h2 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h2><br/><ul><li>ResNet을 바라보게 되면 그냥 두개의 값을 더하지 말고 concatnate시키면 되지 않을까?</li><li>계속 concatnate하면 channel이 기하급수적으로 커지기 때문에 이를 해결하기 위해 중간에 1x1 conv를 해줌</li></ul><br/>]]></content:encoded>
+      
+      
+      <category domain="https://jo-member.github.io/categories/Boostcamp/">Boostcamp</category>
+      
+      
+      <category domain="https://jo-member.github.io/tags/Basic/">Basic</category>
+      
+      <category domain="https://jo-member.github.io/tags/CNN/">CNN</category>
+      
+      
+      <comments>https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Computer Vision application</title>
+      <link>https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.2/</link>
+      <guid>https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.2/</guid>
+      <pubDate>Tue, 02 Feb 2021 15:00:00 GMT</pubDate>
+      
+      <description>&lt;br/&gt;
+
+&lt;h1 id=&quot;Computer-Vision-application&quot;&gt;&lt;a href=&quot;#Computer-Vision-application&quot; class=&quot;headerlink&quot; title=&quot;Computer Vision application&quot;&gt;&lt;/a&gt;Computer Vision application&lt;/h1&gt;&lt;br/&gt;
+
+&lt;h2 id=&quot;Fully-Convolutional-Network&quot;&gt;&lt;a href=&quot;#Fully-Convolutional-Network&quot; class=&quot;headerlink&quot; title=&quot;Fully Convolutional Network&quot;&gt;&lt;/a&gt;Fully Convolutional Network&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;기존의 CNN 구조 : &lt;img src=&quot;/images/image-20210203184815070-1612348862409.png&quot; alt=&quot;image-20210203184815070&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Fully Convolutional Network : &lt;img src=&quot;/images/image-20210203184859006.png&quot; alt=&quot;image-20210203184859006&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dense layer를 없앴다. - &amp;gt; convolutionize&lt;/p&gt;
+&lt;p&gt;결국 input과 output은 같다&lt;/p&gt;
+&lt;p&gt;parameter도 같다&lt;/p&gt;
+&lt;p&gt;flat을 해서 dense layer를 거치나, convolution을 거치나 같다&lt;/p&gt;
+&lt;p&gt;ex) 4x4x16  이 였다면 이걸 256개의 vector로 flatten 시킨다&lt;/p&gt;
+&lt;p&gt;​      FCN을 보면 4x4x16에 똑같은 크기를 가진 kernel을 적용한다&lt;/p&gt;
+&lt;p&gt;parameter &lt;/p&gt;
+&lt;p&gt;4x4x16x10 = 2560&lt;/p&gt;
+&lt;p&gt;4x4x16x10 = 2560&lt;/p&gt;
+&lt;p&gt;같다&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<br/><h1 id="Computer-Vision-application"><a href="#Computer-Vision-application" class="headerlink" title="Computer Vision application"></a>Computer Vision application</h1><br/><h2 id="Fully-Convolutional-Network"><a href="#Fully-Convolutional-Network" class="headerlink" title="Fully Convolutional Network"></a>Fully Convolutional Network</h2><ul><li>기존의 CNN 구조 : <img src="/images/image-20210203184815070-1612348862409.png" alt="image-20210203184815070"></li><li>Fully Convolutional Network : <img src="/images/image-20210203184859006.png" alt="image-20210203184859006"></li></ul><p>Dense layer를 없앴다. - &gt; convolutionize</p><p>결국 input과 output은 같다</p><p>parameter도 같다</p><p>flat을 해서 dense layer를 거치나, convolution을 거치나 같다</p><p>ex) 4x4x16  이 였다면 이걸 256개의 vector로 flatten 시킨다</p><p>​      FCN을 보면 4x4x16에 똑같은 크기를 가진 kernel을 적용한다</p><p>parameter </p><p>4x4x16x10 = 2560</p><p>4x4x16x10 = 2560</p><p>같다</p><span id="more"></span><p><img src="/images/image-20210203185349968-1612348862411.png" alt="image-20210203185349968"></p><p>이런짓이 convolutionization</p><p><strong>왜 이런걸 할까????</strong></p><p>image segmentation 관점에서 생각을 해보자</p><ul><li><p>Fully convolutional network가 가지는 가자은 특징은 바로 input dimension, 특히나 input dimension의 spacial dimension이다</p></li><li><p>Transforming fully connected layer into convolutional layers enables a classification to output a hitmap</p></li><li><p>output이 커지게 되면 이거에 비례해서 뒷단의 spacial dimension이 커지게 됨</p><p>Because of convolution이 가지는 shared parameter의 성질 때문에</p></li><li><p>원래는 출력의 hitmap은 input보다 크기가 줄어들기는 하다</p><p>그렇지만 hitmap이라는 가능성이 생겼구나!!!</p></li><li><p>그래서 어떠한 inputsize에도 돌아가지만 이러한 작아진 output을 <strong>다시 input size만큼 늘리는 방법</strong></p></li></ul><ol><li><strong>Deconvolution(convolution transpose)</strong></li></ol><p>간단하게 생각하면 convolution 연산으로 줄어든 결과를 convolution의 역연산으로 다시 늘려주는</p><p>근데 convolution의 역연산이 존재하나? 불가능하다</p><p>근데 그냥 간단하게 이렇게 생각하는게 편하다</p><p>deconvolution은 결국 convolution이후에 결과에 padding을 많이 줘서 여기에 같은 size에 kernel을 적용하는것이다</p><br/><h2 id="Dectection"><a href="#Dectection" class="headerlink" title="Dectection"></a>Dectection</h2><br/><h3 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h3><ol><li>takes and input image</li><li>extract around 2000 region proposal (using selective search)</li><li>computes features for each proposal (size는 모두 똑같이 맞추어 준다, use AlexNet)</li><li>classifies with linear SVMs</li></ol><h3 id="SPPNet"><a href="#SPPNet" class="headerlink" title="SPPNet"></a>SPPNet</h3><ul><li>RCNN의 문제 : 2000개를 뽑으면 2000개를 전부 CNN에 돌려야 되기 때문에 시간이 졸라 많이 걸린다</li><li>따라서 일단 image 안에서 bounding box를 뽑고 image 전체를 CNN에 돌리고, 해당하는 위치의 tensor만을 활용하자</li></ul><br/><h3 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h3><p><img src="/images/image-20210203192314454-1612348862411.png" alt="image-20210203192314454"></p><p> selective search로 bounding box를 얻고 전체 이미지를 CNN에 통과 그리고 ROI pooling layer를 통해 각각의 region에 대해서 feature를 뽑는다</p><p>그리고 마지막에  Fully connected layer을 통해 bounding box를 어떻게 움직이면좋은지, label이 뭔지를 알아낸다</p><br/><h3 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h3><br/><p>Bounding box를 뽑아내는 Region proposal도 학습을 하자!</p><p>selective search를 하지말고 이것도 학습을 하자는 의미</p><p>이 network를 region proposal Network가 추가됨</p><p><strong>Region proposal Network</strong></p><ul><li>이미지의 특정영역이 bounding box로서 의미가 있는지 없는지만 찾아주는 Network</li><li>여기서 필요한게 Anchor box</li><li>미리 정해놓은 Bounding box의 크기 : anchor box</li></ul><p>어떤 크기의 물체가 있을것 같다?</p><p>해당하는 영역의 이미지에 물체가 들어있을지 안들어있을지가 </p><p><img src="/images/image-20210203195347275.png" alt="image-20210203195347275"></p><p>해당하는 영역에 물체가있을지에 대한 정보를 알고있다</p><p>9개의 region size중에 1개를 골라서</p><p>얼마나 bounding box를 늘이거나 줄일지 , xy에 off set을 줘야 해서 4개의 parameter</p><p>해당 box가 쓸만한지 아닌지</p><p>9x(4+2) = 54만큼의 channel이 나오는</p><br/><h2 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h2><br/><p>faster R-CNN보다 훨씬 빠름</p><p>Region에 해당하는 sub tensor을 분류하는게 아니라 그냥 image를 때려 넣으면 딱 나오기 떄문에 빠름</p><ul><li>no exclusive bounding box sampling (region proposal)</li></ul><p>YOLO에 대해서는 추가로 정리해서 따로 posting 하겠다</p>]]></content:encoded>
+      
+      
+      <category domain="https://jo-member.github.io/categories/Boostcamp/">Boostcamp</category>
+      
+      
+      <category domain="https://jo-member.github.io/tags/Basic/">Basic</category>
+      
+      <category domain="https://jo-member.github.io/tags/Vision/">Vision</category>
+      
+      
+      <comments>https://jo-member.github.io/2021/02/03/2021-02-03-Boostcamp13.2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Optimization</title>
+      <link>https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/</link>
+      <guid>https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/</guid>
+      <pubDate>Mon, 01 Feb 2021 15:00:00 GMT</pubDate>
+      
+      <description>&lt;br/&gt;
+
+&lt;h1 id=&quot;1-Optimization&quot;&gt;&lt;a href=&quot;#1-Optimization&quot; class=&quot;headerlink&quot; title=&quot;1. Optimization&quot;&gt;&lt;/a&gt;1. Optimization&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;용어들의 명확한 정리가 필요&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+
+&lt;h2 id=&quot;Concept-of-Optimization&quot;&gt;&lt;a href=&quot;#Concept-of-Optimization&quot; class=&quot;headerlink&quot; title=&quot;Concept of Optimization&quot;&gt;&lt;/a&gt;Concept of Optimization&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Generalization&lt;/li&gt;
+&lt;li&gt;Under fitting vs Over fitting&lt;/li&gt;
+&lt;li&gt;Cross Validation&lt;/li&gt;
+&lt;li&gt;Bias-varience tradeoff&lt;/li&gt;
+&lt;li&gt;Bootstraping&lt;/li&gt;
+&lt;li&gt;Bagging and Boosting&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<br/><h1 id="1-Optimization"><a href="#1-Optimization" class="headerlink" title="1. Optimization"></a>1. Optimization</h1><ul><li>용어들의 명확한 정리가 필요</li></ul><br/><h2 id="Concept-of-Optimization"><a href="#Concept-of-Optimization" class="headerlink" title="Concept of Optimization"></a>Concept of Optimization</h2><ul><li>Generalization</li><li>Under fitting vs Over fitting</li><li>Cross Validation</li><li>Bias-varience tradeoff</li><li>Bootstraping</li><li>Bagging and Boosting</li></ul><span id="more"></span><h3 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h3><br/><p>일반화 성능을 높힌다?</p><p>일반화란 :  Training error각 0 이라고 해서 Test error가 0인것은 아니기 때문에 </p><p>좋은 generalization : network의 Test data 성능이 학습데이터와 비슷하게 나온다</p><p><img src="/images/image-20210202104727640.png"></p><h3 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h3><br/><p>Training data에서 validation data를 나누어서 training된 모델이 validation data 기준으로 얼마나 잘 동작하는지를 판단</p><p><strong>나누는 기준??????</strong></p><p>학습데이터가 적으면 안된다</p><p>따라서 <strong>Cross validation</strong>을 씀</p><p>학습데이터를 K개씩으로 나누어 하나씩 바꾸어가며 validation data로 설정하고 training과 validation을 반복진행</p><p>Test data는 저얼대 model 학습에 사용되어서는 안된다!!</p><p> <img src="/images/image-20210202105239108.png"></p><br/><h3 id="Bias-varience-tradeoff"><a href="#Bias-varience-tradeoff" class="headerlink" title="Bias-varience tradeoff"></a>Bias-varience tradeoff</h3><img src="/images/image-20210202110006947.png"  style="zoom:80%;" /><p>학습데이터에 noise가 껴있을때 Cost를 minimizing하는것은 3개로 decomposed 될수있다</p><ul><li>bias</li><li>varience</li><li>noise</li></ul><p>bias와 varience는 trade off관계에 있다</p><p><img src="/images/image-20210203102311593.png"></p><h3 id="Bootstrapping"><a href="#Bootstrapping" class="headerlink" title="Bootstrapping"></a>Bootstrapping</h3><br/><ul><li><p>Any test or matric that uses random sampling with replacement</p></li><li><p>학습 data가 100개가 있으면 80개씩 random으로 뽑아서 모델을 여러개를 만들어서 하나의 입력에 대한 consensus를 보고 모델을 수정하는법</p></li></ul><h3 id="Bagging-amp-Boosting"><a href="#Bagging-amp-Boosting" class="headerlink" title="Bagging &amp; Boosting"></a>Bagging &amp; Boosting</h3><br/><ul><li><p>Bagging (Bootstrapping aggregating)</p><ul><li>Muitiple models are being trained with bootstrapping</li><li>학습 data가 100개가 있으면 80개씩 random으로 뽑아서(bootstrapping) 모델을 여러개를 만들어서 하나의 입력에 대한 consensus를 보고 모델을 수정하는법</li></ul></li><li><p>Boosting</p><ul><li><p>간단하게 모델을 만들어 testing후 안좋은 부분을 고쳐나가며 여러개의 model을 만든다</p></li><li><p>이들을 독립적인 모델이 아닌 이 모델들을 Sequential하게 합쳐서 하나의 strong learner를 만든다</p><p><img src="/images/image-20210202111433121.png"></p></li></ul></li></ul><br/><h2 id="Gradient-Descent-Method"><a href="#Gradient-Descent-Method" class="headerlink" title="Gradient Descent Method"></a>Gradient Descent Method</h2><br/><ul><li>Stocastic (한번에 1개의 sample을 사용하여 gradient update)</li><li>Mini batch (한번에 적당히 작은 batch size개수의 samples를 사용하여 update) S</li><li>Batch (모든 data를 다 써서 gradient를 update) </li></ul><p>Batch gradient descent를 사용할 경우 step 한번에 모든 data에 대한 loss function을 계산해야 하므로 계산량이 터진다</p><p>이를 방지하기 위해 쓰는 것이 SGD (stocastic gradient descent), mini batch</p><p>Batch보다 다소 부정확 할수는 있지만 빠른 계산속도로 인한 빠른 수렴속도</p><p><strong>BATCH SIZE MATTERS!!!</strong></p><p>Large batch size converge to sharp minimizers</p><p>Small batch size converge to flat minimizers    —&gt; High Generalize performance</p><p><img src="/images/image-20210202112531987.png"></p><p>위의 그래프는 model의 training data와 testing data에 대한 loss function이다. </p><p>큰 batch size를 써서 sharp minimum 값을 가지게 된다면, 우리가 원했던 training fuction의 minimum에서의 testing function에서의 testing function의 값을 보면 최소점이 아닌 꽤나 큰값을 가진다. 이는 모델이 Generalize성능이 떨어진다는 이야기로 귀결된다. 하지만 작은 batch size를 써서 function들이 Flat Minumum값을 가지게 된다면, 꽤나 Generalize 성능이 좋다.</p><p>위의 논문 읽어보면 좋다고 추천해 주심</p><p>Automatic Differentiation</p><ul><li>SGD</li><li>Momentum</li><li>Adagrad</li><li>RMSprop</li><li>Adam</li><li>…</li></ul><br/><h3 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h3><p>1번 gradient가 한쪽으로 흐르게 되면 이전의 gradient정보를 사용하여 이어가는 방향 ? 이런느낌</p><p>SGD와 달리 parameter업데이트시 gradient를 바로 사용하여 업데이트 하는게 아니라 a라는 term을 만들어 이전의 gradient 값을 반영해주는 term을 추가해 주었다.</p><ul><li>a<del>t+1</del>  &lt;= Ba<del>t</del> + g<del>t</del></li><li>W<del>t+1</del> &lt;= W<del>t</del> - $\eta$a<del>t+1</del></li><li>B가 momentum, a<del>t+1</del>가 accumulation, a는 momentum을 포함하고 있어서 한번 흘러가기 시작한 gradient를 유지시켜줌</li></ul><p>momentum을 사용하면 SGD에서 local minimum에 빠졌던 문제를 해결할수도 있다. Momentum으로 기존의 local minimum을 빠져나와 더 좋은 minimum으로 갈수도 있다는 것이다.</p><br/><h3 id="NAG-Nesterov-Accelerated-Gradient"><a href="#NAG-Nesterov-Accelerated-Gradient" class="headerlink" title="NAG (Nesterov Accelerated Gradient)"></a>NAG (Nesterov Accelerated Gradient)</h3><ul><li>a<del>t+1</del>  &lt;= Ba<del>t</del> + $\nabla$ L(W<del>t</del> - $\eta$Ba<del>t+1</del>)</li><li>W<del>t+1</del> &lt;= W<del>t</del> - $\eta$a<del>t+1</del></li><li> $\nabla$ L(W<del>t</del> - $\eta$Ba<del>t+1</del>)  : a라고 불리우는 현재정보에서 그방향으로 한번가보고 (lookahead) 이를 포함해서 update</li><li>momentum은 관성 : 따라서 값이 local minimum에 수렴하지 못하는 현상이 일어날 수도 있음 (관성을 가져서) </li><li>NAG를 쓰면 convergance ratio가 좋다</li></ul><p><img src="/images/image-20210203103339210.png"></p> <br/><h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><ul><li><p>adapts the learning rate </p></li><li><p>parameter가 변해왔는지 안변해왔는지를 보고 parameter를 업데이트 </p></li><li><p>Sum of gradient squares -&gt; G</p><p><img src="/images/image-20210202124747331.png"></p></li></ul><p>G가 결국 계속커지기 때문에 W가 업데이트가 안되고 학습이 멈추는 현상이 발생</p><p>따라서 G의 문제를 해결하는게 뒤의 optimizer인 Adadelta</p> <br/><h3 id="Adadelta"><a href="#Adadelta" class="headerlink" title="Adadelta"></a>Adadelta</h3><p><img src="/images/image-20210202124858966.png"></p><p>엄청난 양의 memory가 필요</p><p>이를 해결하기 위해 감마, 1-감마 : exponential moving average(EMA)</p><p>There is no learning rate in Adadelta!!</p><br/><h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h3><br/><p><img src="/images/image-20210202125049389.png"></p><h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><br/><ul><li><p>adaptive moment estimation</p><p><img src="/images/image-20210202125200078.png"></p></li></ul><br/><h1 id="2-Regulization"><a href="#2-Regulization" class="headerlink" title="2. Regulization"></a>2. Regulization</h1><br/><ul><li>For good generalization</li><li>학습을 방해하는게 요점</li><li>Overfitting 방지 이런거</li></ul><br/><p>종류</p><ol><li>Early Stopping</li><li>Parameter norm penalty</li><li>Data augmentation</li><li>Noise robustness</li><li>Dropout</li><li>Batch Normalization</li></ol><br/><h3 id="Early-stopping"><a href="#Early-stopping" class="headerlink" title="Early stopping"></a>Early stopping</h3><br/><ul><li>중간에 학습을 멈추어 validation data를 만드는</li></ul><h3 id="Parameter-norm-penalty"><a href="#Parameter-norm-penalty" class="headerlink" title="Parameter norm penalty"></a>Parameter norm penalty</h3><p><img src="/images/image-20210202125632498.png"></p><p>weight가 작을수록 좋다? -&gt; function space내에서 부드러운 함수일수록 generalization performance가 높을것이다</p><h3 id="Data-augmentation"><a href="#Data-augmentation" class="headerlink" title="Data augmentation"></a>Data augmentation</h3><br/><ul><li>데이터의 개수를 늘리기 위해 label preserving data augmentation같은걸 사용 </li><li>label이 변환되지 않는 선에서 data를 변환</li></ul><h3 id="Label-smoothing"><a href="#Label-smoothing" class="headerlink" title="Label smoothing"></a>Label smoothing</h3><p><img src="/images/image-20210202131206191.png"></p><p>이러한 방법으로 dataset을 확장시켜 model을 training 해보면 성능향상이 뚜렸하다</p><br/><br/><h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><br/><ul><li><p>내가 적용하고자 하는 statistics를 정규화</p></li><li><p>각각의 layer가 1000개의 parameter라면 각각의 parameter가 정규화되게 하는것</p><p><img src="/images/image-20210202131442725.png"></p></li><li><p>Internal feature shift를 줄인다???? -&gt; 논란이 많다</p></li><li><p>그럼에도 활용하면 일반적으로 성능이 많이 향상된다</p></li></ul><p><img src="/images/image-20210202131704296.png"></p><p>하나하나를 활용하여 Normalize를 하면서 좋은 성능이 나는걸 선택 ㅋㅋ</p><p>Further Question</p><ul><li>Regression Task, Classification Task, Probabilistic Task의 Loss 함수(or 클래스)는 Pytorch에서 어떻게 구현이 되어있을까요?</li><li>올바르게(?) cross-validation을 하기 위해서는 어떻 방법들이 존재할까요? </li><li>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</li><li><a href="https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9">TimeseriesCV</a></li></ul><br/><h1 id="Further-Question-1"><a href="#Further-Question-1" class="headerlink" title="Further Question 1"></a>Further Question 1</h1><br/><h2 id="Pytorch-내부에서의-Loss-function-구현"><a href="#Pytorch-내부에서의-Loss-function-구현" class="headerlink" title="Pytorch 내부에서의 Loss function 구현"></a>Pytorch 내부에서의 Loss function 구현</h2><br/><ol><li>Regression Task의 Loss function</li></ol><br/><ul><li><code>torch.nn.L1Loss</code>(<em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li></ul><p>Measures the mean absolute error (MAE) between each element in the input <em>x</em> and target <em>y</em> .</p><p><img src="/images/image-20210203115218626.png"></p><p>내부적으로 L1Loss가 어찌 구현되어 있나 확인해 보자</p><p><img src="/images/image-20210203114526003.png"></p><p>내부적으로 reduction을 mean으로 설정시 우리가 알고있는 sum을 n으로 나눈 값을 loss로 사용(기본값 : mean)</p><p>reduction을 sum으로 설정시 n으로 나누는게 사라진 그저 차이의 norm의 sum값</p><br/><br/><ul><li><code>torch.nn.MSELoss</code>(<em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li></ul><p>Measures the mean squared error (squared L2 norm) between each element in the input x<em>x</em> and target y<em>y</em> .</p><p>위의 L1 loss와 다른점은 차이의 제곱</p><p><img src="/images/image-20210203115235418.png"></p><p><img src="/images/image-20210203113548662.png"></p><br/><br/><ol start="2"><li>Classification Task의 Loss function</li></ol><br/><ul><li><code>torch.nn.BCELoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li></ul><p>내가 이 loss function을 사용했을때는 분류문제중, 2개의 label 사이에서 classification을 할때는 BCELoss를 사용하고 NN의 출력단에 sigmoid함수를 적용해주었다.</p><p><a href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#torch.nn.BCEWithLogitsLoss"><code>nn.BCEWithLogitsLoss</code></a>하지만 이 함수를 사용시 sigmoid가 내부적으로 포함되어있다</p><p><img src="/images/image-20210203115548370.png"></p><p>loss function을 보면 </p><ul><li><code>torch.nn.CrossEntropyLoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>ignore_index: int = -100</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li></ul><p><img src="/images/image-20210203115810360.png"></p><br/><ol start="3"><li>Probabilistic Task의 Loss function</li></ol><ul><li><code>torch.nn.NLLLoss</code>(<em>weight: Optional[torch.Tensor] = None</em>, <em>size_average=None</em>, <em>ignore_index: int = -100</em>, <em>reduce=None</em>, <em>reduction: str = ‘mean’</em>)</li></ul><p>The negative log likelihood loss. It is useful to train a classification problem with C classes.</p><br/><h1 id="Further-Question-2"><a href="#Further-Question-2" class="headerlink" title="Further Question 2"></a>Further Question 2</h1><br/><h2 id="올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요"><a href="#올바르게-cross-validation을-하기-위해서는-어떤-방법들이-존재할까요" class="headerlink" title="올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?"></a>올바르게(?) cross-validation을 하기 위해서는 어떤 방법들이 존재할까요?</h2><br/><p>일정한 k개로 data를 나누어 그중에 하나를 validation data로 사용하는 -&gt; k-fold cv</p><p>validation</p><p>hyper paramter : 우리가 정하는 값 ex) lr, network 깊이, loss function 종류, 등등</p><p>cross validation으로 최적의 hyper parameter를 찾고 이걸 고정한 상태에서 전체 training data를 사용해서 학습을 시킨다</p><p>모형의 파라미터 추정에는 트레이닝셋을 사용하고, 하이퍼파라미터 설정에는 밸리데이션 셋을 사용합니다</p><h1 id="Further-Question-3"><a href="#Further-Question-3" class="headerlink" title="Further Question 3"></a>Further Question 3</h1><br/><h2 id="Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요"><a href="#Time-series의-경우-일반적인-k-fold-cv를-사용해도-될까요" class="headerlink" title="Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?"></a>Time series의 경우 일반적인 k-fold cv를 사용해도 될까요?</h2><br/><p>시간의 정보를 가진 data를 기존의 k-fold cv를 사용하여 섞어 버린다면 , 과거와 미래가 뒤섞여 안된다</p><p>for time series data we utilize hold-out cross-validation where a subset of the data (<em>split temporally</em>) is reserved for validating the model performance.</p><p>이는 결국 training data set -&gt; validation data set -&gt; test data set 이 시간순으로 배열되야 한다는 뜻이다</p><ol><li><strong>Time dependency</strong></li></ol><p> 현재의 시점에서 미래의 data를 예측하는 모델을 맞추는 데 사용 된 이벤트 이후에 시간순으로 발생하는 이벤트에 대한 모든 데이터를 보류해야합니다. </p><p>따라서 교차적으로 data를 바꾸어주는 K-fold 대신 hold-out cross-validation을 사용해야 한다</p><p>이는 결국 training data set -&gt; validation data set -&gt; test data set 이 시간순으로 배열되야 한다는 뜻이다</p><ol start="2"><li><strong>Arbitrary Choice of Test Set</strong></li></ol><p>만약 우리가 임의적으로 정한 test set에서 poor한 결과를 내었다면, 이는 전체적인 data에 대한 poor한결과가 아닌 그 특정한 독립적인 test set에의 poor한 결과이다</p><p>따라서 우리는 Nested Cross-Validation을 사용한다</p><p><img src="/images/image-20210203125504680.png"></p><p>그림을 보면서 Nested cv를 알아보자</p><p>Nested CV에는 오류 추정을 위한 외부 loop와 hyperparameter추정을 위한 Inner loop가 있다</p><p>내부루프는 train data set을 나누는 걸로 앞서 설명한일반적인 CV구조이다</p><p>이제 data set를 여러 train과 test set으로 나누는 외부루프가 추가되었고 각 분할된 오류의 평균을 구한다</p><br/><h3 id="Nested-CV-for-Time-series-data"><a href="#Nested-CV-for-Time-series-data" class="headerlink" title="Nested CV for Time series data"></a>Nested CV for Time series data</h3><br/><ol><li><strong>Predict second half</strong></li></ol><p>데이터의 전반부 (일시적으로 분할)는 훈련 세트에 할당되고 후반부는 테스트 세트가 된다</p><p>validation data의 크기는 달라질수 있지만, 순서는 data의 시간 순서는 항상 test data set이 train보다 뒤에있어야 한다</p><p>이게 앞선 1의 time dependency를 해소시킨 것이다</p><p><img src="/images/image-20210203130233448.png"></p><ol start="2"><li><strong>Day Forward-Chaining</strong></li></ol><p>predict second half의 단점은 hold-out dataset(앞서 말한 연대순)을 임의로 선택하게 되면 time dependency는 해결되었지만 <strong>Arbitrary Choice of Test Set</strong>을 해결하지 못하게 된다</p><p>따라서 앞서 말한 Nested CV와 같이 많은 train과 test data set을 만들어 이들의 오류값을 구해 평균을 내어준다</p><p>예를 들면  1일을 test set으로 간주하고 나머지를 train set으로 해주는 것이다</p><p><img src="/images/image-20210203130519597.png"></p>]]></content:encoded>
+      
+      
+      <category domain="https://jo-member.github.io/categories/Boostcamp/">Boostcamp</category>
+      
+      
+      <category domain="https://jo-member.github.io/tags/Basic/">Basic</category>
+      
+      
+      <comments>https://jo-member.github.io/2021/02/02/2021-02-02-Boostcamp12.1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>딥러닝 기초</title>
+      <link>https://jo-member.github.io/2021/02/01/2021-02-01-Boostcamp11/</link>
+      <guid>https://jo-member.github.io/2021/02/01/2021-02-01-Boostcamp11/</guid>
+      <pubDate>Sun, 31 Jan 2021 15:00:00 GMT</pubDate>
+      
+      <description>&lt;br/&gt;
+
+&lt;h1 id=&quot;베이즈-통계학&quot;&gt;&lt;a href=&quot;#베이즈-통계학&quot; class=&quot;headerlink&quot; title=&quot;베이즈 통계학&quot;&gt;&lt;/a&gt;베이즈 통계학&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;데이터가 추가되었을때 쓰는 인과관계에 대한 추론법&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;조건부-확률&quot;&gt;&lt;a href=&quot;#조건부-확률&quot; class=&quot;headerlink&quot; title=&quot;조건부 확률&quot;&gt;&lt;/a&gt;조건부 확률&lt;/h2&gt;&lt;br/&gt;
+
+&lt;ul&gt;
+&lt;li&gt;베이즈 정리는 곧 조건부 확률을 이용하여 정보를 갱신하는 방법을 알려줍니다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image-20210201112623410.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;결국 우리가 알고 싶은 것은 A라는 새로운 추가적인 정보가 들어왔을때 P(B)로 부터 P(B l A)를 계산하는 방법을 제공한다&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<br/><h1 id="베이즈-통계학"><a href="#베이즈-통계학" class="headerlink" title="베이즈 통계학"></a>베이즈 통계학</h1><ul><li>데이터가 추가되었을때 쓰는 인과관계에 대한 추론법</li></ul><h2 id="조건부-확률"><a href="#조건부-확률" class="headerlink" title="조건부 확률"></a>조건부 확률</h2><br/><ul><li>베이즈 정리는 곧 조건부 확률을 이용하여 정보를 갱신하는 방법을 알려줍니다</li></ul><p><img src="/images/image-20210201112623410.png"></p><p>결국 우리가 알고 싶은 것은 A라는 새로운 추가적인 정보가 들어왔을때 P(B)로 부터 P(B l A)를 계산하는 방법을 제공한다</p><span id="more"></span><br/><h2 id="실제로-그럼-어디에-쓸까"><a href="#실제로-그럼-어디에-쓸까" class="headerlink" title="실제로 그럼 어디에 쓸까"></a>실제로 그럼 어디에 쓸까</h2><p><img src="/images/image-20210201113042309.png"></p><ul><li>D : data , $\theta$ : 모수</li><li>사후확률 : 데이터가 주어져 있을때  $\theta$에 대한 확률</li><li>사전확률 : 데이터가 없는 상황에서 사전에 주어진  $\theta$ 에 대한 확률</li><li>Likelihood : 현재 주어진 모수에서 어떠한 Data가 관찰될 확률</li><li>Evidence : Data 자체의 분포</li></ul><br/><p>ex) COVID의 발병률이 10%로 알려져 있을 때, 이 바이러스에 실제로 <strong>걸렸을때</strong>(조건부) 검진될 확률 : 99%, 오검진 확률 : 1%</p><p>이 때, 어떤 사람이 양성판정일때 정말로 이사람이 바이러스에 감였되었을 확률</p><br/><p>발병률 : 사전확률</p><p>실제로 걸렸을 확률 :  $\theta$ </p><p>검진된 경우 : D</p><p>실제로 걸렸을 때 검진될 확률 : P(D l $\theta$) : Likelihood</p><p>가능도와 사전확률이 주어져 있으므로, 사후확률 계산가능</p><p>그렇다면 Evidence의 계산법은????????</p><p><img src="/images/image-20210201120929030.png"></p><p>따라서  $\theta$를 부정했을때의 likelihood도 알아야 계산이 가능하다</p><h2 id="조건부-확률의-시각화"><a href="#조건부-확률의-시각화" class="headerlink" title="조건부 확률의 시각화"></a>조건부 확률의 시각화</h2><p> <img src="/images/image-20210201121230522.png"></p><p>데이터의 성격에 따라 1종오류을 줄이냐 2종오류를 줄이냐가 달라진다</p><p>Ex) 의료문제의 경우 False Negative : 질병이 아니다라고 했는데 실제로 질병일 경우 따라서 False Negative에 신경을 쓴다</p><br/><p>사전 확률 : 질병에 걸릴 확률, 안걸릴 확률</p><p>민감도 : 걸린걸 걸렸다고 탐지</p><p>실제로 걸렸을 때 걸렸다고 할 확률 : 민감도</p><p>실제로 걸리지 않았을때 걸렸다고 할 확률 : 오탐</p><p>양성이 나왔을때  진짜 양성인 경우 : True Positive </p><p>음성이 나왔을때 진짜 음성인 경우 : True Negative</p><p>양성이 나왔을때 음성인 경우 : 1종 오류</p><p>음성이 나왔는데 질병에 걸린 경우 : 2종 오류</p><p>정밀도 : TP/(TP+FP)</p><br/><h2 id="베이즈-정리를-통한-정보의-갱신"><a href="#베이즈-정리를-통한-정보의-갱신" class="headerlink" title="베이즈 정리를 통한 정보의 갱신"></a>베이즈 정리를 통한 정보의 갱신</h2><ul><li>베이즈 정리를 통해 새로운 데이터가 들어왔을 경우 앞서 계산한 사후확률을 사전확률로 사용하여 갱신된 사후확률을 계산가능</li><li>앞서 양성 판정을 받은 사람이 2번째 검진을 받았을 때도 양성이 나왔을때 진짜 COVID에 걸렸을 확률은?&gt;??????</li></ul><p>베이즈 정리를 활용하여 사후확률을 연속으로 계산해보면 정밀도가 화아아악 올라간다</p><p>이게 바로 베이즈 정리의 강점!!</p><br/><ul><li><strong>BUT!!! 조건부확률로 인과관계를 추론해서는 안된다!!!!!!!!!!!</strong></li><li>인과 관계는 데이터 분포의 변화에 강건한 예측모형을 만들 때 고려해 주어야 한다</li><li>인과 관계를 고려했을 시에 예측도는 떨어질 수 있음</li><li>인과 관계를 알아내기 위해서는 중첩요인(confounding factor)의 효과를 제거하고 원인에 해당하는 변수만의 인과관계를 계산해야 한다</li><li><img src="/images/image-20210201125109622.png"></li></ul><p>ex) 키와 지능 -&gt; 여기에 나이에 따른 효과를 제거하지 않는다면 키가 클수록 지능이 높다라는 결과가 나오게 됨</p><p>이러한 나이와 같은 중첩요인을 제거하는 것이 Main Point</p><br/><p>Ex)</p><p><img src="/images/image-20210201125438048.png"></p><p>위의 문제가 바로 아주 유명한 simpsons 역설</p><p>a와b의 중첩효과를 제거해야 됨</p><p>Z의 개입을 제거하기 위해 조정(intervention)효과를 사용한다???</p><p>조정효과에 대한 개념이 조금 필요할듯 싶다</p><h1 id="Deep-Learning-Historical-Review"><a href="#Deep-Learning-Historical-Review" class="headerlink" title="Deep Learning ; Historical Review"></a>Deep Learning ; Historical Review</h1><p>사람의 지능을 모방하는 인공지능 AI &gt; data based Machine Learning &gt; Deep Learning (NN을 사용하는)</p><br/><h2 id="Key-components-of-Deep-learning"><a href="#Key-components-of-Deep-learning" class="headerlink" title="Key components of Deep learning"></a>Key components of Deep learning</h2><ol><li>Data that model can learn</li><li>Model how to transform data</li><li>Loss Function that quantifies the badness of model</li><li>Algorithm to adjust the parameters to minimize the Loss Function (최적화 알고리즘)</li></ol><img src="/images/image-20210201183439274.png"  style="zoom: 80%;" /><h2 id="Historical-Review"><a href="#Historical-Review" class="headerlink" title="Historical Review"></a>Historical Review</h2><br/><h3 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h3><ul><li>224*224의 image data 분류대회에서 처음으로 Deep Learning을 사용하여 1등함</li><li>실제적으로 딥러닝의 성능이 입증이 되었던 사실</li></ul><br/><h3 id="2-DQN"><a href="#2-DQN" class="headerlink" title="2. DQN"></a>2. DQN</h3><ul><li>Q -Learning의 function estimation에 NN을 추가하여 높은 성능을 이끌어냄</li></ul><br/><h3 id="3-Encoder-Decoder"><a href="#3-Encoder-Decoder" class="headerlink" title="3. Encoder/Decoder"></a>3. Encoder/Decoder</h3><ul><li>NLP의 trend가 많이 바뀌었다</li></ul><br/><h3 id="4-Adam-Optimizer"><a href="#4-Adam-Optimizer" class="headerlink" title="4. Adam Optimizer"></a>4. Adam Optimizer</h3><ul><li>우리가 optimizer를 선정할때 Adam을 그냥 쓰는 이유가 있을까? 결과가 잘나오는 이유가 있을까?</li></ul><br/><h3 id="5-GAN"><a href="#5-GAN" class="headerlink" title="5. GAN"></a>5. GAN</h3><ul><li>Generate Model  : Network가 data를 생성!</li></ul><br/><h3 id="6-RESNET"><a href="#6-RESNET" class="headerlink" title="6. RESNET"></a>6. RESNET</h3><ul><li>왜 딥러닝이냐를 설명해주었다</li><li>Layer를 더욱더 깊게 쌓을수 있게 만들어줌</li></ul><br/><h3 id="7-Transformer"><a href="#7-Transformer" class="headerlink" title="7. Transformer"></a>7. Transformer</h3><ul><li><strong>Attention is all you need!!</strong></li><li>모든 기존의 RNN을 대체하였고, 이젠 CNN도 넘보고 있다</li></ul><br/><h3 id="8-BERT-fine-tuned-NLP-model"><a href="#8-BERT-fine-tuned-NLP-model" class="headerlink" title="8. BERT (fine tuned NLP model)"></a>8. BERT (fine tuned NLP model)</h3><ul><li>일반적인 단어들로 model을 train한후에 내가 원하는 소수의 data에 fine tunning</li><li>OPENAI의 GPT-3</li></ul><h3 id="9-Self-Supervised-Learning"><a href="#9-Self-Supervised-Learning" class="headerlink" title="9. Self Supervised Learning"></a>9. Self Supervised Learning</h3><ul><li>이미지 분류와 같은 분류문제를 풀때 한정된 학습데이터로 model과 loss fun을 바꿔가는게 아닌 학습데이터 외에 라벨을 모르는 Unsupervised Learning 활용</li><li>SimCLR</li></ul><br/><h1 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h1><br/><p>단순히 Function approximate이다</p><p>gradient ascent 라면 reward를 키우도록 ! 이런게 되겠구만</p><p>step size $\eta$</p><p>행렬을 찾겠다 -&gt; 서로다른 차원의 선형변환을 찾겠다</p><p><img src="/images/image-20210201202237271.png"></p><p>이렇게 그저 연속된 선형변환은 하나의 선형변환으로 합쳐질수 있기 떄문에 층을 여러개 쌓는 이유가 사라진다</p><p>따라서 층 중간에 activation function을 넣어준다 -&gt; nonlinear transform</p><p>선형결합의 반복이 아닌 nonlinear transform의 결합</p><p>더 많은 표현력을 가지게 됨</p><br/><p>존재성이 중요한게 아니라 표현력이 중요함</p><p>MSE는 제곱이라 data 사이에 error가 껴있을때 -&gt; 전체적인 NN이 망가질수도 있음</p><p>이렇게 항상 같은 Loss Function을 쓰는게 아니라 상황에 맞게</p><p>다른 값에 비해서 그값이 높기만 하면 그 index를 뽑는것 -&gt; 그래서 이걸 수학적으로 CE를 사용함</p>]]></content:encoded>
+      
+      
+      <category domain="https://jo-member.github.io/categories/Boostcamp/">Boostcamp</category>
+      
+      
+      
+      <comments>https://jo-member.github.io/2021/02/01/2021-02-01-Boostcamp11/#disqus_thread</comments>
       
     </item>
     
